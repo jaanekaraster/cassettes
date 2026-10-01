@@ -1,0 +1,16 @@
+{
+  "id": "song-001",
+  "title": "English Display Title",
+  "original_title": {
+    "language": "",
+    "script": "",
+    "transliteration": ""
+  },
+  "language": "",
+  "reference": null,
+  "description": "",
+  "lyrics": {
+    "original": null,
+    "english": null
+  }
+}
