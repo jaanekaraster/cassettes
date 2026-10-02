@@ -1,31 +1,129 @@
 :root {
-  color-scheme: light;
-  font-family: system-ui, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #242424;
+  background: #f5f2ec;
+
   line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: #f7f5f0;
-  color: #222;
 }
 
-main {
+.container {
   width: min(900px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 3rem 0 5rem;
 }
 
-header {
+.site-header {
   margin-bottom: 3rem;
 }
 
-h1,
-h2 {
-  line-height: 1.2;
+.site-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.site-header p {
+  margin: 0;
+  color: #666;
+}
+
+.controls {
+  margin-bottom: 2.5rem;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.controls input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #c9c4bb;
+  border-radius: 6px;
+  background: white;
+  font: inherit;
+}
+
+.controls input:focus {
+  outline: 2px solid #8c7355;
+  outline-offset: 1px;
+}
+
+.results-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.results-header h2 {
+  margin: 0;
+}
+
+#result-count {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.recording-card {
+  padding: 1.5rem 0;
+  border-top: 1px solid #d8d3ca;
+}
+
+.recording-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.original-title {
+  margin-top: 0.25rem;
+  color: #555;
+}
+
+.metadata {
+  margin-top: 0.5rem;
+  color: #706b64;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0.8rem 0;
 }
 
 audio {
+  display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.error {
+  color: #a33;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 2rem;
+  }
+
+  .recording-card {
+    padding: 1.25rem 0;
+  }
 }

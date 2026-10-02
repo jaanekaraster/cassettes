@@ -1,0 +1,64 @@
+[
+  {
+    "id": "rec-001",
+    "song_id": "song-001",
+    "reel": {
+      "id": "3_s2",
+      "size": "3.75\""
+    },
+    "type": "audio",
+    "participants": [
+      {
+        "person_id": "person-001",
+        "role": "singer"
+      }
+    ],
+    "audio": {
+      "path": "audio/3_s2_dortn_dortn.mp3"
+    },
+    "duration_seconds": 0,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel-12.jpg"
+      }
+    ],
+    "date": {
+      "value": "1968",
+      "precision": "year"
+    }
+  },
+  {
+    "id": "rec-002",
+    "song_id": "song-002",
+    "reel": {
+      "id": "3_s2",
+      "size": "3.75\""
+    },
+    "type": "audio",
+    "participants": [
+      {
+        "person_id": "person-001",
+        "role": "singer"
+      }
+    ],
+    "audio": {
+      "path": "audio/3_s2_dorozhinka.mp3"
+    },
+    "duration_seconds": 0,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel-12.jpg"
+      }
+    ],
+    "date": {
+      "value": "1968",
+      "precision": "year"
+    }
+  }
+]
