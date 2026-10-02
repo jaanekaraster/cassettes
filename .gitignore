@@ -26,3 +26,4 @@ Thumbs.db
 media/
 local-media/
 originals/
+.env.r2

@@ -17,14 +17,17 @@
   },
   {
     "id": "song-002",
-    "title": "Dorozhinka",
+    "title": "Dorozhen'ka (Little Road)",
     "original_title": {
       "language": "Russian",
-      "script": "",
-      "transliteration": ""
+      "script": "Дороженька",
+      "transliteration": "Dorozhen'ka"
     },
     "language": "Russian",
-    "reference": null,
+    "reference": {
+      "source": "https://www.youtube.com/watch?v=sYkiCUc41Wk",
+      "type": "youtube"
+    },
     "description": "",
     "lyrics": {
       "original": null,

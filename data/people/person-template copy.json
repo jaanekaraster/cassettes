@@ -1,0 +1,12 @@
+{
+  "id": "person-num",
+  "name": "Full Name",
+  "display_name": "Preferred Display Name",
+  "description": "",
+  "photos": [
+    {
+      "path": "photos/person-001-01.jpg",
+      "caption": ""
+    }
+  ]
+}
