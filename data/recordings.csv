@@ -1,15 +1,45 @@
 id,title,song_ids,reel_id,reel_size,type,participants,order,duration_seconds,description,comments,documents,date_value,date_precision,audio_path
-rec_013,Mikhail Alexandrovitch/Horowitz/Kagan,,3_s2,"7.5""",audio,person_002,0,,,"""Mikhail Alexandrovitch, a leading concert artist of the Soviet Union, a tenor. Instrumentals and ensemble arranged and conducted by Kazan."" Only a few seconds of him singing (not good quality)",documents/reel_3.pdf,,,audio/3_s2_kagan_1.mp3
-rec_004,A Glezele L'Chayim (Yiddish folk song),song_004,3_s2,"7.5""",audio,person_001,1,,,,documents/reel_3.pdf,,,audio/3_s2_glezele.mp3
-rec_003,Oyf Yener Zayt Taych,song_003,3_s2,"7.5""",audio,person_001,2,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_oyf_yener.mp3
-rec_002,A Liteleyn Yiddish (Nigun Atik),song_002,3_s2,"7.5""",audio,person_001,3,,,,documents/reel_3.pdf,,,audio/3_s2_nigun.mp3
-rec_001,Dortn Dortn,song_001,3_s2,"7.5""",audio,person_001,4,,,,documents/reel_3.pdf,,,audio/3_s2_dortn_dortn.mp3
-rec_005,Droitele,song_005,3_s2,"7.5""",audio,person_001,5,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_droitele_1.mp3
-rec_014,Droitele (different key),song_005,3_s2,"7.5""",audio,person_001,6,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_droitele_2.mp3
-rec_007,"Sunrise, Sunset",song_007,3_s2,"7.5""",audio,person_001,7,,,,documents/reel_3.pdf,,,audio/3_s2_sunrise_sunset.mp3
-rec_006,Dorozhen'ka (Little Road),song_006,3_s2,"7.5""",audio,person_001,8,,,,documents/reel_3.pdf,,,audio/3_s2_dorozhenka.mp3
-rec_008,"Ya lyublyu tebya zhizn (I love you, life)",song_008,3_s2,"7.5""",audio,person_001,9,,,,documents/reel_3.pdf,,,audio/3_s2_zhizn.mp3
-rec_009,Mat' radnaya maya,song_009,3_s2,"7.5""",audio,person_001,10,,,,documents/reel_3.pdf,,,audio/3_s2_maty.mp3
-rec_010,Lyubimye Glaza (Beloved Eyes),song_010,3_s2,"7.5""",audio,person_001,11,,,,documents/reel_3.pdf,,,audio/3_s2_glaza.mp3
-rec_011,Gershwin Medley in Concert,,3_s2,"7.5""",audio,,12,,,"Includes: Someone to watch over me, Embraceable You",documents/reel_3.pdf,,,audio/3_s2_gershwin.mp3
+rec_001,Dortn Dortn,song_001,3_s2,"3.75""",audio,person_001,4,,,,documents/reel_3.pdf,,,audio/3_s2_dortn_dortn.mp3
+rec_002,A Liteleyn Yiddish (Nigun Atik),song_002,3_s2,"3.75""",audio,person_001,3,,,,documents/reel_3.pdf,,,audio/3_s2_nigun.mp3
+rec_003,Oyf Yener Zayt Taych,song_003,3_s2,"3.75""",audio,person_001,2,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_oyf_yener.mp3
+rec_004,A Glezele L'Chayyim (A Little Glass of Life),song_004,3_s2,"3.75""",audio,person_001,1,,,,documents/reel_3.pdf,,,audio/3_s2_glezele.mp3
+rec_005,Droitele,song_005,3_s2,"3.75""",audio,person_001,5,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_droitele_1.mp3
+rec_006,Dorozhen'ka (Little Road),song_006,3_s2,"3.75""",audio,person_001,8,,,,documents/reel_3.pdf,,,audio/3_s2_dorozhenka.mp3
+rec_007,"Sunrise, Sunset",song_007,3_s2,"3.75""",audio,person_001,7,,,,documents/reel_3.pdf,,,audio/3_s2_sunrise_sunset.mp3
+rec_008,"Ya lyublyu tebya zhizn (I love you, life)",song_008,3_s2,"3.75""",audio,person_001,9,,,,documents/reel_3.pdf,,,audio/3_s2_zhizn.mp3
+rec_009,Mat' radnaya maya,song_009,3_s2,"3.75""",audio,person_001,10,,,,documents/reel_3.pdf,,,audio/3_s2_maty.mp3
+rec_010,Lyubimye Glaza (Beloved Eyes),song_010,3_s2,"3.75""",audio,person_001,11,,,,documents/reel_3.pdf,,,audio/3_s2_glaza.mp3
+rec_011,Gershwin Medley in Concert,,3_s2,"3.75""",audio,,12,,,"Includes: Someone to watch over me, Embraceable You",documents/reel_3.pdf,,,audio/3_s2_gershwin.mp3
 rec_012,Mikhail Alexandrovitch/Horowitz/Kagan,,3_s2,"7.5""",audio,person_002,13,,,Rest of the Mikhail Alexandrovitch (not good quality),documents/reel_3.pdf,,,audio/3_s2_kagan_2.mp3
+rec_013,Mikhail Alexandrovitch/Horowitz/Kagan,,3_s2,"7.5""",audio,person_002,0,,,"""Mikhail Alexandrovitch, a leading concert artist of the Soviet Union, a tenor. Instrumentals and ensemble arranged and conducted by Kazan."" Only a few seconds of him singing (not good quality)",documents/reel_3.pdf,,,audio/3_s2_kagan_1.mp3
+rec_014,Droitele (different key),song_005,3_s2,"3.75""",audio,person_001,6,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_droitele_2.mp3
+rec_015,"Proshchai, lyubim'i gorod! (Goodbye, beloved city!)",song_011,4_s2,"5""",audio,person_001,1,,,,documents/reel_4.pdf,,,audio/4_s2_proshchai.mp3
+rec_016,"Akh, t' tserdtsye, serdtsye devichye (Oh, my heart, a maiden's heart)",song_012,4_s2,"5""",audio,person_001,2,,,,documents/reel_4.pdf,,,audio/4_s2_ti_tsertsye.mp3
+rec_017,Dorozhen'ka (Little Road),song_006,4_s2,"5""",audio,person_001,3,,,,documents/reel_4.pdf,,,audio/4_s2_dorozhenka_1.mp3
+rec_018,Pravazhaniye (Seeing off),song_013,4_s2,"5""",audio,person_001,4,,,"Sara calls it ""Razluka""",documents/reel_4.pdf,,,audio/4_s2_pravazhaniye.mp3
+rec_019,Ti ryadom so mnoi (You are by my side),song_014,4_s2,"5""",audio,person_001,5,,,,documents/reel_4.pdf,,,audio/4_s2_ti_ryadom.mp3
+rec_020,A godi letyat... (And the years fly by...),song_015,4_s2,"5""",audio,person_001,6,,,,documents/reel_4.pdf,,,audio/4_s2_letat.mp3
+rec_021,Odinokaya Garmon' (The Lonely Accordion),song_016,4_s2,"5""",audio,person_001,7,,,,documents/reel_4.pdf,,,audio/4_s2_garmon.mp3
+rec_022,Mnye vse ravno: Stradat' il' naslazhdat'sya (It makes no difference to me: to suffer or to find delight),song_017,4_s2,"5""",audio,person_001,8,,,,documents/reel_4.pdf,,,audio/4_s2_mnye_vse_1.mp3
+rec_023,"Ya lyublyu tebya, zhizni (I love you, life)",song_008,4_s2,"5""",audio,person_001,9,,,,documents/reel_4.pdf,,,audio/4_s2_zhizn.mp3
+rec_024,Tishina,song_018,4_s2,"5""",audio,person_001,10,,,,documents/reel_4.pdf,,,audio/4_s2_tishina.mp3
+rec_025,Pust' vsegda budet solntsye (May there always be sunshine),song_019,4_s2,"5""",audio,person_001,11,,,,documents/reel_4.pdf,,,audio/4_s2_pust.mp3
+rec_026,Zvenit gitara nad rekoyu (A guitar rings out over the river.),song_020,4_s2,"5""",audio,person_001,12,,,,documents/reel_4.pdf,,,audio/4_s2_zvenit_1.mp3
+rec_027,Parucheniye (Assignment) from film Isl'taniye vernosti (A Test of Loyalty),song_021,4_s2,"5""",audio,person_001,13,,,,documents/reel_4.pdf,,,audio/4_s2_parucheniye_1.mp3
+rec_028,Parucheniye (Assignment) from film Isl'taniye vernosti (A Test of Loyalty),song_021,4_s2,"5""",audio,person_001,13,,,,documents/reel_4.pdf,,,audio/4_s2_parucheniye_2.mp3
+rec_029,Yiddish song (Di eyniklach?),,4_s2,"5""",audio,person_001,14,,,A Yiddish song with piano and mandolin accompaniment,documents/reel_4.pdf,,,audio/4_s2_eyniklach.mp3
+rec_030,Turn Around,song_022,4_s2,"5""",audio,person_001,15,,,,documents/reel_4.pdf,,,audio/4_s2_turn.mp3
+rec_031,Mat' radnaya maya,song_009,4_s2,"5""",audio,person_001,16,,,,documents/reel_4.pdf,,,audio/4_s2_maty.mp3
+rec_032,Dorozhen'ka (Little Road),song_006,4_s2,"5""",audio,person_001,17,,,,documents/reel_4.pdf,,,audio/4_s2_dorozhenka_2.mp3
+rec_033,Za okoshkom svetu mala,song_023,4_s2,"5""",audio,person_001,18,,,,documents/reel_4.pdf,,,audio/4_s2_za_okoshkom.mp3
+rec_034,"Akh, tsertsye mayo",song_024,4_s2,"5""",audio,person_001,19,,,,documents/reel_4.pdf,,,audio/4_s2_tsertsye_mayo.mp3
+rec_035,Zvenit gitara nad rekoyu (A guitar rings out over the river.),song_020,4_s2,"5""",audio,person_001,20,,,,documents/reel_4.pdf,,,audio/4_s2_zvenit_2.mp3
+rec_036,Verba-verbochka,song_025,4_s2,"5""",audio,person_001,21,,,Unconfirmed song,documents/reel_4.pdf,,,audio/4_s2_verba.mp3
+rec_037,Vasemnadtsat' let,song_026,4_s2,"5""",audio,person_001,22,,,,documents/reel_4.pdf,,,audio/4_s2_vasem.mp3
+rec_038,Bezhit reka v tumanye taet,song_027,4_s2,"5""",audio,person_001,23,,,,documents/reel_4.pdf,,,audio/4_s2_bezhit.mp3
+rec_039,Mnye vse ravno: Stradat' il' naslazhdat'sya (It makes no difference to me: to suffer or to find delight),song_017,4_s2,"5""",audio,person_001,24,,,,documents/reel_4.pdf,,,audio/4_s2_mnye_vse_2.mp3
+rec_040,silence,,4_s2,"5""",audio,person_001,25,,,,documents/reel_4.pdf,,,audio/4_s2_silence.mp3
+rec_041,some poor quality song,,4_s2,"5""",audio,person_001,26,,,,documents/reel_4.pdf,,,audio/4_s2_poor_1.mp3
+rec_042,poor quality Russian singing,,4_s2,"5""",audio,person_001,27,,,,documents/reel_4.pdf,,,audio/4_s2_poor_2.mp3
+rec_043,slow narration,,4_s2,"5""",audio,person_001,29,,,,documents/reel_4.pdf,,,audio/4_s2_slow_1.mp3
+rec_044,slow Russian narration,,4_s2,"5""",audio,person_001,30,,,,documents/reel_4.pdf,,,audio/4_s2_slow_2.mp3

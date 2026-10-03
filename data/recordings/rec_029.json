@@ -1,0 +1,29 @@
+{
+  "id": "rec_029",
+  "title": "Yiddish song (Di eyniklach?)",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "4_s2",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 14,
+  "audio": {
+    "path": "audio/4_s2_eyniklach.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "A Yiddish song with piano and mandolin accompaniment",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

@@ -1,0 +1,29 @@
+{
+  "id": "rec_042",
+  "title": "poor quality Russian singing",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "4_s2",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 27,
+  "audio": {
+    "path": "audio/4_s2_poor_2.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

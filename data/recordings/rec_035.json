@@ -1,0 +1,33 @@
+{
+  "id": "rec_035",
+  "title": "Zvenit gitara nad rekoyu (A guitar rings out over the river.)",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_020"
+    }
+  ],
+  "reel": {
+    "id": "4_s2",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 20,
+  "audio": {
+    "path": "audio/4_s2_zvenit_2.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

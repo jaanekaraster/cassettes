@@ -22,9 +22,9 @@
       "script": "ניגון עתיק",
       "transliteration": "Nigun Atik"
     },
-    "language": "Hebrew",
+    "language": "Yiddish",
     "reference": "https://www.youtube.com/watch?v=B6Rc1gd289k",
-    "description": "Tune from Nigun Atik",
+    "description": "Traditional tune, known as Nigun Atik",
     "lyrics": {
       "original": null,
       "transliteration": null,
@@ -72,7 +72,7 @@
     },
     "language": "Yiddish",
     "reference": null,
-    "description": null,
+    "description": "",
     "lyrics": {
       "original": null,
       "transliteration": null,
@@ -87,7 +87,7 @@
       "transliteration": "Dorozhen'ka"
     },
     "language": "Russian",
-    "reference": "https://www.youtube.com/watch?v=sYkiCUc41Wk",
+    "reference": "https://www.youtube.com/watch?si=UAFy-dHAUpEh-PNs&v=cyQL9TItUyM&feature=youtu.be",
     "description": "Music: N. Ivanov Lyrics: S. Podelkov (1914)",
     "lyrics": {
       "original": "Вьется, вьется дальняя дороженька,\r\nСтелется за дымкой горизонт,\r\nА по этой дальней по дороженьке\r\nВслед за милым еду я на фронт.\r\n\r\nОн все чаще, чаще, чаще снится мне,\r\nКак идет с полками в бой и дым...\r\nПоднялась, рванулась бы я птицею,\r\nОпустилась рядом бы я с ним.\r\n\r\nВьется, вьется вдаль моя дороженька,\r\nЗа окном становится рассвет.\r\nЯ одна, одна стою у тополя,\r\nИ обидно сердцу - крыльев нет.",
@@ -116,7 +116,7 @@
     "title": "Ya lyublyu tevya, zhizn' (I Love You, Life)",
     "original_title": {
       "script": "Я люблю тебя, жизнь",
-      "transliteration": "Ya lyublyu tevya, zhizn'"
+      "transliteration": "Ya lyublyu tebya, zhizn'"
     },
     "language": "Russian",
     "reference": "https://www.youtube.com/watch?v=eGu_lVnCyAg",
@@ -157,6 +157,278 @@
       "original": "Воды арыка бегут, как живые\r\nПереливаясь, в журчаньи звеня\r\nВозле арыка я помню, впервые\r\nГлянули эти глаза на меня\r\n\r\nВ небе блещут звезды золотые\r\nЯрче звезд очей твоих краса\r\nТолько у любимой могут быть такие\r\nНеобыкновенные глаза!\r\n\r\nГде бы я ни был: в пустыне безбрежной\r\nВ море, в горах с пастухом у огня -\r\nЭти глаза неотрывно и нежно\r\nМне помогая, глядят на меня\r\n\r\nВ небе блещут звезды золотые\r\nЯрче звезд очей твоих краса\r\nТолько у любимой могут быть такие\r\nНеобыкновенные глаза!",
       "transliteration": null,
       "english": "The waters of the Aryk flow, alive and bright,\nRippling and chiming with a gentle sound;\nBeside the stream, I recall the moment\nThose eyes first gazed upon me.\n\nGolden stars are gleaming in the sky,\nYet the beauty of your eyes outshines them all;\nOnly a beloved could possess such\nExtraordinary eyes!\n\nWherever I may be—in the boundless desert,\nAt sea, or in the mountains by a shepherd's fire—\nThose eyes gaze upon me, tender and unwavering,\nOffering their support.\n\nGolden stars are gleaming in the sky,\nYet the beauty of your eyes outshines them all;\nOnly a beloved could possess such\nExtraordinary eyes!"
+    }
+  },
+  {
+    "id": "song_011",
+    "title": "Proshchai, lyubim'i gorod! (Goodbye, beloved city!)",
+    "original_title": {
+      "script": "Прощай, любимый город!",
+      "transliteration": "Proshchai, lyubim'i gorod!"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=Z3MWpo3LYrw",
+    "description": "Composer: Vasily Solovyov-Sedoi, Lyrics: Alexander Churkin (1941)",
+    "lyrics": {
+      "original": "Споёмте, друзья, ведь завтра в поход\r\nУйдём в предрассветный туман\r\nСпоём веселей пусть нам подпоёт\r\nСедой боевой капитан.\r\n\r\nПрощай любимый город!\r\nУходим завтра в море,\r\nИ ранней порой\r\nМелькнёт за кормой\r\nЗнакомый платок голубой.\r\n\r\nА вечер опять хороший такой,\r\nЧто песен не петь нам нельзя.\r\nО дружбе большой, о службе морской\r\nПодтянем дружнее друзья.\r\n\r\nПрощай любимый город!\r\nУходим завтра в море,\r\nИ ранней порой\r\nМелькнёт за кормой\r\nЗнакомый платок голубой.\r\n\r\nНа рейде большом легла тишина,\r\nА море окутал туман\r\nИ берег родной целует волна\r\nИ тихо доносит баян.\r\n\r\nПрощай любимый город!\r\nУходим завтра в море,\r\nИ ранней порой\r\nМелькнёт за кормой\r\nЗнакомый платок голубой...",
+      "transliteration": null,
+      "english": "Let’s sing, friends, for tomorrow we set out\r\nInto the pre-dawn mist;\r\nLet’s sing more gaily—let our grizzled\r\nBattle-hardened captain join in.\r\n\r\nFarewell, beloved city!\r\nTomorrow we head out to sea,\r\nAnd in the early light,\r\nA familiar blue scarf\r\nWill flash in our wake.\r\n\r\nThe evening is so fine again\r\nThat we simply must sing;\r\nOf deep friendship, of life at sea—\r\nLet’s raise our voices together, friends.\r\n\r\nFarewell, beloved city!\r\nTomorrow we head out to sea,\r\nAnd in the early light,\r\nA familiar blue scarf\r\nWill flash in our wake.\r\n\r\nSilence has settled over the roadstead,\r\nAnd mist has wrapped the sea;\r\nWaves kiss the native shore,\r\nAnd the *bayan* carries its tune softly.\r\n\r\nFarewell, beloved city!\r\nTomorrow we head out to sea,\r\nAnd in the early light,\r\nA familiar blue scarf\r\nWill flash in our wake..."
+    }
+  },
+  {
+    "id": "song_012",
+    "title": "Akh, t' tserdtsye, serdtsye devichye (Oh, my heart, a maiden's heart)",
+    "original_title": {
+      "script": "Ох, ты сердце, сердце девичье",
+      "transliteration": "Akh, t' tserdtsye, serdtsye devichye"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?si=A_YIU2oop1ciPNPB&v=VipT7bUds70&feature=youtu.be",
+    "description": "Composer: Isaak Dunaevsky, Lyrics: V. Volzhanin (1936)",
+    "lyrics": {
+      "original": "Ох ты сердце, сердце девичье,\r\nНе видать мне с тобой покоя.\r\nПел недаром за рекою,\r\nЗа рекою соловей.\r\n\r\nПриходи вечор, любимый,\r\nПриголубь и обогрей,\r\nПел недаром за рекою,\r\nЗа рекою соловей.\r\n\r\nПрипев:\r\n\r\nНад рекою, над водою\r\n(нрзб.)ет месяц молодой.\r\nНе меня ли ты ласкал так\r\nНазывал своей родной?\r\n \r\n\r\nГде ж ты радость, жизнь моя,\r\nОтзовися, жду тебя!\r\nНе меня ли ты ласкал так\r\nНазывал своей родной?\r\nВариант куплета:\r\n\r\nОх, ты ночка, ночка темная!\r\nРазгони ты печаль, заботу.\r\nА на зорьке, за работу,\r\nЗа работу, веселей.\r\n\r\nПриходи вечор, любимый,\r\nПриголубь и обогрей,\r\nА на зорьке, за работу,\r\nза работу, веселей.",
+      "transliteration": null,
+      "english": "Oh, my heart, my maiden heart,\r\nWith you I will never find peace.\r\nNot in vain did the nightingale sing beyond the river,\r\nBeyond the river.\r\n\r\nCome this evening, my beloved,\r\nCover and warm me,\r\nNo in vain did the nightingale sing beyond the river,\r\nBeyond the river.\r\n\r\nChorus:\r\n\r\nOver the river, over the water\r\n(illegible) the young moon sings.\r\nDidn't you caress me so\r\nCalling me your darling?\r\n\r\nWhere are you, my joy, my life,\r\nRespond, I'm waiting for you!\r\nDidn't you caress me so\r\nCalling me your darling?\r\n\r\nVerse:\r\n\r\nOh, night, dark night!\r\nDispel sorrow, worry.\r\nAnd at dawn, to work,\r\nTo work, more joyfully.\r\n\r\nCome this evening, my love,\r\nCuddle me and warm me,\r\nAnd at dawn, to work,\r\nto work, more joyfully."
+    }
+  },
+  {
+    "id": "song_013",
+    "title": "Pravazhaniye (Seeing off)",
+    "original_title": {
+      "script": "Провожанье",
+      "transliteration": "Pravazhaniye"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?si=SY85YztNhksQunJc&v=6AFMQcWlBtc&feature=youtu.be",
+    "description": "Also known as \"Дайте в руки мне гармонь\"; Composer: Vladimir Zakharov, Lyrics: Mikhail Isakovsky (1936)",
+    "lyrics": {
+      "original": "Дайте в руки мне гармонь\r\nЗолотые планки!\r\nПарень девушку домой\r\nПровожал с гулянки.\n\r\nШли они – в руке рука –\r\nВесело и дружно.\r\nТолько стежка коротка –\r\nРасставаться нужно.\n\r\nХата встала впереди –\r\nТемное окошко...\r\nОй ты, стежка, погоди,\r\nПротянись немножко!\n\r\nТы потише провожай,\r\nПарень сероглазый,\r\nПотому что очень жаль\r\nРасставаться сразу...\n\r\nДайте ж в руки мне гармонь,\r\nЧтоб сыграть страданье.\r\nПарень девушку домой\r\nПровожал с гулянья.\n\r\nШли они – рука в руке,\r\nШли они до дому,\r\nА пришли они к реке,\r\nК берегу крутому.\n\r\nШли они – рука в руке,\r\nШли они до дому,\r\nА пришли они к реке,\r\nК берегу крутому.\n\r\nПозабыл знакомый путь\r\nУхажер-забава:\r\nНадо б влево повернуть –\r\nПовернул направо.\n\r\nЛьется речка в дальний край\r\nПогляди, послушай...\r\nЧто же, Коля, Николай,\r\nСделал ты с Катюшей?!\n\r\nВозвращаться позже всех\r\nКате неприятно,\r\nТолько ноги, как на грех,\r\nНе идут обратно.\n\r\nНе хотят они домой,\r\nНоги молодые...\r\nОй, гармонь моя, гармонь –\r\nПланки золотые!",
+      "transliteration": null,
+      "english": "Hand me the accordion\r\nWith its golden reeds!\r\nA lad was walking his girl home\r\nFrom the village merrymaking.\r\n\r\nThey walked—hand in hand—\r\nHappily and in step.\r\nBut the path was all too short—\r\nAnd the time to part had come.\r\n\r\nThe cottage loomed ahead—\r\nWith its dark window...\r\nOh, path, just wait a while,\r\nStretch out a little longer!\r\n\r\nWalk me home more slowly,\r\nGrey-eyed lad,\r\nFor it is so hard\r\nTo part so soon...\r\n\r\nHand me the accordion,\r\nTo play a song of longing.\r\nA lad was walking his girl home\r\nFrom the village merrymaking.\r\n\r\nThey walked—hand in hand—\r\nWalking toward her home,\r\nBut they came upon the river,\r\nAnd its steep bank.\r\n\r\nThey walked—hand in hand—\r\nWalking toward her home,\r\nBut they came upon the river,\r\nAnd its steep bank.\r\n\r\nThe playful suitor forgot\r\nThe familiar way:\r\nHe should have turned left—\r\nBut turned right instead.\r\n\r\nThe river flows to distant lands—\r\nLook and listen...\r\nOh, Kolya, Nikolai,\r\nWhat have you done to Katyusha?!\r\n\r\nKatya dislikes returning\r\nLater than everyone else,\r\nYet her feet—as luck would have it—\r\nRefuse to turn back.\r\n\r\nThey do not want to go home,\r\nThose youthful feet...\r\nOh, my accordion, my accordion—\r\nWith its golden reeds!"
+    }
+  },
+  {
+    "id": "song_014",
+    "title": "Ti ryadom so mnoi (You are by my side)",
+    "original_title": {
+      "script": "Ты рядом со мной",
+      "transliteration": "Ti ryadom so mnoi"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=B92ZA2GoyhQ",
+    "description": "Composer: Boris Mokrousov, Lyrics: Nikolai Gleizarov (1957)",
+    "lyrics": {
+      "original": "Вечерком за окном\r\nВ синем небе мерцает звезда\r\nКаждый раз в этот час\r\nО тебе я тоскую всегда\r\nВижу в сумерках я\r\nВ платье белом тебя\r\nТы рядом, ты рядом со мной, дорогая\r\nИ всё ж далека, как звезда\r\nТы рядом, ты рядом со мной, дорогая\r\nИ всё ж далека, как звезда\r\nБез твоих голубых\r\nЯсных глаз я прожить не могу\r\nТы во сне снишься мне\r\nНезабудкой на светлом лугу\r\nТолько вот на беду\r\nНужных слов не найду\r\nНо песня, но песня тебе всё расскажет\r\nО чём я сказать не могу\r\nНо песня, но песня тебе всё расскажет\r\nО чём я сказать не могу\r\nЧас пробьёт, ночь уйдёт\r\nИ погаснет звезда за окном\r\nЗнаю я, никогда\r\nВ сердце ты не погаснешь моём\r\nИ для нас вешним днём\r\nРасцветёт всё кругом\r\nМы рядом, мы рядом с тобою, родная\r\nСчастливой тропинкой пойдём\r\nМы рядом, мы рядом с тобою, родная\r\nСчастливой тропинкой пойдём",
+      "transliteration": null,
+      "english": "In the evening, outside the window,\r\nA star twinkles in the blue sky.\r\nEvery time, at this hour,\r\nI always yearn for you.\r\nIn the twilight, I see you\r\nIn a white dress;\r\nYou are near, right here beside me, my dear,\r\nYet distant as a star.\r\nYou are near, right here beside me, my dear,\r\nYet distant as a star.\r\nI cannot live without\r\nYour clear, blue eyes.\r\nYou appear in my dreams\r\nLike a forget-me-not in a sunlit meadow.\r\nBut, alas,\r\nI cannot find the right words;\r\nYet the song—the song—will tell you everything\r\nThat I cannot put into words.\r\nYet the song—the song—will tell you everything\r\nThat I cannot put into words.\r\nThe hour will strike, the night will fade,\r\nAnd the star outside the window will dim.\r\nI know that you will never\r\nFade from my heart.\r\nAnd for us, on a spring day,\r\nEverything around will bloom;\r\nWe will be together, side by side, my love,\r\nWalking a path of happiness.\r\nWe will be together, side by side, my love,\r\nWalking a path of happiness."
+    }
+  },
+  {
+    "id": "song_015",
+    "title": "A godi letyat... (And the years fly by...)",
+    "original_title": {
+      "script": "А годы летят...",
+      "transliteration": "A godi letyat..."
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=44inZ8dTfIA",
+    "description": "Composer: Mark Fradkin, Lyrics: Evgeny Dolmatovsky (1958)",
+    "lyrics": {
+      "original": "Вот так и живём, не ждём тишины\nМы юности нашей, как прежде, верны\nА сердце, как прежде, горит оттого\nГорит оттого\nЧто дружба превыше всего\n\nПрипев:\nА годы летят, наши годы как птицы летят\nИ некогда нам оглянуться назад\n\nИ радости встреч, и горечь разлук\nМы всё испытали, товарищ и друг\nА там, где когда-то влюблёнными шли\nВлюблёнными шли\nДеревья теперь подросли\n\nПрипев:\nА годы летят, наши годы как птицы летят\nИ некогда нам оглянуться назад\n\nНе созданы мы для лёгких путей\nИ эта повадка у наших детей\nМы c ними выходим навстречу ветрам\nНавстречу ветрам\nВовек не состариться нам\n\nПрипев:\nА годы летят, наши годы как птицы летят\nИ некогда нам оглянуться назад",
+      "transliteration": null,
+      "english": "That’s how we live, expecting no quiet rest;\r\nWe remain true to our youth, just as before.\r\nAnd the heart still burns—yes, it burns—\r\nWith the knowledge that friendship stands above all.\r\n\r\nChorus:\r\nThe years fly by, our years fly like birds,\r\nAnd we have no time to look back.\r\n\r\nThe joy of meeting, the bitterness of parting—\r\nWe’ve known it all, my comrade and friend.\r\nAnd where we once walked as lovers—\r\nWalked as lovers—\r\nThe trees have now grown tall.\r\n\r\nChorus:\r\nThe years fly by, our years fly like birds,\r\nAnd we have no time to look back.\r\n\r\nWe were not made for the easy path,\r\nAnd our children share that same spirit.\r\nTogether we step out to meet the winds—\r\nTo meet the winds—\r\nWe shall never grow old.\r\n\r\nChorus:\r\nThe years fly by, our years fly like birds,\r\nAnd we have no time to look back."
+    }
+  },
+  {
+    "id": "song_016",
+    "title": "Odinokaya Garmon' (The Lonely Accordion)",
+    "original_title": {
+      "script": "Одинокая гармонь",
+      "transliteration": "Odinokaya Garmon'"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=CjRkxZTX1gc",
+    "description": "Composer: Boris Mokrousov, Lyrics: Mikhail Isakovsky (1946)",
+    "lyrics": {
+      "original": "Снова замерло все до рассвета\r\nДверь не скрипнет не вспыхнет огонь\r\nТолько слышно на улице где-то\r\nОдинокая бродит гармонь\r\nТолько слышно на улице где-то\r\n\r\nОдинокая бродит гармонь\r\n\r\nТо пойдет на поля за ворота\r\nТо вернется обратно опять\r\nСловно ищет в потемках кого-то\r\nИ не может никак отыскать\r\nСловно ищет в потемках кого-то\r\n\r\nИ не может никак отыскать\r\n\r\nВеет с поля ночная прохлада\r\nС яблонь цвет облетает густой\r\nТы признайся кого тебе надо\r\nТы скажи гармонист молодой\r\nТы признайся кого тебе надо\r\n\r\nТы скажи гармонист молодой\r\n\r\nМожет радость твоя недалеко\r\nДа не знает ее ли ты ждешь\r\n\r\nЧто ж ты бродишь всю ночь одиноко\r\nЧто ж ты девушкам спать не даешь\r\nЧто ж ты бродишь всю ночь одиноко\r\n\r\nЧто ж ты девушкам спать не даешь",
+      "transliteration": null,
+      "english": "All is still again until dawn;\r\nNo door creaks, no light flares up.\r\nOnly, somewhere out on the street,\r\nA lonely accordion wanders—\r\nOnly, somewhere out on the street,\r\n\r\nA lonely accordion wanders.\r\n\r\nNow it drifts past the gate to the fields,\r\nThen it turns and comes back again,\r\nAs if searching for someone in the darkness\r\nBut unable to find them at all—\r\nAs if searching for someone in the darkness\r\n\r\nBut unable to find them at all.\r\n\r\nA night chill wafts in from the fields,\r\nThick blossoms fall from the apple trees.\r\nConfess—who is it you need?\r\nTell us, young accordion player—\r\nConfess—who is it you need?\r\n\r\nTell us, young accordion player.\r\n\r\nPerhaps your joy is close at hand,\r\nAnd you do not know it is her you await.\r\nWhy do you wander alone all night long?\r\nWhy won't you let the girls sleep?\r\nWhy do you wander alone all night long?\r\n\r\nWhy won't you let the girls sleep?"
+    }
+  },
+  {
+    "id": "song_017",
+    "title": "Mnye vse ravno: Stradat' il' naslazhdat'sya (It makes no difference to me: to suffer or to find delight)",
+    "original_title": {
+      "script": "МНЕ ВСЕ РАВНО: СТРАДАТЬ ИЛЬ НАСЛАЖДАТЬСЯ",
+      "transliteration": "Mnye vse ravno: Stradat' il' naslazhdat'sya"
+    },
+    "language": "Russian",
+    "reference": "https://lera-komor.livejournal.com/1825254.html",
+    "description": "Composers: Alexander Dargomyzhsky, V. Sokolov, and K. Sidorovich, Lyrics: Fyodor Bogdanovich Miller (1859)",
+    "lyrics": {
+      "original": "Мне все равно, страдать иль наслаждаться,\r\nК страданьям я привык уже давно;\r\nГотов я плакать и смеяться,\r\nМне все равно, мне все равно.\r\n\r\nМне все равно, враги ль, друзья ль найдутся;\r\nЯ к клеветам привык уже давно!\r\nПускай бранят, пускай смеются,\r\nМне все равно, мне все равно!\r\n\r\nСкажите ей, что пламенной душою\r\nС ее душой сливаюсь тайно я;\r\nСкажите ей, что горькою тоскою\r\nОтравлена младая жизнь моя.\r\n\r\nСкажите ей, как страстно и как нежно\r\nЛюблю ее – как Бога херувим;\r\nСкажите ей, что в грусти безнадежной\r\nУвяну я, бездушной не любим.\r\n\r\nСкажите ей, как дорого мне стоит\r\nИ трудно мне притворным с нею быть;\r\nСкажите ей, как томно сердце ноет,\r\nКогда велит она любовь таить.\r\n\r\nСкажите ей, какое мне страданье,\r\nКогда спокойно взор ее глядит,\r\nКогда взамен немого обожанья\r\nОна, как льдом, мне душу холодит.\r\n\r\nСкажите ей, скажите ей!",
+      "transliteration": null,
+      "english": "It matters not to me—to suffer or rejoice;\r\nLong since have I grown used to suffering.\r\nI am ready to weep or to laugh;\r\nIt is all the same to me, all the same.\r\n\r\nIt matters not to me whether I find foes or friends;\r\nLong since have I grown used to slander!\r\nLet them revile me, let them mock;\r\nIt is all the same to me, all the same!\r\n\r\nTell her that with a burning soul\r\nI secretly merge my spirit with hers;\r\nTell her that my young life is poisoned\r\nBy bitter anguish.\r\n\r\nTell her how passionately and tenderly\r\nI love her—as a cherub loves God;\r\nTell her that in hopeless sorrow\r\nI shall wither away, unloved by her cold heart.\r\n\r\nTell her what a heavy price I pay,\r\nAnd how hard it is to feign indifference with her;\r\nTell her how languidly my heart aches\r\nWhen she bids me conceal my love.\r\n\r\nTell her what torment I endure\r\nWhen her gaze rests calmly upon me,\r\nWhen, in return for my silent adoration,\r\nShe chills my soul as if with ice.\r\n\r\nTell her, tell her!"
+    }
+  },
+  {
+    "id": "song_018",
+    "title": "Tishina (Silence)",
+    "original_title": {
+      "script": "Тишина",
+      "transliteration": "Tishina"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=8Tye3AK4H8I",
+    "description": "Composer: Eduard Kolmanovsky, Lyrics: Vladimir Orlov (1958)",
+    "lyrics": {
+      "original": "Ночью за окном метель, метель\r\nБелый беспокойный снег\r\nТы живёшь за тридевять земель\r\nТы не вспоминаешь обо мне\r\nЗнаю, даже писем не придёт\r\nПамять больше не нужна\r\nПо ночному городу бредёт\r\nТишина\r\n\r\nТы меня не ждёшь давным-давно\r\nНет к тебе путей-дорог\r\nСчастье у людей всего одно\r\nТолько я его не уберёг\r\nСнова мне покоя не даёт\r\nГорькая моя вина\r\nНочью за окном звенит, поёт\r\nТишина\r\n\r\nТолько б мне тебя найти, найти\r\nОтыскать в любом краю\r\nТолько бы сказать тебе прости\r\nРуку взять любимую твою\r\nРассказать, как ночи напролёт\r\nЛетом и зимой без сна\r\nЗдесь тебя со мною вместе ждёт\r\nТишина\r\n\r\nЗнала б ты, как ночи напролёт\r\nЛетом и зимой без сна\r\nЗдесь тебя со мною вместе ждёт\r\nТишина",
+      "transliteration": null,
+      "english": "Outside at night, a blizzard rages—\r\nRestless, swirling white snow.\r\nYou live in a land far, far away;\r\nYou never think of me.\r\nI know no letters will ever come;\r\nMemories are no longer needed.\r\nThrough the city night wanders...\r\nSilence.\r\n\r\nYou haven't waited for me in ages;\r\nThere are no roads leading to you.\r\nPeople have but one chance at happiness,\r\nYet I failed to hold onto mine.\r\nOnce again, I find no peace—\r\nHaunted by my bitter guilt.\r\nOutside at night, the silence rings and sings...\r\nSilence.\r\n\r\nIf only I could find you—\r\nTrack you down in any land.\r\nIf only I could say \"forgive me,\"\r\nAnd hold your beloved hand.\r\nAnd tell you how, night after night—\r\nSleepless through summer and winter—\r\nHere, alongside me, waiting for you...\r\nSilence.\r\n\r\nIf only you knew how, night after night—\r\nSleepless through summer and winter—\r\nHere, alongside me, waiting for you...\r\nSilence."
+    }
+  },
+  {
+    "id": "song_019",
+    "title": "Pust' vsegda budet solntsye (May there always be sunshine)",
+    "original_title": {
+      "script": "Пусть всегда будет солнце",
+      "transliteration": "Pust' vsegda budet solntsye"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=MUDFYvV2cxg",
+    "description": "Composer: Arkady Ostrovsky, Lyrics: Lev Oshanin (1962)",
+    "lyrics": {
+      "original": "Солнечный круг,\r\nНебо вокруг -\r\nЭто рисунок мальчишки.\r\nНарисовал он на листке\r\nИ подписал в уголке:\r\n\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\n\r\nМилый мой друг,\r\nДобрый мой друг,\r\nЛюдям так хочется мира.\r\nИ в тридцать пять\r\nСердце опять\r\nНе устает повторять:\r\n\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\n\r\nТише, солдат,\r\nСлышишь, солдат,-\r\nЛюди пугаются взрывов.\r\nТысячи глаз\r\nВ небо глядят,\r\nГубы упрямо твердят:\r\n\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.\r\n\r\nПусть всегда будет солнце,\r\nПусть всегда будет небо,\r\nПусть всегда будет мама,\r\nПусть всегда буду я.",
+      "transliteration": null,
+      "english": "A circle of sun,\r\nThe sky all around—\r\nA young boy's drawing.\r\nHe drew it on a sheet of paper\r\nAnd signed it in the corner:\r\n\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\n\r\nMy dear friend,\r\nMy kind friend,\r\nPeople long for peace so much.\r\nAnd at thirty-five,\r\nMy heart once again\r\nNever tires of repeating:\r\n\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\n\r\nHush, soldier,\r\nDo you hear, soldier?—\r\nPeople are frightened by explosions.\r\nThousands of eyes\r\nGaze at the sky,\r\nLips stubbornly repeat:\r\n\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me.\r\n\r\nMay there always be sunshine,\r\nMay there always be blue skies,\r\nMay there always be Mama,\r\nMay there always be me."
+    }
+  },
+  {
+    "id": "song_020",
+    "title": "Zvenit gitara nad rekoyu (A guitar rings out over the river.)",
+    "original_title": {
+      "script": "Звенит гитара над рекою",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=LMqUXj_r8Ic",
+    "description": "Composer: Anatoliy Novikov, Lyrics: Lev Oshanin (1955)",
+    "lyrics": {
+      "original": "Звенит гитара над рекою,\r\nНа берегу костры горят...\r\nМы оба гости здесь с тобою\r\nИз разных стран, сестра и брат.\r\n\r\nВ твоём краю не меркнет лето,\r\nУ нас зимой снега кругом.\r\nМы с двух концов большого света,\r\nА на реке сейчас вдвоём.\r\n\r\nПрипев:\r\nКостёр ночной...\r\nПростор речной...\r\nВолна поёт...\r\nИ наша маленькая лодочка плывёт...\r\n\r\nИ вот как будто мчимся вдаль мы -\r\nВстают иные берега:\r\nТвои раскидистые пальмы,\r\nМои берёзы и снега.\r\n\r\nИ всё у нас с тобою иное,\r\nИ мы по-разному росли,\r\nНо мы живём мечтой одною,\r\nХоть между нами полземли.\r\n\r\nПрипев.\r\n\r\nЗвенит гитара над рекою,\r\nИ не спеша бежит река,\r\nИ рядом с белою рукою\r\nТемнеет смуглая рука.\r\n\r\nПускай придёт пора проститься,\r\nДруг друга долго не видать,\r\nНо сердце с сердцем, словно птицы,\r\nКонечно, встретятся опять.\r\n\r\nПрипев.",
+      "transliteration": null,
+      "english": "A guitar rings out over the river,\r\nBonfires burn upon the shore...\r\nWe are both guests here, you and I,\r\nFrom different lands—sister and brother.\r\n\r\nIn your land, summer never fades,\r\nWhile here, snow lies all around in winter.\r\nWe come from opposite ends of the wide world,\r\nYet here by the river, we are together.\r\n\r\nChorus:\r\nA campfire in the night...\r\nThe river's vast expanse...\r\nThe waves are singing...\r\nAnd our little boat drifts along...\r\n\r\nAnd now, it is as if we are racing into the distance—\r\nNew shores rise up to meet us:\r\nYour spreading palms,\r\nMy birches and snows.\r\n\r\nEverything about us is different,\r\nAnd we grew up in different worlds,\r\nYet we share the same dream,\r\nThough half the globe lies between us.\r\n\r\nChorus.\r\n\r\nA guitar rings out over the river,\r\nThe river flows on unhurriedly,\r\nAnd beside a pale hand,\r\nA dark hand rests.\r\n\r\nThough the time to part may come,\r\nAnd we may not see each other for long,\r\nOur hearts—like birds—\r\nWill surely meet again.\r\n\r\nChorus."
+    }
+  },
+  {
+    "id": "song_021",
+    "title": "Parucheniye (Assignment) from film Isl'taniye vernosti (A Test of Loyalty)",
+    "original_title": {
+      "script": "\"Поручение\" from Испытание верности",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://youtu.be/x7izty3_lIw?si=JHLUBx41QiA2vp3S",
+    "description": "Composer: Isaak Dunayevsky, Lyrics: Mikhail Matusovsky (1954)",
+    "lyrics": {
+      "original": "В Москве, в отдалённом районе,\r\nДвенадцатый дом от угла,\r\nЧудесная девушка Тоня\r\nСогласно прописке жила.\r\nУ этого дома по тропке\r\nБродил я, не чувствуя ног.\r\nИ парень я, в общем, не робкий,\r\nА вот объясниться не мог.\r\n\r\nИ как я додумался, братцы,\r\nИ сам до сих пор не пойму,\r\nВ любви перед нею признаться\r\nДоверил дружку своему.\r\nПод вечер запели гармони,\r\nНад нашим районом родным,\r\nТогда и отправился к Тоне\r\nМой друг с порученьем моим.\r\n\r\nИ долго стоял я в обиде,\r\nСебя проклиная тайком,\r\nКогда я их вместе увидел\r\nНа танцах в саду городском.\r\nИ сердце забилось неровно,\r\nИ с горечью вымолвил я:\r\n— Прощай, Антонина Петровна,—\r\nНеспетая песня моя!..\r\n\r\nВ любви надо действовать смело\r\nВопросы решать самому.\r\nИ это серьёзное дело\r\nНельзя поручать никому.",
+      "transliteration": null,
+      "english": "In a remote district of Moscow,\r\nAt the twelfth house from the corner,\r\nLived a wonderful girl named Tonya—\r\nThat was her registered home.\r\nAlong the path by that house\r\nI’d wander, my legs feeling weak.\r\nAnd though I’m no timid fellow,\r\nI simply could not bring myself to speak.\r\n\r\nAnd how I ever thought of it—\r\nI still don't understand to this day—\r\nI entrusted a close friend of mine\r\nTo declare my love to her.\r\nAs evening fell, accordions played\r\nAcross our own neighborhood;\r\nThat was when my friend set off to see Tonya\r\nTo carry out my mission.\r\n\r\nAnd I stood there, deeply hurt,\r\nSecretly cursing myself,\r\nWhen I saw the two of them together\r\nAt the dance in the city park.\r\nMy heart began to pound unevenly,\r\nAnd bitterly I said:\r\n\"Farewell, Antonina Petrovna—\r\nMy unsung song!..\"\r\n\r\nIn matters of love, one must act boldly\r\nAnd handle things for oneself.\r\nFor a task as serious as this\r\nShould never be entrusted to anyone else."
+    }
+  },
+  {
+    "id": "song_022",
+    "title": "Turn Around",
+    "original_title": {
+      "script": null,
+      "transliteration": null
+    },
+    "language": "English",
+    "reference": "https://www.youtube.com/watch?v=eCh13Rsd-WU",
+    "description": "Composer and Lyrics: Malvina Reynolds, Harry Belafonte, and Alan Greene (1959)",
+    "lyrics": {
+      "original": null,
+      "transliteration": null,
+      "english": "Where are you going my little one, little one?\r\nWhere are you going my baby, my own?\r\nTurn around and you're two, turn around and you're four\r\nTurn around and you're a young girl going out of the door\r\nTurn around, turn around\r\nTurn around and you're a young girl going out of the door\r\n\r\nWhere are you going my little one, little one?\r\nLittle dirndls and petticoats, where have you gone?\r\nTurn around and you're tiny, turn around and you're grown\r\nTurn around and you're a young wife with babes of your own\r\nTurn around, turn around\r\nTurn around and you're a young wife with babes of your own\r\n\r\nWhere are you going my little one, little one?\r\nWhere are you going my baby, my own?"
+    }
+  },
+  {
+    "id": "song_023",
+    "title": "Za okoshkom svetu mala",
+    "original_title": {
+      "script": "За окошком свету мало",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=_vtRfdGww_A",
+    "description": "Composer: Eduard Kolmanovsky, Lyrics: Konstantin Vanshenkin (1964)",
+    "lyrics": {
+      "original": "За окошком свету мало,\r\nБелый снег валит, валит.\r\nА мне мама, а мне мама\r\nЦеловаться не велит.\r\n\r\nГоворит: \"Не плачь - забудешь!\"\r\nХочет мама пригрозить.\r\nГоворит: \"Кататься любишь,\r\nЛюби саночки возить\".\r\n\r\nГоворит серьезно мама.\r\nА в снегу лежат дворы.\r\nДней немало, лет немало\r\nМиновало с той поры.\r\n\r\nИ ничуть я не раскаюсь,\r\nКак вокруг я погляжу,\r\nХоть давно я не катаюсь.\r\nТолько саночки вожу.\r\n\r\nЗа окошком свету мало,\r\nБелый снег опять валит.\r\nИ опять кому-то мама\r\nЦеловаться не велит.",
+      "transliteration": null,
+      "english": "There is little light outside the window;\r\nWhite snow is falling, falling fast.\r\nBut Mom—oh, Mom—\r\nForbids me to kiss.\r\n\r\nShe says: \"Don't cry—you'll forget!\"\r\nMom tries to scold me.\r\nShe says: \"If you love the ride,\r\nYou must love hauling the sled.\"\r\n\r\nMom speaks in earnest.\r\nAnd the courtyards lie deep in snow.\r\nMany days and many years\r\nHave passed since then.\r\n\r\nAnd I have no regrets at all\r\nWhen I look around me,\r\nThough I haven't gone for a ride in ages—\r\nI only haul the sled.\r\n\r\nThere is little light outside the window;\r\nWhite snow is falling again.\r\nAnd once again, someone's mom\r\nForbids them to kiss."
+    }
+  },
+  {
+    "id": "song_024",
+    "title": "Akh, tsertsye mayo",
+    "original_title": {
+      "script": "Ох, сердце моё",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=ri8zBLMuCnc",
+    "description": "Composer: Grigory Ponomarenko, Lyrics: Veniamin Burygin (1961)",
+    "lyrics": {
+      "original": "Ох, девушки-подруженьки,\r\nСкажите, почему —\r\nВесёлому, хорошему\r\nСказала: «Не люблю»?\r\n\r\nПрипев:\r\nОй, сердце моё,\r\nПочему гордилось?\r\nОх, говорила одно,\r\nА сама влюбилась.\r\n\r\nЗа речкою, за Волгою,\r\nРумянится закат.\r\nИ я грущу, и он грустит —\r\nКто ж в этом виноват?\r\n\r\nПрипев.\r\n\r\nЭх, ноченьки весенние,\r\nТревожницы любви.\r\nРасстроили, огонь зажгли\r\nВы в девичьей груди.\r\n\r\nПрипев.\r\n\r\nОх, девушки-подруженьки,\r\nСкажите, как мне быть?\r\nКак с миленьким, весёленьким\r\nСкорей заговорить?\r\n\r\nПрипев:\r\nОй, сердце моё,\r\nПочему гордилось?\r\nОх, говорила одно,\r\nА сама влюбилась.",
+      "transliteration": null,
+      "english": "Oh, my dear girlfriends,\nTell me, why did I—\nTo that cheerful, fine lad—\nSay, \"I do not love you\"?\n\nChorus:\nOh, my heart,\nWhy were you so proud?\nOh, I said one thing,\nYet I fell in love.\n\nBeyond the river, beyond the Volga,\nThe sunset glows rosy-red.\nI am sad, and he is sad—\nWho is to blame for this?\n\nChorus.\n\nOh, spring nights,\nYou stir the heart with love.\nYou’ve set a fire burning\nDeep within a maiden’s breast.\n\nChorus.\n\nOh, my dear girlfriends,\nTell me, what should I do?\nHow can I soon strike up a talk\nWith that cheerful, lovely lad?\n\nChorus:\nOh, my heart,\nWhy were you so proud?\nOh, I said one thing,\nYet I fell in love."
+    }
+  },
+  {
+    "id": "song_025",
+    "title": "Verba-verbochka",
+    "original_title": {
+      "script": "Верба-вербочка",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://youtu.be/MUftD8yZKbk?si=LjTHoa0j93-vRBfC",
+    "description": "Composer: Yan Frenkel, Lyrics: Robert Rozhdestvensky (1971)",
+    "lyrics": {
+      "original": "Ой, зачем меня назвали Верою,\r\nНаучили не стонать от боли.\r\nИ не Верой я была, а вербою,\r\nВербою, растущей в чистом поле.\r\n\r\nПрипев:\r\n\r\nВерба-веpбочка, от стужи корчилась,\r\nОт дождя она к земле склонялась.\r\nНе жалею я того, что кончилось,\r\nЖаль, что ничего не начиналось.\r\n\r\nЗря блестела я порой несладкою,\r\nКак слезинка посредине мира,\r\nИ встречала я с улыбкой каждого,\r\nКаждого, кто шел куда-то мимо.\r\n\r\nПрипев.",
+      "transliteration": null,
+      "english": "Oh, why was I named Vera,\r\nTaught not to moan in pain?\r\nI was no \"Faith,\" but a pussy willow—\r\nA willow growing in the open field.\r\n\r\nChorus:\r\n\r\nLittle willow, writhing in the bitter cold,\r\nBowing to the earth beneath the rain.\r\nI do not regret what has come to an end;\r\nI only regret that nothing ever began.\r\n\r\nIn vain I glistened in bitter times,\r\nLike a teardrop in the midst of the world,\r\nAnd greeted everyone with a smile—\r\nEveryone who happened to pass me by.\r\n\r\nChorus."
+    }
+  },
+  {
+    "id": "song_026",
+    "title": "Vasemnadtsat' let",
+    "original_title": {
+      "script": "Восемнадцать лет",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=2eTjPmooCns",
+    "description": "Composer: Oktyabr Grishin, Lyrics: Vladimir Zastrozhny (1958)",
+    "lyrics": {
+      "original": "За рекой, за лесом\r\nСолнышко садится.\r\nЧто-то мне, подружки,\r\nДома не сидится.\r\nСладкая истома,\r\nЧеремухи цвет.\r\nУсидишь ли дома\r\nВ восемнадцать лет!\r\n\r\nЗвездочки-росинки\r\nНа лугах мерцают.\r\nСердце ждет чего-то,\r\nБьется, замирает:\r\nШорохи ночные,\r\nМягкий лунный свет.\r\nЗори золотые.\r\nВосемнадцать лет.\r\n\r\nПаренек кудрявый\r\nПрошептал три слова\r\nИ увел девчонку\r\nОт крыльца родного.\r\nМята луговая\r\nУронила цвет.\r\nРадость молодая\r\nВ восемнадцать лет.\r\n\r\nЗа рекой, за лесом\r\nСолнышко садится.\r\nМне теперь, подружки,\r\nДома не сидится.\r\nС ветки облетает\r\nЧеремухи цвет.\r\nВ жизни раз бывает\r\nВосемнадцать лет.",
+      "transliteration": null,
+      "english": "Beyond the river, beyond the woods,\r\nThe sun is sinking low.\r\nI cannot sit at home, my friends—\r\nI simply have to go.\r\nA sweet, soft languor fills the air,\r\nThe bird-cherry is in bloom.\r\nWho could stay indoors at home\r\nAt the age of eighteen?\r\n\r\nTiny stars like dewdrops\r\nGlimmer in the meadow grass.\r\nMy heart awaits a moment—\r\nBeating fast, then pausing still:\r\nNighttime rustles,\r\nSoft and silvery moonlight.\r\nGolden dawns.\r\nEighteen years of age.\r\n\r\nA curly-headed lad\r\nWhispered three words low,\r\nAnd led the maiden far away\r\nFrom her own doorstep.\r\nMeadow mint has shed\r\nIts blossoms on the ground.\r\nYouthful joy abounds\r\nAt the age of eighteen.\r\n\r\nBeyond the river, beyond the woods,\r\nThe sun is sinking low.\r\nI cannot sit at home, my friends—\r\nI simply have to go.\r\nPetals drift down softly\r\nFrom the bird-cherry tree.\r\nOne has the age of eighteen\r\nBut once in a lifetime."
+    }
+  },
+  {
+    "id": "song_027",
+    "title": "Bezhit reka v tumanye taet",
+    "original_title": {
+      "script": "Бежит река в тумане тает",
+      "transliteration": null
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=SM5EdIoncNw",
+    "description": "Composer: Eduard Kolmanovsky, Lyrics: Yevgeny Yevtushenko (1960)",
+    "lyrics": {
+      "original": "Бежит река, в тумане тает.\r\nБежит она, меня дразня.\r\nАх, кавалеров мне вполне хватает,\r\nНо нет любви хорошей у меня!\r\n\r\nТанцую я фокстроты-вальсы,\r\nПою в кругу я у плетня.\r\nЯ не хочу, чтоб кто-то догадался,\r\nЧто нет любви хорошей у меня.\r\n\r\nСтоит берёза у опушки,\r\nГрустит одна на склоне дня.\r\nЯ расскажу берёзе, как подружке,\r\nЧто нет любви хорошей у меня.\r\n\r\nВсе парни спят, и спят девчата.\r\nУже в селе нет ни огня.\r\nАх, я сама, наверно, виновата,\r\nЧто нет любви хорошей у меня!",
+      "transliteration": null,
+      "english": "The river flows, dissolving in the mist;\r\nIt flows along, as if to tease me so.\r\nOh, I have suitors—plenty, I insist—\r\nBut true, good love is something I don't know!\r\n\r\nI dance the foxtrot and the waltz with glee,\r\nI sing with friends beside the garden fence.\r\nI do not want a soul to guess or see\r\nThat true, good love is missing from my life.\r\n\r\nA birch tree stands upon the forest edge,\r\nAnd pines alone as day begins to fade.\r\nI’ll tell that birch, just like a trusted friend,\r\nThat true, good love has passed me by so far.\r\n\r\nThe lads are sleeping, and the girls as well;\r\nNo lights remain within the village bounds.\r\nOh, perhaps the fault is mine to tell—\r\nThat true, good love is missing from my life!"
     }
   }
 ]

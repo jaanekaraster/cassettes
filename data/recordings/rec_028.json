@@ -1,0 +1,33 @@
+{
+  "id": "rec_028",
+  "title": "Parucheniye (Assignment) from film Isl'taniye vernosti (A Test of Loyalty)",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_021"
+    }
+  ],
+  "reel": {
+    "id": "4_s2",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 13,
+  "audio": {
+    "path": "audio/4_s2_parucheniye_2.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

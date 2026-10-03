@@ -1,0 +1,33 @@
+{
+  "id": "rec_038",
+  "title": "Bezhit reka v tumanye taet",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_027"
+    }
+  ],
+  "reel": {
+    "id": "4_s2",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 23,
+  "audio": {
+    "path": "audio/4_s2_bezhit.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

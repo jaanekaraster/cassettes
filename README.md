@@ -187,7 +187,12 @@ For a new recording:
 1. Get the path to the WAV file. If stored on D://, connect first: `sudo mount -t drvfs D: /mnt/d`
 2. Upload it as MP3 to the R2 audio/ prefix: `scripts/upload_audio.sh "path/to/wav/file.wav" "audio/file.mp3"`
 3. Upload any photographs or scanned documents to their R2 prefixes.
-4. Create or update the relevant JSON records. 
+4. Create or update the relevant JSON records:
+```
+node scripts/csv-to-people.cjs
+node scripts/csv-to-recordings.cjs
+node scripts/csv-to-songs.cjs
+```
 5. Build the data into the site: `node scripts/build-data.js`
 6. Validate the JSON: `node scripts/validate-data.js`
 7. Check the site: 

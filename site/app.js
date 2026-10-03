@@ -54,7 +54,6 @@ const audioPlayer = document.querySelector("#audio-player");
 
 const playButton = document.querySelector("#play-button");
 const playIcon = playButton.querySelector(".play-icon");
-const playLabel = playButton.querySelector(".play-label");
 
 const stopButton = document.querySelector("#stop-button");
 
@@ -786,7 +785,6 @@ function stopAudio() {
 }
 
 function updatePlayButton(isPlaying) {
-  playLabel.textContent = "Play";
   playButton.setAttribute("aria-label", "Play recording");
   playButton.disabled = isPlaying || !audioPlayer.getAttribute("src") || Boolean(audioPlayer.error);
 }

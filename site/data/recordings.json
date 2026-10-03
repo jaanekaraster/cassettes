@@ -10,7 +10,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -43,7 +43,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -76,7 +76,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -100,7 +100,7 @@
   },
   {
     "id": "rec_004",
-    "title": "A Glezele L'Chayim (Yiddish folk song)",
+    "title": "A Glezele L'Chayyim (A Little Glass of Life)",
     "type": "audio",
     "songs": [
       {
@@ -109,7 +109,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -142,7 +142,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -175,7 +175,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -208,7 +208,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -241,7 +241,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -274,7 +274,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -307,7 +307,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -336,7 +336,7 @@
     "songs": [],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [],
     "order": 12,
@@ -423,7 +423,7 @@
     ],
     "reel": {
       "id": "3_s2",
-      "size": "7.5\""
+      "size": "3.75\""
     },
     "participants": [
       {
@@ -441,6 +441,972 @@
       {
         "type": "reel_information",
         "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_015",
+    "title": "Proshchai, lyubim'i gorod! (Goodbye, beloved city!)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_011"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 1,
+    "audio": {
+      "path": "audio/4_s2_proshchai.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_016",
+    "title": "Akh, t' tserdtsye, serdtsye devichye (Oh, my heart, a maiden's heart)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_012"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 2,
+    "audio": {
+      "path": "audio/4_s2_ti_tsertsye.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_017",
+    "title": "Dorozhen'ka (Little Road)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_006"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 3,
+    "audio": {
+      "path": "audio/4_s2_dorozhenka_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_018",
+    "title": "Pravazhaniye (Seeing off)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_013"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 4,
+    "audio": {
+      "path": "audio/4_s2_pravazhaniye.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Sara calls it \"Razluka\"",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_019",
+    "title": "Ti ryadom so mnoi (You are by my side)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_014"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 5,
+    "audio": {
+      "path": "audio/4_s2_ti_ryadom.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_020",
+    "title": "A godi letyat... (And the years fly by...)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_015"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 6,
+    "audio": {
+      "path": "audio/4_s2_letat.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_021",
+    "title": "Odinokaya Garmon' (The Lonely Accordion)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_016"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 7,
+    "audio": {
+      "path": "audio/4_s2_garmon.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_022",
+    "title": "Mnye vse ravno: Stradat' il' naslazhdat'sya (It makes no difference to me: to suffer or to find delight)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_017"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 8,
+    "audio": {
+      "path": "audio/4_s2_mnye_vse_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_023",
+    "title": "Ya lyublyu tebya, zhizni (I love you, life)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_008"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 9,
+    "audio": {
+      "path": "audio/4_s2_zhizn.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_024",
+    "title": "Tishina",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_018"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 10,
+    "audio": {
+      "path": "audio/4_s2_tishina.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_025",
+    "title": "Pust' vsegda budet solntsye (May there always be sunshine)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_019"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 11,
+    "audio": {
+      "path": "audio/4_s2_pust.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_026",
+    "title": "Zvenit gitara nad rekoyu (A guitar rings out over the river.)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_020"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 12,
+    "audio": {
+      "path": "audio/4_s2_zvenit_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_027",
+    "title": "Parucheniye (Assignment) from film Isl'taniye vernosti (A Test of Loyalty)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_021"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 13,
+    "audio": {
+      "path": "audio/4_s2_parucheniye_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_028",
+    "title": "Parucheniye (Assignment) from film Isl'taniye vernosti (A Test of Loyalty)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_021"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 13,
+    "audio": {
+      "path": "audio/4_s2_parucheniye_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_029",
+    "title": "Yiddish song (Di eyniklach?)",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 14,
+    "audio": {
+      "path": "audio/4_s2_eyniklach.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "A Yiddish song with piano and mandolin accompaniment",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_030",
+    "title": "Turn Around",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_022"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 15,
+    "audio": {
+      "path": "audio/4_s2_turn.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_031",
+    "title": "Mat' radnaya maya",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_009"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 16,
+    "audio": {
+      "path": "audio/4_s2_maty.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_032",
+    "title": "Dorozhen'ka (Little Road)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_006"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 17,
+    "audio": {
+      "path": "audio/4_s2_dorozhenka_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_033",
+    "title": "Za okoshkom svetu mala",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_023"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 18,
+    "audio": {
+      "path": "audio/4_s2_za_okoshkom.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_034",
+    "title": "Akh, tsertsye mayo",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_024"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 19,
+    "audio": {
+      "path": "audio/4_s2_tsertsye_mayo.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_035",
+    "title": "Zvenit gitara nad rekoyu (A guitar rings out over the river.)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_020"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 20,
+    "audio": {
+      "path": "audio/4_s2_zvenit_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_036",
+    "title": "Verba-verbochka",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_025"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 21,
+    "audio": {
+      "path": "audio/4_s2_verba.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Unconfirmed song",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_037",
+    "title": "Vasemnadtsat' let",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_026"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 22,
+    "audio": {
+      "path": "audio/4_s2_vasem.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_038",
+    "title": "Bezhit reka v tumanye taet",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_027"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 23,
+    "audio": {
+      "path": "audio/4_s2_bezhit.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_039",
+    "title": "Mnye vse ravno: Stradat' il' naslazhdat'sya (It makes no difference to me: to suffer or to find delight)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_017"
+      }
+    ],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 24,
+    "audio": {
+      "path": "audio/4_s2_mnye_vse_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_040",
+    "title": "silence",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 25,
+    "audio": {
+      "path": "audio/4_s2_silence.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_041",
+    "title": "some poor quality song",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 26,
+    "audio": {
+      "path": "audio/4_s2_poor_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_042",
+    "title": "poor quality Russian singing",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 27,
+    "audio": {
+      "path": "audio/4_s2_poor_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_043",
+    "title": "slow narration",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 29,
+    "audio": {
+      "path": "audio/4_s2_slow_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_044",
+    "title": "slow Russian narration",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "4_s2",
+      "size": "5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 30,
+    "audio": {
+      "path": "audio/4_s2_slow_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_4.pdf"
       }
     ],
     "date": null
