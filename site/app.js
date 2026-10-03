@@ -1,45 +1,66 @@
+// app.js
+
 const searchInput = document.querySelector("#search");
 const languageFilter = document.querySelector("#language-filter");
 const personFilter = document.querySelector("#person-filter");
 const reelFilter = document.querySelector("#reel-filter");
+
 const shuffleButton = document.querySelector("#shuffle-button");
-const clearFiltersButton = document.querySelector("#clear-filters");
+const clearFiltersButton = document.querySelector("#clear-filters-button");
 
 const recordingsContainer = document.querySelector("#recordings");
 const resultCount = document.querySelector("#result-count");
-const playerContainer = document.querySelector("#player");
+
+const emptyState = document.querySelector("#empty-state");
+const recordingView = document.querySelector("#recording-view");
+
+const recordingNumber = document.querySelector("#recording-number");
+const recordingTitle = document.querySelector("#recording-title");
+const recordingSubtitle = document.querySelector("#recording-subtitle");
+
+const detailsButton = document.querySelector("#details-button");
+const detailsPanel = document.querySelector("#recording-details");
+
+const reelPlayer = document.querySelector("#reel-player");
+const audioPlayer = document.querySelector("#audio-player");
+
+const playButton = document.querySelector("#play-button");
+const playIcon = playButton.querySelector(".play-icon");
+const playLabel = playButton.querySelector(".play-label");
+
+const stopButton = document.querySelector("#stop-button");
+
+const progress = document.querySelector("#progress");
+const playbackTime = document.querySelector("#playback-time");
+const playbackDuration = document.querySelector("#playback-duration");
 
 let people = [];
 let songs = [];
 let recordings = [];
-let mediaBaseUrl = "";
+
+let selectedRecording = null;
 
 const peopleById = new Map();
 const songsById = new Map();
 
-let filteredRecordings = [];
-let activeRecordingId = null;
-
-let currentAudio = null;
-let currentReel = null;
+let mediaBaseUrl = "";
 
 
-/*
- * ------------------------------------------------------------
- * Data loading
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Data loading
+------------------------------------------------------- */
 
-async function loadJson(path) {
-  const response = await fetch(path);
+async function loadJson(filePath) {
+  const response = await fetch(filePath);
 
   if (!response.ok) {
-    throw new Error(`Unable to load ${path}: ${response.status}`);
+    throw new Error(
+      `Unable to load ${filePath}: ${response.status}`
+    );
   }
 
   return response.json();
 }
-
 
 async function loadArchive() {
   const [
@@ -54,207 +75,218 @@ async function loadArchive() {
     loadJson("./config/media.json")
   ]);
 
-  people = peopleData;
-  songs = songsData;
-  recordings = recordingsData;
+  people = Array.isArray(peopleData) ? peopleData : [];
+  songs = Array.isArray(songsData) ? songsData : [];
+  recordings = Array.isArray(recordingsData)
+    ? recordingsData
+    : [];
 
-  mediaBaseUrl = mediaConfig.base_url.replace(/\/$/, "");
+  mediaBaseUrl = String(
+    mediaConfig?.base_url || ""
+  ).replace(/\/$/, "");
 
   peopleById.clear();
   songsById.clear();
 
   people.forEach((person) => {
-    peopleById.set(person.id, person);
+    if (person?.id) {
+      peopleById.set(person.id, person);
+    }
   });
 
   songs.forEach((song) => {
-    songsById.set(song.id, song);
+    if (song?.id) {
+      songsById.set(song.id, song);
+    }
   });
 
   populateFilters();
 
-  filteredRecordings = [...recordings];
-
-  renderRecordingList(filteredRecordings);
+  renderRecordings(recordings);
 
   if (recordings.length > 0) {
-    selectRecording(recordings[0].id);
+    selectRecording(recordings[0]);
   }
 }
 
 
-/*
- * ------------------------------------------------------------
- * Relationships
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Relationship helpers
+------------------------------------------------------- */
+
+function getRecordingSongs(recording) {
+  if (!Array.isArray(recording?.songs)) {
+    return [];
+  }
+
+  return recording.songs
+    .map((entry) => songsById.get(entry?.song_id))
+    .filter(Boolean);
+}
 
 function getParticipants(recording) {
-  if (!Array.isArray(recording.participants)) {
+  if (!Array.isArray(recording?.participants)) {
     return [];
   }
 
   return recording.participants
     .map((participant) =>
-      peopleById.get(participant.person_id)
+      peopleById.get(participant?.person_id)
     )
     .filter(Boolean);
 }
 
 
-function getSongs(recording) {
-  if (!Array.isArray(recording.songs)) {
-    return [];
-  }
-
-  return recording.songs
-    .map((entry) => songsById.get(entry.song_id))
-    .filter(Boolean);
-}
-
-
-function getPrimarySong(recording) {
-  return getSongs(recording)[0] || null;
-}
-
-
-/*
- * ------------------------------------------------------------
- * Filters
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Filters
+------------------------------------------------------- */
 
 function populateFilters() {
-  populateLanguageFilter();
-  populatePersonFilter();
-  populateReelFilter();
-}
-
-
-function populateLanguageFilter() {
   const languages = new Set();
-
-  songs.forEach((song) => {
-    if (song.language) {
-      languages.add(song.language);
-    }
-  });
+  const peopleInRecordings = new Set();
+  const reels = new Set();
 
   recordings.forEach((recording) => {
-    getSongs(recording).forEach((song) => {
+    getRecordingSongs(recording).forEach((song) => {
       if (song.language) {
         languages.add(song.language);
       }
     });
-  });
 
-  const values = [...languages].sort((a, b) =>
-    a.localeCompare(b)
-  );
-
-  languageFilter.replaceChildren();
-
-  const allOption = document.createElement("option");
-  allOption.value = "";
-  allOption.textContent = "All languages";
-  languageFilter.appendChild(allOption);
-
-  values.forEach((language) => {
-    const option = document.createElement("option");
-    option.value = language;
-    option.textContent = language;
-    languageFilter.appendChild(option);
-  });
-}
-
-
-function populatePersonFilter() {
-  const participantIds = new Set();
-
-  recordings.forEach((recording) => {
-    if (!Array.isArray(recording.participants)) {
-      return;
-    }
-
-    recording.participants.forEach((participant) => {
-      if (participant.person_id) {
-        participantIds.add(participant.person_id);
-      }
-    });
-  });
-
-  const participants = [...participantIds]
-    .map((id) => peopleById.get(id))
-    .filter(Boolean)
-    .sort((a, b) => {
-      const nameA = a.display_name || a.name || "";
-      const nameB = b.display_name || b.name || "";
-
-      return nameA.localeCompare(nameB);
+    getParticipants(recording).forEach((person) => {
+      peopleInRecordings.add(person.id);
     });
 
-  personFilter.replaceChildren();
-
-  const allOption = document.createElement("option");
-  allOption.value = "";
-  allOption.textContent = "All people";
-  personFilter.appendChild(allOption);
-
-  participants.forEach((person) => {
-    const option = document.createElement("option");
-
-    option.value = person.id;
-    option.textContent =
-      person.display_name || person.name;
-
-    personFilter.appendChild(option);
-  });
-}
-
-
-function populateReelFilter() {
-  const reels = new Set();
-
-  recordings.forEach((recording) => {
     if (recording.reel?.id) {
       reels.add(recording.reel.id);
     }
   });
 
-  const values = [...reels].sort((a, b) =>
-    a.localeCompare(b, undefined, {
-      numeric: true,
-      sensitivity: "base"
-    })
-  );
+  [...languages]
+    .sort((a, b) => a.localeCompare(b))
+    .forEach((language) => {
+      const option = document.createElement("option");
+      option.value = language;
+      option.textContent = language;
+      languageFilter.appendChild(option);
+    });
 
-  reelFilter.replaceChildren();
+  [...peopleInRecordings]
+    .map((id) => peopleById.get(id))
+    .filter(Boolean)
+    .sort((a, b) =>
+      (a.display_name || a.name || "")
+        .localeCompare(b.display_name || b.name || "")
+    )
+    .forEach((person) => {
+      const option = document.createElement("option");
+      option.value = person.id;
+      option.textContent =
+        person.display_name || person.name;
 
-  const allOption = document.createElement("option");
-  allOption.value = "";
-  allOption.textContent = "All reels";
-  reelFilter.appendChild(allOption);
+      personFilter.appendChild(option);
+    });
 
-  values.forEach((reelId) => {
-    const option = document.createElement("option");
+  [...reels]
+    .sort((a, b) => a.localeCompare(b))
+    .forEach((reelId) => {
+      const option = document.createElement("option");
+      option.value = reelId;
+      option.textContent = reelId;
+      reelFilter.appendChild(option);
+    });
+}
 
-    option.value = reelId;
-    option.textContent = reelId;
+function recordingMatchesFilters(recording) {
+  const query = searchInput.value
+    .trim()
+    .toLowerCase();
 
-    reelFilter.appendChild(option);
-  });
+  const selectedLanguage = languageFilter.value;
+  const selectedPerson = personFilter.value;
+  const selectedReel = reelFilter.value;
+
+  const recordingSongs =
+    getRecordingSongs(recording);
+
+  const participants =
+    getParticipants(recording);
+
+  if (selectedLanguage) {
+    const matchesLanguage = recordingSongs.some(
+      (song) =>
+        song.language === selectedLanguage
+    );
+
+    if (!matchesLanguage) {
+      return false;
+    }
+  }
+
+  if (selectedPerson) {
+    const matchesPerson = participants.some(
+      (person) =>
+        person.id === selectedPerson
+    );
+
+    if (!matchesPerson) {
+      return false;
+    }
+  }
+
+  if (selectedReel) {
+    if (recording.reel?.id !== selectedReel) {
+      return false;
+    }
+  }
+
+  if (query) {
+    const searchable = searchableText(recording);
+
+    if (!searchable.includes(query)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function getFilteredRecordings() {
+  return recordings.filter(recordingMatchesFilters);
+}
+
+function applyFilters() {
+  const filtered = getFilteredRecordings();
+
+  renderRecordings(filtered);
+
+  if (
+    selectedRecording &&
+    !filtered.includes(selectedRecording)
+  ) {
+    if (filtered.length > 0) {
+      selectRecording(filtered[0]);
+    } else {
+      showEmptySelection();
+    }
+  }
+
+  if (!selectedRecording && filtered.length > 0) {
+    selectRecording(filtered[0]);
+  }
 }
 
 
-/*
- * ------------------------------------------------------------
- * Searching
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Search
+------------------------------------------------------- */
 
 function searchableText(recording) {
-  const recordingSongs = getSongs(recording);
-  const participants = getParticipants(recording);
+  const recordingSongs =
+    getRecordingSongs(recording);
+
+  const participants =
+    getParticipants(recording);
 
   return [
     recording.id,
@@ -268,13 +300,15 @@ function searchableText(recording) {
       song.title,
       song.description,
       song.language,
-      song.reference,
       song.original_title?.script,
-      song.original_title?.transliteration
+      song.original_title?.transliteration,
+      song.reference,
+      song.lyrics?.original,
+      song.lyrics?.transliteration,
+      song.lyrics?.english
     ]),
 
     ...participants.flatMap((person) => [
-      person.id,
       person.name,
       person.display_name,
       person.description
@@ -286,1354 +320,861 @@ function searchableText(recording) {
 }
 
 
-function recordingMatches(recording) {
-  const query = searchInput.value
-    .trim()
-    .toLowerCase();
+/* -------------------------------------------------------
+   Recording list
+------------------------------------------------------- */
 
-  const selectedLanguage = languageFilter.value;
-  const selectedPerson = personFilter.value;
-  const selectedReel = reelFilter.value;
-
-  /*
-   * Search
-   */
-
-  if (
-    query &&
-    !searchableText(recording).includes(query)
-  ) {
-    return false;
-  }
-
-  /*
-   * Language
-   */
-
-  if (selectedLanguage) {
-    const matchesLanguage = getSongs(recording).some(
-      (song) => song.language === selectedLanguage
-    );
-
-    if (!matchesLanguage) {
-      return false;
-    }
-  }
-
-  /*
-   * Person
-   */
-
-  if (selectedPerson) {
-    const matchesPerson = getParticipants(recording).some(
-      (person) => person.id === selectedPerson
-    );
-
-    if (!matchesPerson) {
-      return false;
-    }
-  }
-
-  /*
-   * Reel
-   */
-
-  if (
-    selectedReel &&
-    recording.reel?.id !== selectedReel
-  ) {
-    return false;
-  }
-
-  return true;
-}
-
-
-function applyFilters() {
-  filteredRecordings = recordings.filter(
-    recordingMatches
-  );
-
-  renderRecordingList(filteredRecordings);
-
-  /*
-   * If the current recording is no longer visible,
-   * select the first visible recording.
-   */
-
-  if (
-    filteredRecordings.length > 0 &&
-    !filteredRecordings.some(
-      (recording) =>
-        recording.id === activeRecordingId
-    )
-  ) {
-    selectRecording(filteredRecordings[0].id);
-  }
-
-  if (filteredRecordings.length === 0) {
-    activeRecordingId = null;
-    renderEmptyPlayer("No recordings match these filters.");
-  }
-}
-
-
-/*
- * ------------------------------------------------------------
- * Recording list
- * ------------------------------------------------------------
- */
-
-function renderRecordingList(items) {
+function renderRecordings(items) {
   recordingsContainer.replaceChildren();
 
   resultCount.textContent =
-    `${items.length} ${
-      items.length === 1
-        ? "recording"
-        : "recordings"
-    }`;
+    `${items.length} recording${items.length === 1 ? "" : "s"}`;
 
   if (items.length === 0) {
     const empty = document.createElement("p");
-
-    empty.className = "recording-list-empty";
+    empty.className = "sidebar-empty";
     empty.textContent = "No recordings found.";
-
     recordingsContainer.appendChild(empty);
-
     return;
   }
 
-  items.forEach((recording) => {
-    recordingsContainer.appendChild(
-      createRecordingListItem(recording)
+  items.forEach((recording, index) => {
+    const card = createRecordingListItem(
+      recording,
+      index
     );
+
+    recordingsContainer.appendChild(card);
   });
 }
 
-
-function createRecordingListItem(recording) {
+function createRecordingListItem(recording, index) {
   const button = document.createElement("button");
 
   button.type = "button";
   button.className = "recording-list-item";
 
-  if (recording.id === activeRecordingId) {
-    button.classList.add("is-active");
+  if (recording === selectedRecording) {
+    button.classList.add("is-selected");
   }
 
-  button.setAttribute(
-    "aria-label",
-    `Select recording ${recording.title || recording.id}`
-  );
-
-  const songsForRecording = getSongs(recording);
-  const participants = getParticipants(recording);
-
-  const title = document.createElement("strong");
-
+  const title = document.createElement("span");
   title.className = "recording-list-title";
 
   title.textContent =
     recording.title ||
-    songsForRecording
-      .map((song) => song.title)
-      .filter(Boolean)
-      .join(", ") ||
+    getRecordingSongs(recording)[0]?.title ||
     "Untitled recording";
 
-  button.appendChild(title);
+  const meta = document.createElement("span");
+  meta.className = "recording-list-meta";
 
-  /*
-   * Song names
-   */
+  const participants =
+    getParticipants(recording);
 
-  if (songsForRecording.length > 0) {
-    const songsElement = document.createElement("span");
-
-    songsElement.className = "recording-list-songs";
-
-    songsElement.textContent = songsForRecording
-      .map((song) => song.title)
-      .filter(Boolean)
-      .join(" · ");
-
-    button.appendChild(songsElement);
-  }
-
-  /*
-   * People
-   */
+  const parts = [];
 
   if (participants.length > 0) {
-    const peopleElement = document.createElement("span");
-
-    peopleElement.className = "recording-list-people";
-
-    peopleElement.textContent = participants
-      .map(
-        (person) =>
+    parts.push(
+      participants
+        .map((person) =>
           person.display_name || person.name
-      )
-      .join(", ");
-
-    button.appendChild(peopleElement);
-  }
-
-  /*
-   * Reel / language
-   */
-
-  const metadata = document.createElement("span");
-
-  metadata.className = "recording-list-meta";
-
-  const metadataParts = [];
-
-  if (recording.reel?.id) {
-    metadataParts.push(
-      `Reel ${recording.reel.id}`
+        )
+        .join(", ")
     );
   }
 
-  const languages = [
-    ...new Set(
-      songsForRecording
-        .map((song) => song.language)
-        .filter(Boolean)
-    )
-  ];
-
-  if (languages.length > 0) {
-    metadataParts.push(languages.join(", "));
+  if (recording.reel?.id) {
+    parts.push(`Reel ${recording.reel.id}`);
   }
 
-  metadata.textContent = metadataParts.join(" · ");
+  const songsForRecording =
+    getRecordingSongs(recording);
 
-  if (metadata.textContent) {
-    button.appendChild(metadata);
+  if (songsForRecording.length > 1) {
+    parts.push(
+      `${songsForRecording.length} songs`
+    );
   }
+
+  meta.textContent = parts.join(" · ");
+
+  button.appendChild(title);
+  button.appendChild(meta);
 
   button.addEventListener("click", () => {
-    selectRecording(recording.id);
+    selectRecording(recording);
   });
 
   return button;
 }
 
 
-/*
- * ------------------------------------------------------------
- * Active recording
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Selection
+------------------------------------------------------- */
 
-function selectRecording(recordingId) {
-  const recording = recordings.find(
-    (item) => item.id === recordingId
-  );
-
+function selectRecording(recording) {
   if (!recording) {
+    showEmptySelection();
     return;
   }
 
-  activeRecordingId = recording.id;
+  selectedRecording = recording;
 
-  renderRecordingList(filteredRecordings);
-  renderPlayer(recording);
+  emptyState.hidden = true;
+  recordingView.hidden = false;
+
+  updateSelectedRecordingHeader(recording);
+  updateReel(recording);
+  updateDetails(recording);
+  updateRecordingListSelection();
+  loadAudio(recording);
+}
+
+function showEmptySelection() {
+  selectedRecording = null;
+
+  stopAudio();
+
+  recordingView.hidden = true;
+  emptyState.hidden = false;
+
+  updateRecordingListSelection();
+}
+
+function updateRecordingListSelection() {
+  const buttons =
+    recordingsContainer.querySelectorAll(
+      ".recording-list-item"
+    );
+
+  buttons.forEach((button) => {
+    button.classList.remove("is-selected");
+  });
+
+  if (!selectedRecording) {
+    return;
+  }
+
+  const items =
+    getFilteredRecordings();
+
+  items.forEach((recording, index) => {
+    if (recording !== selectedRecording) {
+      return;
+    }
+
+    const button = buttons[index];
+
+    if (button) {
+      button.classList.add("is-selected");
+    }
+  });
 }
 
 
-function renderPlayer(recording) {
-  stopCurrentAudio();
+/* -------------------------------------------------------
+   Recording header
+------------------------------------------------------- */
 
-  playerContainer.replaceChildren();
+function updateSelectedRecordingHeader(recording) {
+  const songsForRecording =
+    getRecordingSongs(recording);
 
-  const songsForRecording = getSongs(recording);
-  const participants = getParticipants(recording);
+  const participants =
+    getParticipants(recording);
 
-  /*
-   * Header
-   */
+  recordingNumber.textContent =
+    recording.id || "";
 
-  const header = document.createElement("header");
-  header.className = "player-header";
-
-  const eyebrow = document.createElement("div");
-  eyebrow.className = "player-eyebrow";
-  eyebrow.textContent = "Family Archive";
-
-  header.appendChild(eyebrow);
-
-  const title = document.createElement("h2");
-
-  title.className = "player-title";
-
-  title.textContent =
+  recordingTitle.textContent =
     recording.title ||
-    songsForRecording
-      .map((song) => song.title)
-      .filter(Boolean)
-      .join(" · ") ||
+    songsForRecording[0]?.title ||
     "Untitled recording";
 
-  header.appendChild(title);
-
-  /*
-   * Song titles
-   */
+  const subtitleParts = [];
 
   if (songsForRecording.length > 0) {
-    const songsElement = document.createElement("div");
-
-    songsElement.className = "player-songs";
-
-    songsForRecording.forEach((song, index) => {
-      const songElement = document.createElement("span");
-
-      songElement.className = "player-song";
-
-      songElement.textContent = song.title;
-
-      if (index < songsForRecording.length - 1) {
-        const separator =
-          document.createElement("span");
-
-        separator.className =
-          "player-song-separator";
-
-        separator.textContent = " · ";
-
-        songsElement.appendChild(songElement);
-        songsElement.appendChild(separator);
-      } else {
-        songsElement.appendChild(songElement);
-      }
-    });
-
-    header.appendChild(songsElement);
-  }
-
-  playerContainer.appendChild(header);
-
-  /*
-   * Reel stage
-   */
-
-  const stage = document.createElement("div");
-
-  stage.className = "reel-stage";
-
-  const reel = createReel(recording);
-
-  stage.appendChild(reel);
-
-  playerContainer.appendChild(stage);
-
-  currentReel = reel;
-
-  /*
-   * Main controls
-   */
-
-  const controls = document.createElement("div");
-
-  controls.className = "player-controls";
-
-  const playButton = document.createElement("button");
-
-  playButton.type = "button";
-  playButton.className = "play-button";
-  playButton.textContent = "Play";
-
-  const progress = document.createElement("div");
-
-  progress.className = "player-progress";
-
-  const progressBar = document.createElement("div");
-
-  progressBar.className = "player-progress-bar";
-
-  progress.appendChild(progressBar);
-
-  const time = document.createElement("span");
-
-  time.className = "player-time";
-  time.textContent = "0:00";
-
-  controls.appendChild(playButton);
-  controls.appendChild(progress);
-  controls.appendChild(time);
-
-  playerContainer.appendChild(controls);
-
-  /*
-   * Metadata
-   */
-
-  const metadata = createPlayerMetadata(
-    recording,
-    songsForRecording,
-    participants
-  );
-
-  if (metadata) {
-    playerContainer.appendChild(metadata);
-  }
-
-  /*
-   * Audio element
-   */
-
-  const audio = document.createElement("audio");
-
-  audio.preload = "metadata";
-  audio.src = getAudioUrl(recording);
-
-  currentAudio = audio;
-
-  /*
-   * The browser reads the actual MP3 duration here.
-   *
-   * We deliberately do not depend on duration_seconds
-   * in the recording JSON.
-   */
-
-  audio.addEventListener("loadedmetadata", () => {
-    updateReelFromDuration(
-      recording,
-      audio.duration
+    subtitleParts.push(
+      songsForRecording
+        .map((song) => song.title)
+        .join(" · ")
     );
-  });
-
-  audio.addEventListener("timeupdate", () => {
-    if (
-      !Number.isFinite(audio.duration) ||
-      audio.duration <= 0
-    ) {
-      return;
-    }
-
-    const percentage =
-      (audio.currentTime / audio.duration) * 100;
-
-    progressBar.style.width =
-      `${Math.min(100, percentage)}%`;
-
-    time.textContent =
-      `${formatDuration(audio.currentTime)} / ` +
-      `${formatDuration(audio.duration)}`;
-  });
-
-  audio.addEventListener("play", () => {
-    reel.classList.add("is-playing");
-
-    playButton.textContent = "Pause";
-    playButton.setAttribute(
-      "aria-label",
-      "Pause recording"
-    );
-  });
-
-  audio.addEventListener("pause", () => {
-    reel.classList.remove("is-playing");
-
-    playButton.textContent = "Play";
-    playButton.setAttribute(
-      "aria-label",
-      "Play recording"
-    );
-  });
-
-  audio.addEventListener("ended", () => {
-    reel.classList.remove("is-playing");
-
-    playButton.textContent = "Play";
-    playButton.setAttribute(
-      "aria-label",
-      "Play recording"
-    );
-
-    progressBar.style.width = "0%";
-  });
-
-  audio.addEventListener("error", () => {
-    time.textContent = "Audio unavailable";
-  });
-
-  playButton.addEventListener("click", () => {
-    togglePlayback(audio);
-  });
-
-  progress.addEventListener("click", (event) => {
-    if (
-      !Number.isFinite(audio.duration) ||
-      audio.duration <= 0
-    ) {
-      return;
-    }
-
-    const rect =
-      progress.getBoundingClientRect();
-
-    const position =
-      (event.clientX - rect.left) / rect.width;
-
-    audio.currentTime =
-      Math.max(
-        0,
-        Math.min(1, position)
-      ) * audio.duration;
-  });
-}
-
-
-/*
- * ------------------------------------------------------------
- * CSS reel
- * ------------------------------------------------------------
- */
-
-function createReel(recording) {
-  const reel = document.createElement("div");
-
-  reel.className = "reel";
-
-  reel.dataset.recordingId = recording.id;
-
-  /*
-   * Two reels.
-   */
-
-  const reelLeft =
-    document.createElement("div");
-
-  reelLeft.className =
-    "reel-wheel reel-wheel-left";
-
-  const reelRight =
-    document.createElement("div");
-
-  reelRight.className =
-    "reel-wheel reel-wheel-right";
-
-  /*
-   * Tape path.
-   *
-   * The tape intentionally exits from the lower
-   * portion of the first reel and enters the lower
-   * portion of the second reel rather than connecting
-   * through their centers.
-   */
-
-  const tape =
-    document.createElement("div");
-
-  tape.className = "reel-tape";
-
-  /*
-   * Tape endpoints.
-   */
-
-  const tapeStart =
-    document.createElement("span");
-
-  tapeStart.className =
-    "reel-tape-start";
-
-  const tapeEnd =
-    document.createElement("span");
-
-  tapeEnd.className =
-    "reel-tape-end";
-
-  tape.appendChild(tapeStart);
-  tape.appendChild(tapeEnd);
-
-  /*
-   * Center hubs.
-   */
-
-  const leftHub =
-    createReelHub();
-
-  const rightHub =
-    createReelHub();
-
-  reelLeft.appendChild(leftHub);
-  reelRight.appendChild(rightHub);
-
-  reel.appendChild(reelLeft);
-  reel.appendChild(reelRight);
-  reel.appendChild(tape);
-
-  /*
-   * Initial visual reel size.
-   *
-   * This will be replaced once the browser knows
-   * the actual audio duration.
-   */
-
-  setReelSize(reel, null);
-
-  return reel;
-}
-
-
-function createReelHub() {
-  const hub =
-    document.createElement("div");
-
-  hub.className = "reel-hub";
-
-  const hubCenter =
-    document.createElement("div");
-
-  hubCenter.className =
-    "reel-hub-center";
-
-  const holes =
-    document.createElement("div");
-
-  holes.className = "reel-holes";
-
-  for (let i = 0; i < 5; i++) {
-    const hole =
-      document.createElement("span");
-
-    hole.style.setProperty(
-      "--hole-index",
-      i
-    );
-
-    holes.appendChild(hole);
   }
-
-  hub.appendChild(holes);
-  hub.appendChild(hubCenter);
-
-  return hub;
-}
-
-
-/*
- * Reel diameter is based on audio duration.
- *
- * The CSS variable --reel-size controls the
- * physical diameter of both reel wheels.
- *
- * The mapping is intentionally logarithmic-ish:
- * short recordings get a visibly smaller reel,
- * while long recordings approach the maximum size.
- */
-
-function setReelSize(reel, duration) {
-  let size;
-
-  if (
-    !Number.isFinite(duration) ||
-    duration <= 0
-  ) {
-    size = 210;
-  } else {
-    const minimumDuration = 30;
-    const maximumDuration = 60 * 60;
-
-    const normalized =
-      Math.max(
-        0,
-        Math.min(
-          1,
-          (Math.log(duration) -
-            Math.log(minimumDuration)) /
-            (
-              Math.log(maximumDuration) -
-              Math.log(minimumDuration)
-            )
-        )
-      );
-
-    const minimumSize = 170;
-    const maximumSize = 310;
-
-    size =
-      minimumSize +
-      normalized *
-        (maximumSize - minimumSize);
-  }
-
-  reel.style.setProperty(
-    "--reel-size",
-    `${Math.round(size)}px`
-  );
-}
-
-
-function updateReelFromDuration(
-  recording,
-  duration
-) {
-  if (!currentReel) {
-    return;
-  }
-
-  if (
-    currentReel.dataset.recordingId !==
-    recording.id
-  ) {
-    return;
-  }
-
-  setReelSize(
-    currentReel,
-    duration
-  );
-}
-
-
-/*
- * ------------------------------------------------------------
- * Player metadata
- * ------------------------------------------------------------
- */
-
-function createPlayerMetadata(
-  recording,
-  songsForRecording,
-  participants
-) {
-  const section =
-    document.createElement("section");
-
-  section.className =
-    "player-metadata";
-
-  let hasContent = false;
-
-  /*
-   * People
-   */
 
   if (participants.length > 0) {
-    const item =
-      createMetadataItem(
-        "Participants",
-        participants
-          .map(
-            (person) =>
-              person.display_name ||
-              person.name
-          )
-          .join(", ")
-      );
-
-    section.appendChild(item);
-
-    hasContent = true;
-  }
-
-  /*
-   * Language
-   */
-
-  const languages = [
-    ...new Set(
-      songsForRecording
-        .map((song) => song.language)
-        .filter(Boolean)
-    )
-  ];
-
-  if (languages.length > 0) {
-    section.appendChild(
-      createMetadataItem(
-        "Language",
-        languages.join(", ")
-      )
+    subtitleParts.push(
+      participants
+        .map((person) =>
+          person.display_name || person.name
+        )
+        .join(", ")
     );
-
-    hasContent = true;
   }
-
-  /*
-   * Reel
-   */
 
   if (recording.reel?.id) {
-    section.appendChild(
-      createMetadataItem(
-        "Reel",
-        recording.reel.id
-      )
+    subtitleParts.push(
+      `Reel ${recording.reel.id}`
     );
-
-    hasContent = true;
   }
 
-  /*
-   * Reel size
-   */
+  recordingSubtitle.textContent =
+    subtitleParts.join(" · ");
+}
 
-  if (recording.reel?.size) {
-    section.appendChild(
-      createMetadataItem(
-        "Reel size",
-        recording.reel.size
-      )
-    );
 
-    hasContent = true;
+/* -------------------------------------------------------
+   Reel animation
+------------------------------------------------------- */
+
+const rewindButton = document.querySelector("#rewind-button");
+const forwardButton = document.querySelector("#forward-button");
+const reelBodies = reelPlayer.querySelectorAll(".reel-body");
+const tapeGradient = document.querySelector("#tape-gradient");
+let animationFrame = null;
+let previousFrame = null;
+let reelAngles = [0, 0];
+let tapeOffset = 0;
+let windingDirection = 0;
+let windingElapsed = 0;
+let resumeAfterWinding = false;
+const windingStepSeconds = 0.125;
+
+
+function updateReel() {
+  stopReelAnimation();
+  reelAngles = [0, 0];
+  tapeOffset = 0;
+  reelBodies.forEach((body) => body.style.transform = "rotate(0deg)");
+  tapeGradient.setAttribute("gradientTransform", "translate(0)");
+}
+
+function animateReels(timestamp) {
+  if ((!windingDirection && (audioPlayer.paused || audioPlayer.ended)) || document.hidden) {
+    stopReelAnimation();
+    return;
   }
-
-  /*
-   * Date
-   */
-
-  if (recording.date?.value) {
-    section.appendChild(
-      createMetadataItem(
-        "Date",
-        recording.date.value
-      )
-    );
-
-    hasContent = true;
+  const elapsed = previousFrame === null ? 0 : Math.min((timestamp - previousFrame) / 1000, 0.1);
+  previousFrame = timestamp;
+  if (windingDirection) {
+    windingElapsed += elapsed;
+    while (windingDirection && windingElapsed >= windingStepSeconds) {
+      windingElapsed -= windingStepSeconds;
+      skipAudio(windingDirection);
+      if (audioPlayer.currentTime <= 0 || audioPlayer.currentTime >= audioPlayer.duration) {
+        finishWinding();
+        return;
+      }
+    }
   }
+  const duration = audioPlayer.duration;
+  const fraction = Number.isFinite(duration) && duration > 0
+    ? Math.min(1, Math.max(0, audioPlayer.currentTime / duration)) : 0;
+  // Tape pack area transfers between reels; angular speed is inverse to radius.
+  const radii = windingDirection ? [1, 0.7]
+    : [Math.sqrt(1 - fraction * 0.75), Math.sqrt(0.25 + fraction * 0.75)];
+  const speed = windingDirection ? windingDirection * 4 : audioPlayer.playbackRate;
+  reelBodies.forEach((body, index) => {
+    reelAngles[index] = (reelAngles[index] - elapsed * 90 * speed / radii[index]) % 360;
+    body.style.transform = `rotate(${reelAngles[index]}deg)`;
+  });
+  tapeOffset = (tapeOffset + elapsed * 48 * speed) % 48;
+  tapeGradient.setAttribute("gradientTransform", `translate(${tapeOffset})`);
+  animationFrame = requestAnimationFrame(animateReels);
+}
 
-  /*
-   * Description
-   */
-
-  if (recording.description) {
-    const description =
-      document.createElement("p");
-
-    description.className =
-      "player-description";
-
-    description.textContent =
-      recording.description;
-
-    section.appendChild(description);
-
-    hasContent = true;
+function startReelAnimation() {
+  reelPlayer.classList.add("is-playing");
+  // Playback motion is explicitly requested by the Play control.
+  if (animationFrame === null && !document.hidden) {
+    previousFrame = null;
+    animationFrame = requestAnimationFrame(animateReels);
   }
+}
 
-  /*
-   * Comments
-   */
+function stopReelAnimation() {
+  reelPlayer.classList.remove("is-playing");
+  cancelAnimationFrame(animationFrame);
+  animationFrame = null;
+  previousFrame = null;
+}
 
-  if (recording.comments) {
-    const comments =
-      document.createElement("p");
+function syncReelAnimation() {
+  if (document.hidden) finishWinding(false);
+  stopReelAnimation();
+  if (!audioPlayer.paused && !audioPlayer.ended) startReelAnimation();
+}
+document.addEventListener("visibilitychange", syncReelAnimation);
 
-    comments.className =
-      "player-comments";
-
-    comments.textContent =
-      recording.comments;
-
-    section.appendChild(comments);
-
-    hasContent = true;
+function skipAudio(seconds) {
+  if (!Number.isFinite(audioPlayer.duration) || audioPlayer.duration <= 0) return;
+  audioPlayer.currentTime = Math.max(0, Math.min(audioPlayer.duration, audioPlayer.currentTime + seconds));
+  updatePlaybackDisplay();
+}
+function beginWinding(direction) {
+  if (!Number.isFinite(audioPlayer.duration) || audioPlayer.duration <= 0) return;
+  if (windingDirection) finishWinding(false);
+  resumeAfterWinding = !audioPlayer.paused;
+  windingDirection = direction;
+  windingElapsed = 0;
+  audioPlayer.pause();
+  updatePlayButton(false);
+  rewindButton.classList.toggle("is-winding", direction < 0);
+  forwardButton.classList.toggle("is-winding", direction > 0);
+  skipAudio(direction);
+  if (audioPlayer.currentTime <= 0 || audioPlayer.currentTime >= audioPlayer.duration) {
+    finishWinding();
+    return;
   }
+  startReelAnimation();
+}
 
-  /*
-   * Original song references.
-   */
+function finishWinding(resume = true) {
+  if (!windingDirection) return;
+  const shouldResume = resume && resumeAfterWinding && audioPlayer.currentTime < audioPlayer.duration;
+  windingDirection = 0;
+  resumeAfterWinding = false;
+  rewindButton.classList.remove("is-winding");
+  forwardButton.classList.remove("is-winding");
+  stopReelAnimation();
+  if (shouldResume) {
+    audioPlayer.play().catch((error) => console.error("Unable to resume recording:", error));
+  }
+}
 
-  const references = songsForRecording
-    .filter((song) => song.reference);
-
-  if (references.length > 0) {
-    const referencesSection =
-      document.createElement("div");
-
-    referencesSection.className =
-      "player-references";
-
-    const heading =
-      document.createElement("h3");
-
-    heading.textContent =
-      "Original song";
-
-    referencesSection.appendChild(heading);
-
-    references.forEach((song) => {
-      const link =
-        document.createElement("a");
-
-      link.href = song.reference;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-
-      link.textContent =
-        `${song.title} ↗`;
-
-      referencesSection.appendChild(link);
+function bindWindingButton(button, direction) {
+  let suppressClick = false;
+  button.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0 || button.disabled) return;
+    event.preventDefault();
+    suppressClick = true;
+    button.setPointerCapture(event.pointerId);
+    beginWinding(direction);
+  });
+  for (const eventName of ["pointerup", "pointercancel", "lostpointercapture", "blur"]) {
+    button.addEventListener(eventName, () => {
+      if (windingDirection === direction) finishWinding();
     });
-
-    section.appendChild(
-      referencesSection
-    );
-
-    hasContent = true;
   }
-
-  /*
-   * Documents.
-   */
-
-  const documents =
-    createDocumentLinks(recording);
-
-  if (documents) {
-    section.appendChild(documents);
-    hasContent = true;
-  }
-
-  return hasContent ? section : null;
+  button.addEventListener("keydown", (event) => {
+    if (event.code !== "Space" && event.code !== "Enter") return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (!event.repeat) beginWinding(direction);
+  });
+  button.addEventListener("keyup", (event) => {
+    if (event.code !== "Space" && event.code !== "Enter") return;
+    event.preventDefault();
+    if (windingDirection === direction) finishWinding();
+  });
+  // Assistive technology can activate a button without pointer or key events.
+  button.addEventListener("click", () => {
+    if (suppressClick) { suppressClick = false; return; }
+    beginWinding(direction);
+    setTimeout(() => { if (windingDirection === direction) finishWinding(); }, 100);
+  });
 }
+bindWindingButton(rewindButton, -1);
+bindWindingButton(forwardButton, 1);
+window.addEventListener("blur", () => finishWinding(false));
 
-
-function createMetadataItem(label, value) {
-  const item =
-    document.createElement("div");
-
-  item.className =
-    "player-metadata-item";
-
-  const labelElement =
-    document.createElement("span");
-
-  labelElement.className =
-    "player-metadata-label";
-
-  labelElement.textContent =
-    label;
-
-  const valueElement =
-    document.createElement("span");
-
-  valueElement.className =
-    "player-metadata-value";
-
-  valueElement.textContent =
-    value;
-
-  item.appendChild(labelElement);
-  item.appendChild(valueElement);
-
-  return item;
-}
-
-
-/*
- * ------------------------------------------------------------
- * Audio
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Audio
+------------------------------------------------------- */
 
 function getAudioUrl(recording) {
-  if (
-    !recording.audio ||
-    typeof recording.audio.path !== "string"
-  ) {
+  const audioPath =
+    recording?.audio?.path;
+
+  if (!audioPath) {
     return "";
   }
 
-  return (
-    `${mediaBaseUrl}/` +
-    recording.audio.path.replace(/^\/+/, "")
+  if (!mediaBaseUrl) {
+    return audioPath;
+  }
+
+  return `${mediaBaseUrl}/${audioPath.replace(
+    /^\/+/,
+    ""
+  )}`;
+}
+
+function loadAudio(recording) {
+  finishWinding(false);
+  stopReelAnimation();
+
+  audioPlayer.pause();
+
+  audioPlayer.currentTime = 0;
+
+  updatePlayButton(false);
+  const url = getAudioUrl(recording);
+  [playButton, stopButton, rewindButton, forwardButton].forEach((button) => { button.disabled = true; });
+
+  if (!url) {
+    audioPlayer.removeAttribute("src");
+    audioPlayer.load();
+
+    playbackDuration.textContent = "0:00";
+    playbackTime.textContent = "0:00";
+    progress.value = 0;
+
+    return;
+  }
+
+  audioPlayer.src = url;
+  audioPlayer.load();
+
+  playbackDuration.textContent = "0:00";
+  playbackTime.textContent = "0:00";
+  progress.value = 0;
+
+  playButton.disabled = false;
+}
+
+async function togglePlay() {
+  finishWinding(false);
+  if (!selectedRecording) {
+    return;
+  }
+
+  if (!audioPlayer.src) {
+    return;
+  }
+
+  if (audioPlayer.paused) {
+    try {
+      await audioPlayer.play();
+
+      startReelAnimation();
+      updatePlayButton(true);
+    } catch (error) {
+      console.error(
+        "Unable to play recording:",
+        error
+      );
+    }
+
+    return;
+  }
+
+  audioPlayer.pause();
+
+  stopReelAnimation();
+  updatePlayButton(false);
+}
+
+function stopAudio() {
+  finishWinding(false);
+  audioPlayer.pause();
+  stopReelAnimation();
+  updatePlayButton(false);
+  updatePlaybackDisplay();
+}
+
+function updatePlayButton(isPlaying) {
+  playIcon.classList.toggle("is-paused", isPlaying);
+
+  playLabel.textContent =
+    isPlaying ? "Pause" : "Play";
+
+  playButton.setAttribute(
+    "aria-label",
+    isPlaying
+      ? "Pause recording"
+      : "Play recording"
   );
 }
 
-
-function stopCurrentAudio() {
-  if (!currentAudio) {
-    return;
-  }
-
-  currentAudio.pause();
-  currentAudio.currentTime = 0;
-  currentAudio = null;
-  currentReel = null;
-}
-
-
-function togglePlayback(audio) {
-  if (!audio.src) {
-    return;
-  }
-
-  if (audio.paused) {
-    /*
-     * Pause any other audio that might exist.
-     */
-
-    document
-      .querySelectorAll("audio")
-      .forEach((element) => {
-        if (element !== audio) {
-          element.pause();
-        }
-      });
-
-    audio.play().catch((error) => {
-      console.error(
-        "Unable to play audio:",
-        error
-      );
-    });
-  } else {
-    audio.pause();
-  }
-}
-
-
-/*
- * ------------------------------------------------------------
- * Duration formatting
- * ------------------------------------------------------------
- */
-
-function formatDuration(seconds) {
+function formatTime(seconds) {
   if (!Number.isFinite(seconds)) {
     return "0:00";
   }
 
-  const totalSeconds =
-    Math.max(0, Math.floor(seconds));
-
-  const hours =
-    Math.floor(totalSeconds / 3600);
-
   const minutes =
-    Math.floor(
-      (totalSeconds % 3600) / 60
-    );
+    Math.floor(seconds / 60);
 
   const remainingSeconds =
-    totalSeconds % 60;
+    Math.floor(seconds % 60);
 
-  if (hours > 0) {
-    return (
-      `${hours}:` +
-      `${String(minutes).padStart(2, "0")}:` +
-      `${String(remainingSeconds).padStart(2, "0")}`
-    );
+  return `${minutes}:${String(
+    remainingSeconds
+  ).padStart(2, "0")}`;
+}
+
+function updatePlaybackDisplay() {
+  const currentTime =
+    audioPlayer.currentTime || 0;
+
+  const duration =
+    audioPlayer.duration;
+
+  playbackTime.textContent =
+    formatTime(currentTime);
+
+  if (Number.isFinite(duration)) {
+    playbackDuration.textContent =
+      formatTime(duration);
+
+    progress.value =
+      duration > 0
+        ? (currentTime / duration) * 100
+        : 0;
+  }
+}
+
+function seekAudio() {
+  const duration =
+    audioPlayer.duration;
+
+  if (!Number.isFinite(duration)) {
+    return;
   }
 
-  return (
-    `${minutes}:` +
-    `${String(remainingSeconds).padStart(2, "0")}`
-  );
+  audioPlayer.currentTime =
+    (Number(progress.value) / 100) *
+    duration;
+  updatePlaybackDisplay();
 }
 
 
-/*
- * ------------------------------------------------------------
- * Empty player
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Reel sizing based on actual MP3 duration
+------------------------------------------------------- */
 
-function renderEmptyPlayer(message) {
-  stopCurrentAudio();
-
-  playerContainer.replaceChildren();
-
-  const empty =
-    document.createElement("div");
-
-  empty.className =
-    "player-empty";
-
-  const mark =
-    document.createElement("div");
-
-  mark.className =
-    "player-empty-mark";
-
-  mark.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  mark.textContent = "◉";
-
-  const heading =
-    document.createElement("h2");
-
-  heading.textContent =
-    "No recording selected";
-
-  const paragraph =
-    document.createElement("p");
-
-  paragraph.textContent =
-    message ||
-    "Choose a recording from the archive.";
-
-  empty.appendChild(mark);
-  empty.appendChild(heading);
-  empty.appendChild(paragraph);
-
-  playerContainer.appendChild(empty);
+function updateReelFromDuration() {
+  const canSeek = Number.isFinite(audioPlayer.duration) && audioPlayer.duration > 0;
+  rewindButton.disabled = !canSeek;
+  forwardButton.disabled = !canSeek;
+  stopButton.disabled = !audioPlayer.getAttribute("src");
 }
 
+/* -------------------------------------------------------
+   Details
+------------------------------------------------------- */
 
-/*
- * ------------------------------------------------------------
- * Documents
- * ------------------------------------------------------------
- */
+function updateDetails(recording) {
+  detailsPanel.replaceChildren();
 
-function createDocumentLinks(recording) {
-  if (
-    !Array.isArray(recording.documents) ||
-    recording.documents.length === 0
-  ) {
-    return null;
-  }
+  const songsForRecording =
+    getRecordingSongs(recording);
 
-  const section =
-    document.createElement("div");
-
-  section.className =
-    "player-documents";
+  const participants =
+    getParticipants(recording);
 
   const heading =
     document.createElement("h3");
 
-  heading.textContent =
-    "Documents";
+  heading.textContent = "Recording details";
 
-  section.appendChild(heading);
+  detailsPanel.appendChild(heading);
 
-  recording.documents.forEach(
-    (archiveDocument) => {
-      if (!archiveDocument.path) {
-        return;
-      }
+  const metadata =
+    document.createElement("dl");
 
-      const button =
-        document.createElement("button");
+  metadata.className = "details-list";
 
-      button.type = "button";
-      button.className =
-        "document-button";
-
-      button.textContent =
-        archiveDocument.type ===
-        "reel_information"
-          ? "View reel information"
-          : "View document";
-
-      button.addEventListener(
-        "click",
-        () => {
-          openDocumentModal(
-            archiveDocument.path
-          );
-        }
-      );
-
-      section.appendChild(button);
-    }
+  addDetailRow(
+    metadata,
+    "Recording",
+    recording.id
   );
 
-  return section;
-}
-
-
-function openDocumentModal(documentPath) {
-  const url =
-    `${mediaBaseUrl}/` +
-    documentPath.replace(/^\/+/, "");
-
-  const overlay =
-    document.createElement("div");
-
-  overlay.className =
-    "document-modal";
-
-  overlay.setAttribute(
-    "role",
-    "dialog"
+  addDetailRow(
+    metadata,
+    "Reel",
+    recording.reel?.id
   );
 
-  overlay.setAttribute(
-    "aria-modal",
-    "true"
+  addDetailRow(
+    metadata,
+    "Reel size",
+    recording.reel?.size
   );
 
-  overlay.setAttribute(
-    "aria-label",
-    "Document viewer"
+  addDetailRow(
+    metadata,
+    "Type",
+    recording.type
   );
 
-  const modal =
-    document.createElement("div");
-
-  modal.className =
-    "document-modal-content";
-
-  const toolbar =
-    document.createElement("div");
-
-  toolbar.className =
-    "document-modal-toolbar";
-
-  const closeButton =
-    document.createElement("button");
-
-  closeButton.type = "button";
-  closeButton.className =
-    "document-modal-close";
-
-  closeButton.textContent =
-    "Close";
-
-  closeButton.setAttribute(
-    "aria-label",
-    "Close document"
-  );
-
-  const openButton =
-    document.createElement("a");
-
-  openButton.href = url;
-  openButton.target = "_blank";
-  openButton.rel =
-    "noopener noreferrer";
-
-  openButton.textContent =
-    "Open PDF ↗";
-
-  openButton.className =
-    "document-modal-open";
-
-  toolbar.appendChild(openButton);
-  toolbar.appendChild(closeButton);
-
-  const frame =
-    document.createElement("iframe");
-
-  frame.src = url;
-  frame.title =
-    "Archive document";
-
-  frame.className =
-    "document-frame";
-
-  modal.appendChild(toolbar);
-  modal.appendChild(frame);
-
-  overlay.appendChild(modal);
-
-  document.body.appendChild(overlay);
-
-  function closeModal() {
-    overlay.remove();
-
-    document.body.style.overflow = "";
-
-    document.removeEventListener(
-      "keydown",
-      handleKeydown
+  if (recording.date?.value) {
+    addDetailRow(
+      metadata,
+      "Date",
+      recording.date.value
     );
   }
 
-  function handleKeydown(event) {
-    if (event.key === "Escape") {
-      closeModal();
-    }
+  if (recording.duration_seconds) {
+    addDetailRow(
+      metadata,
+      "Duration",
+      formatTime(recording.duration_seconds)
+    );
   }
 
-  closeButton.addEventListener(
-    "click",
-    closeModal
-  );
+  if (participants.length > 0) {
+    addDetailRow(
+      metadata,
+      "Participants",
+      participants
+        .map((person) =>
+          person.display_name || person.name
+        )
+        .join(", ")
+    );
+  }
 
-  overlay.addEventListener(
-    "click",
-    (event) => {
-      if (event.target === overlay) {
-        closeModal();
+  if (songsForRecording.length > 0) {
+    addDetailRow(
+      metadata,
+      "Songs",
+      songsForRecording
+        .map((song) => song.title)
+        .join(", ")
+    );
+  }
+
+  if (recording.description) {
+    addDetailRow(
+      metadata,
+      "Description",
+      recording.description
+    );
+  }
+
+  if (recording.comments) {
+    addDetailRow(
+      metadata,
+      "Comments",
+      recording.comments
+    );
+  }
+
+  detailsPanel.appendChild(metadata);
+
+  if (songsForRecording.length > 0) {
+    const songsSection =
+      document.createElement("section");
+
+    const songsHeading =
+      document.createElement("h4");
+
+    songsHeading.textContent = "Songs";
+
+    songsSection.appendChild(songsHeading);
+
+    songsForRecording.forEach((song) => {
+      const songBlock =
+        document.createElement("div");
+
+      songBlock.className = "detail-song";
+
+      const title =
+        document.createElement("strong");
+
+      title.textContent = song.title;
+
+      songBlock.appendChild(title);
+
+      if (song.original_title?.script) {
+        const original =
+          document.createElement("div");
+
+        original.textContent =
+          song.original_title.script;
+
+        songBlock.appendChild(original);
       }
-    }
-  );
 
-  document.addEventListener(
-    "keydown",
-    handleKeydown
-  );
+      if (
+        song.original_title?.transliteration
+      ) {
+        const transliteration =
+          document.createElement("div");
 
-  document.body.style.overflow =
-    "hidden";
+        transliteration.className =
+          "transliteration";
 
-  closeButton.focus();
+        transliteration.textContent =
+          song.original_title.transliteration;
+
+        songBlock.appendChild(
+          transliteration
+        );
+      }
+
+      if (song.language) {
+        const language =
+          document.createElement("div");
+
+        language.className =
+          "detail-secondary";
+
+        language.textContent =
+          song.language;
+
+        songBlock.appendChild(language);
+      }
+
+      if (song.reference) {
+        const reference =
+          document.createElement("a");
+
+        reference.href =
+          song.reference;
+
+        reference.target = "_blank";
+        reference.rel =
+          "noopener noreferrer";
+
+        reference.textContent =
+          "Original song ↗";
+
+        songBlock.appendChild(reference);
+      }
+
+      songsSection.appendChild(songBlock);
+    });
+
+    detailsPanel.appendChild(
+      songsSection
+    );
+  }
+
+  if (
+    Array.isArray(recording.documents) &&
+    recording.documents.length > 0
+  ) {
+    const documentsSection =
+      document.createElement("section");
+
+    const heading =
+      document.createElement("h4");
+
+    heading.textContent = "Documents";
+
+    documentsSection.appendChild(
+      heading
+    );
+
+    recording.documents.forEach(
+      (archiveDocument) => {
+        if (!archiveDocument.path) {
+          return;
+        }
+
+        const link =
+          document.createElement("a");
+
+        link.href =
+          `${mediaBaseUrl}/${archiveDocument.path.replace(
+            /^\/+/,
+            ""
+          )}`;
+
+        link.target = "_blank";
+        link.rel =
+          "noopener noreferrer";
+
+        link.textContent =
+          archiveDocument.type ===
+          "reel_information"
+            ? "View reel information ↗"
+            : "View document ↗";
+
+        documentsSection.appendChild(
+          link
+        );
+      }
+    );
+
+    detailsPanel.appendChild(
+      documentsSection
+    );
+  }
 }
 
-
-/*
- * ------------------------------------------------------------
- * Shuffle
- * ------------------------------------------------------------
- */
-
-function shuffleRecording() {
-  if (filteredRecordings.length === 0) {
+function addDetailRow(
+  container,
+  label,
+  value
+) {
+  if (
+    value === undefined ||
+    value === null ||
+    value === ""
+  ) {
     return;
   }
 
-  /*
-   * Prefer a different recording when possible.
-   */
+  const row =
+    document.createElement("div");
 
-  const choices =
-    filteredRecordings.length > 1
-      ? filteredRecordings.filter(
-          (recording) =>
-            recording.id !== activeRecordingId
-        )
-      : filteredRecordings;
+  row.className = "detail-row";
+
+  const dt =
+    document.createElement("dt");
+
+  dt.textContent = label;
+
+  const dd =
+    document.createElement("dd");
+
+  dd.textContent = value;
+
+  row.appendChild(dt);
+  row.appendChild(dd);
+
+  container.appendChild(row);
+}
+
+
+/* -------------------------------------------------------
+   Shuffle
+------------------------------------------------------- */
+
+function shuffleRecording() {
+  const filtered =
+    getFilteredRecordings();
+
+  if (filtered.length === 0) {
+    return;
+  }
+
+  if (filtered.length === 1) {
+    selectRecording(filtered[0]);
+    return;
+  }
+
+  const candidates =
+    filtered.filter(
+      (recording) =>
+        recording !== selectedRecording
+    );
+
+  const pool =
+    candidates.length > 0
+      ? candidates
+      : filtered;
 
   const randomIndex =
     Math.floor(
-      Math.random() * choices.length
+      Math.random() * pool.length
     );
 
-  const recording =
-    choices[randomIndex];
-
-  selectRecording(recording.id);
+  selectRecording(
+    pool[randomIndex]
+  );
 }
 
 
-/*
- * ------------------------------------------------------------
- * Clear filters
- * ------------------------------------------------------------
- */
-
-function clearFilters() {
-  searchInput.value = "";
-  languageFilter.value = "";
-  personFilter.value = "";
-  reelFilter.value = "";
-
-  applyFilters();
-}
-
-
-/*
- * ------------------------------------------------------------
- * Event listeners
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Events
+------------------------------------------------------- */
 
 searchInput.addEventListener(
   "input",
@@ -1662,33 +1203,159 @@ shuffleButton.addEventListener(
 
 clearFiltersButton.addEventListener(
   "click",
-  clearFilters
+  () => {
+    searchInput.value = "";
+    languageFilter.value = "";
+    personFilter.value = "";
+    reelFilter.value = "";
+
+    applyFilters();
+  }
+);
+
+playButton.addEventListener(
+  "click",
+  togglePlay
+);
+
+stopButton.addEventListener(
+  "click",
+  stopAudio
+);
+
+detailsButton.addEventListener(
+  "click",
+  () => {
+    detailsPanel.hidden =
+      !detailsPanel.hidden;
+
+    detailsButton.textContent =
+      detailsPanel.hidden
+        ? "Details"
+        : "Hide details";
+  }
+);
+
+progress.addEventListener(
+  "input",
+  seekAudio
+);
+
+audioPlayer.addEventListener(
+  "loadedmetadata",
+  () => {
+    updatePlaybackDisplay();
+    updateReelFromDuration();
+  }
+);
+
+audioPlayer.addEventListener(
+  "timeupdate",
+  () => {
+    updatePlaybackDisplay();
+    if (!audioPlayer.paused && !audioPlayer.ended && audioPlayer.readyState >= 3) {
+      startReelAnimation();
+    }
+  }
+);
+
+audioPlayer.addEventListener(
+  "play",
+  () => {
+    startReelAnimation();
+    updatePlayButton(true);
+  }
+);
+
+audioPlayer.addEventListener(
+  "pause",
+  () => {
+    if (!windingDirection) stopReelAnimation();
+    updatePlayButton(false);
+  }
+);
+
+audioPlayer.addEventListener(
+  "ended",
+  () => {
+    stopReelAnimation();
+    updatePlayButton(false);
+
+    progress.value = 100;
+    updatePlaybackDisplay();
+  }
+);
+
+audioPlayer.addEventListener(
+  "error",
+  () => {
+    finishWinding(false);
+    stopReelAnimation();
+    updatePlayButton(false);
+
+    console.error(
+      "Unable to load audio:",
+      audioPlayer.src
+    );
+  }
 );
 
 
-/*
- * ------------------------------------------------------------
- * Initial load
- * ------------------------------------------------------------
- */
+/* -------------------------------------------------------
+   Keyboard controls
+------------------------------------------------------- */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+    const target =
+      event.target;
+
+    const isTyping =
+      target instanceof HTMLInputElement ||
+      target instanceof HTMLSelectElement ||
+      target instanceof HTMLTextAreaElement;
+
+    if (isTyping) {
+      return;
+    }
+
+    if (
+      event.code === "Space" &&
+      selectedRecording
+    ) {
+      event.preventDefault();
+      togglePlay();
+    }
+  }
+);
+
+
+/* -------------------------------------------------------
+   Start
+------------------------------------------------------- */
 
 loadArchive().catch((error) => {
   console.error(error);
 
-  recordingsContainer.replaceChildren();
+  recordingsContainer.innerHTML = "";
 
   const message =
     document.createElement("p");
 
   message.className = "error";
-
   message.textContent =
-    "Unable to load the archive. " +
-    "Check the browser console for details.";
+    "Unable to load the archive. Check the browser console for details.";
 
   recordingsContainer.appendChild(message);
+});
 
-  renderEmptyPlayer(
-    "The archive could not be loaded."
-  );
+audioPlayer.addEventListener("waiting", () => {
+  if (!windingDirection) stopReelAnimation();
+});
+audioPlayer.addEventListener("playing", startReelAnimation);
+audioPlayer.addEventListener("error", () => {
+  stopReelAnimation();
+  updatePlayButton(false);
+  [playButton, stopButton, rewindButton, forwardButton].forEach((button) => { button.disabled = true; });
 });

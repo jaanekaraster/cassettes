@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,108 +13,180 @@
 <body>
   <main class="archive-app">
 
-    <!-- Sidebar -->
-    <aside class="archive-sidebar" aria-label="Archive recordings">
-
+    <aside class="sidebar">
       <header class="sidebar-header">
         <h1>Family Archive</h1>
         <p>Archival recordings from the family collection.</p>
       </header>
 
-      <section class="archive-filters" aria-label="Search and filter recordings">
+      <section class="filters" aria-label="Recording filters">
 
-        <div class="filter-group">
-          <label for="search">Search</label>
+        <label for="search">Search</label>
+        <input
+          id="search"
+          type="search"
+          placeholder="Song, person, reel..."
+          autocomplete="off"
+        >
 
-          <input
-            id="search"
-            type="search"
-            placeholder="Search recordings..."
-            autocomplete="off"
-          >
-        </div>
+        <label for="language-filter">Language</label>
+        <select id="language-filter">
+          <option value="">All languages</option>
+        </select>
 
-        <div class="filter-group">
-          <label for="language-filter">Language</label>
+        <label for="person-filter">Person</label>
+        <select id="person-filter">
+          <option value="">All people</option>
+        </select>
 
-          <select id="language-filter">
-            <option value="">All languages</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label for="person-filter">Person</label>
-
-          <select id="person-filter">
-            <option value="">All people</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label for="reel-filter">Reel</label>
-
-          <select id="reel-filter">
-            <option value="">All reels</option>
-          </select>
-        </div>
+        <label for="reel-filter">Reel</label>
+        <select id="reel-filter">
+          <option value="">All reels</option>
+        </select>
 
         <div class="filter-actions">
-          <button
-            id="shuffle-button"
-            type="button"
-            class="shuffle-button"
-          >
+          <button id="shuffle-button" type="button">
             Shuffle
           </button>
 
-          <button
-            id="clear-filters"
-            type="button"
-            class="clear-filters-button"
-          >
+          <button id="clear-filters-button" type="button">
             Clear
           </button>
         </div>
-
       </section>
 
-      <div class="sidebar-results-header">
+      <div class="recordings-heading">
         <h2>Recordings</h2>
         <span id="result-count"></span>
       </div>
 
       <div
         id="recordings"
-        class="recording-list"
-        aria-live="polite"
+        class="recordings-list"
+        aria-label="Recordings"
       >
-        <p class="loading">Loading archive…</p>
+        <p>Loading archive…</p>
       </div>
-
     </aside>
 
+    <section class="main-view" aria-label="Selected recording">
 
-    <!-- Main player -->
-    <section class="archive-main" aria-label="Recording player">
-
-      <div
-        id="player"
-        class="player"
-        aria-live="polite"
-      >
-
-        <div class="player-empty">
-          <div class="player-empty-mark" aria-hidden="true">
-            ◉
+      <div id="empty-state" class="empty-state">
+        <div class="empty-state-inner">
+          <div class="empty-reel-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
           </div>
 
           <h2>Select a recording</h2>
-
           <p>
-            Choose a recording from the archive to view its reel
-            and listen to the recording.
+            Choose a recording from the archive to view and play it.
           </p>
         </div>
+      </div>
+
+      <div id="recording-view" class="recording-view" hidden>
+
+        <header class="recording-header">
+          <div>
+            <p id="recording-number" class="recording-number"></p>
+            <h2 id="recording-title"></h2>
+            <p id="recording-subtitle" class="recording-subtitle"></p>
+          </div>
+
+          <button
+            id="details-button"
+            class="details-button"
+            type="button"
+          >
+            Details
+          </button>
+        </header>
+
+        <div class="reel-stage">
+
+          <div
+            id="reel-player"
+            class="reel-player"
+            aria-label="Tape reel player"
+          >
+
+            <div class="reel-machine" aria-hidden="true">
+              <div class="reel reel-left">
+                <div class="tape-pack"></div>
+                <div class="reel-body"><div class="reel-spokes"><span></span><span></span><span></span></div><div class="reel-hub"><div class="hub-hole"></div></div></div>
+              </div>
+              <div class="head-mount"></div>
+              <div class="tape-guide guide-left" style="left: 27.631579%; top: 80.769231%" title="Supply tape guide"></div>
+              <div class="tape-head erase-head" style="left: 36.842105%; top: 79.487179%" title="Erase head"></div>
+              <div class="tape-head record-head" style="left: 46.052632%; top: 79.487179%" title="Recording head"></div>
+              <div class="tape-head replay-head" style="left: 55.263158%; top: 79.487179%" title="Replay head"></div>
+              <div class="capstan" style="left: 63.157895%; top: 82.051282%" title="Capstan"></div>
+              <div class="pinch-roller" style="left: 63.157895%; top: 88.717949%" title="Pinch roller"></div>
+              <div class="tape-guide guide-right" style="left: 72.368421%; top: 80.769231%" title="Take-up tape guide"></div>
+              <span class="transport-label" style="left: 36.842105%">ERASE</span>
+              <span class="transport-label" style="left: 46.052632%">RECORD</span>
+              <span class="transport-label" style="left: 55.263158%">REPLAY</span>
+              <span class="transport-label" style="left: 63.157895%">CAPSTAN</span>
+              <svg class="tape-path" viewBox="0 0 760 390">
+                <defs>
+                  <linearGradient id="tape-gradient" gradientUnits="userSpaceOnUse" x1="0" x2="48" spreadMethod="repeat">
+                    <stop offset="0" stop-color="#291c15"/>
+                    <stop offset="0.5" stop-color="#ad8056"/>
+                    <stop offset="1" stop-color="#291c15"/>
+                  </linearGradient>
+                </defs>
+                <!-- Supply reel → guide → erase → record → replay → capstan/pinch roller → guide → take-up reel. -->
+                <path d="M 175 305 L 203.509 324.493 A 11.5 11.5 0 0 0 209.010 326.457 L 250 330 H 510 L 549.377 331.488 A 16.5 16.5 0 0 0 561.232 327.087 L 585 305" fill="none" stroke="url(#tape-gradient)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="reel reel-right">
+                <div class="tape-pack"></div>
+                <div class="reel-body"><div class="reel-spokes"><span></span><span></span><span></span></div><div class="reel-hub"><div class="hub-hole"></div></div></div>
+              </div>
+            </div>
+
+            <div class="reel-controls" role="group" aria-label="Playback controls">
+              <button id="rewind-button" class="transport-button" type="button" aria-label="Hold to rewind" title="Hold to rewind" disabled>
+                <span class="transport-icon rewind-icon" aria-hidden="true"></span><span>Rewind</span>
+              </button>
+              <button id="play-button" class="transport-button play-button" type="button" aria-label="Play recording" disabled>
+                <span class="play-icon transport-icon" aria-hidden="true"></span><span class="play-label">Play</span>
+              </button>
+              <button id="stop-button" class="transport-button stop-button" type="button" aria-label="Stop recording" disabled>
+                <span class="transport-icon stop-icon" aria-hidden="true"></span><span>Stop</span>
+              </button>
+              <button id="forward-button" class="transport-button" type="button" aria-label="Hold to fast forward" title="Hold to fast forward" disabled>
+                <span class="transport-icon forward-icon" aria-hidden="true"></span><span>Fast forward</span>
+              </button>
+            </div>
+            <div class="playback-status"><span id="playback-time">0:00</span><span aria-hidden="true"> / </span><span id="playback-duration">0:00</span></div>
+
+            <div class="progress-container">
+              <input
+                id="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Recording progress"
+              >
+            </div>
+
+          </div>
+
+          <audio
+            id="audio-player"
+            preload="metadata"
+          ></audio>
+
+        </div>
+
+        <section
+          id="recording-details"
+          class="recording-details-panel"
+          hidden
+        ></section>
 
       </div>
 
