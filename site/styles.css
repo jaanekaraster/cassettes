@@ -940,7 +940,6 @@ a:focus-visible {
 .play-button:hover { background: #654f39; }
 .transport-icon { display: block; width: 22px; height: 18px; background: currentColor; }
 .play-icon { clip-path: polygon(20% 0, 95% 50%, 20% 100%); }
-.play-icon.is-paused { clip-path: polygon(15% 0, 40% 0, 40% 100%, 15% 100%, 15% 0, 60% 0, 85% 0, 85% 100%, 60% 100%, 60% 0); }
 .stop-icon { width: 16px; height: 16px; }
 .forward-icon { clip-path: polygon(0 0, 50% 50%, 50% 0, 100% 50%, 50% 100%, 50% 50%, 0 100%); }
 .rewind-icon { clip-path: polygon(100% 0, 50% 50%, 50% 0, 0 50%, 50% 100%, 50% 50%, 100% 100%); }
@@ -953,3 +952,117 @@ a:focus-visible {
 /* Keep held transport controls visible and prevent touch scrolling while winding. */
 #rewind-button, #forward-button { touch-action: none; user-select: none; }
 .transport-button.is-winding { background: #d4c7b4; box-shadow: inset 0 2px 4px #0002; transform: translateY(2px); }
+
+/* Fit the archive to the viewport; only recordings and expanded details scroll. */
+html, body { height: 100%; overflow: hidden; }
+.archive-app { height: 100vh; height: 100dvh; min-height: 0; overflow: hidden; }
+.sidebar {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(144px, 20%) auto minmax(0, 1fr);
+}
+.sidebar-header { padding: .65rem 1rem; }
+.sidebar-header h1 { font-size: 1.15rem; margin: 0; }
+.sidebar-header p { font-size: .75rem; }
+.filters {
+  min-height: 0;
+  padding: .5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .25rem;
+}
+.filters label { font-size: .65rem; margin: 0; }
+.filters input, .filters select { min-height: 30px; padding: .25rem .4rem; font-size: .8rem; }
+.filters select { margin: 0; }
+.filter-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; margin: 0; }
+.filter-field { min-width: 0; }
+.filter-actions button { padding: .2rem .4rem; font-size: .75rem; }
+.recordings-heading { padding: .5rem 1rem; }
+#recordings { max-height: none; overflow-y: auto; overscroll-behavior: contain; }
+.main-view { min-height: 0; height: 100%; overflow: hidden; }
+.recording-view { position: relative; height: 100%; min-height: 0; overflow: hidden; }
+.reel-stage {
+  flex: 1 1 0;
+  min-height: 0;
+  padding: 1rem 1.5rem .5rem;
+  align-items: flex-start;
+  container-type: size;
+}
+.reel-player {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto auto;
+  justify-items: center;
+  align-content: start;
+  gap: .5rem;
+}
+.reel-machine {
+  width: min(760px, 100%, calc((100dvh - 260px) * 760 / 390));
+  width: min(760px, 100%, calc((100cqh - 130px) * 760 / 390));
+  margin: 0;
+  align-self: start;
+}
+.reel-controls { align-self: end; }
+.playback-status { margin: .1rem 0 0; }
+.progress-container { line-height: 1; }
+#progress { margin: 0; }
+.recording-header {
+  flex: 0 0 auto;
+  max-height: 130px;
+  padding: .75rem 1.5rem 1rem;
+  border-top: 1px solid #d8d3ca;
+  border-bottom: 0;
+}
+.recording-header > div { min-width: 0; }
+.recording-header h2 {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.recording-subtitle { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.details-button { flex: 0 0 auto; }
+.recording-details-panel {
+  position: absolute;
+  z-index: 20;
+  inset: 1rem 1.5rem 140px;
+  width: auto;
+  margin: 0;
+  padding: 1.25rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #f5f2ec;
+  border: 1px solid #c9c4bb;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px #0002;
+}
+@media (max-width: 700px) {
+  .archive-app { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 38% minmax(0, 1fr); }
+  .sidebar { height: 100%; max-height: none; grid-template-rows: auto 116px auto minmax(0, 1fr); }
+  .sidebar-header { padding: .25rem .75rem; }
+  .sidebar-header p { display: none; }
+  .filters { padding: .25rem .75rem; gap: .1rem; }
+  .filters > label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .filters input, .filters select { min-height: 26px; padding: .15rem .3rem; }
+  .recordings-heading { padding: .2rem .75rem; }
+  .recording-list-item { padding: .45rem .75rem; }
+  .reel-stage { padding: .5rem .75rem; }
+  .reel-machine { width: min(760px, 100%, calc((62dvh - 180px) * 760 / 390)); width: min(760px, 100%, calc((100cqh - 110px) * 760 / 390)); }
+  .transport-button { padding: .45rem .2rem; gap: .25rem; }
+  .recording-header { padding: .4rem .75rem; max-height: 90px; }
+  .recording-number, .recording-subtitle { font-size: .7rem; margin: .1rem 0; }
+  .recording-details-panel { inset: .5rem .75rem 100px; padding: .75rem; }
+}
+@media (max-height: 500px) and (min-width: 701px) {
+  .sidebar-header p { display: none; }
+  .recording-header { padding: .4rem 1rem; max-height: 100px; }
+  .recording-number, .recording-subtitle { font-size: .7rem; margin: .1rem 0; }
+  .transport-button { padding: .35rem .2rem; gap: .2rem; }
+  .reel-player { gap: .25rem; }
+  .reel-machine { width: min(760px, 100%, calc((100cqh - 100px) * 760 / 390)); }
+  .recording-details-panel { bottom: 110px; }
+}

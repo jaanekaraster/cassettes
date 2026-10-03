@@ -29,20 +29,20 @@
           autocomplete="off"
         >
 
-        <label for="language-filter">Language</label>
-        <select id="language-filter">
-          <option value="">All languages</option>
-        </select>
-
-        <label for="person-filter">Person</label>
-        <select id="person-filter">
-          <option value="">All people</option>
-        </select>
-
-        <label for="reel-filter">Reel</label>
-        <select id="reel-filter">
-          <option value="">All reels</option>
-        </select>
+        <div class="filter-row">
+          <div class="filter-field">
+            <label for="language-filter">Language</label>
+            <select id="language-filter"><option value="">All languages</option></select>
+          </div>
+          <div class="filter-field">
+            <label for="person-filter">Person</label>
+            <select id="person-filter"><option value="">All people</option></select>
+          </div>
+          <div class="filter-field">
+            <label for="reel-filter">Reel</label>
+            <select id="reel-filter"><option value="">All reels</option></select>
+          </div>
+        </div>
 
         <div class="filter-actions">
           <button id="shuffle-button" type="button">
@@ -87,22 +87,6 @@
 
       <div id="recording-view" class="recording-view" hidden>
 
-        <header class="recording-header">
-          <div>
-            <p id="recording-number" class="recording-number"></p>
-            <h2 id="recording-title"></h2>
-            <p id="recording-subtitle" class="recording-subtitle"></p>
-          </div>
-
-          <button
-            id="details-button"
-            class="details-button"
-            type="button"
-          >
-            Details
-          </button>
-        </header>
-
         <div class="reel-stage">
 
           <div
@@ -124,10 +108,10 @@
               <div class="capstan" style="left: 63.157895%; top: 82.051282%" title="Capstan"></div>
               <div class="pinch-roller" style="left: 63.157895%; top: 88.717949%" title="Pinch roller"></div>
               <div class="tape-guide guide-right" style="left: 72.368421%; top: 80.769231%" title="Take-up tape guide"></div>
-              <span class="transport-label" style="left: 36.842105%">ERASE</span>
+              <!-- <span class="transport-label" style="left: 36.842105%">ERASE</span>
               <span class="transport-label" style="left: 46.052632%">RECORD</span>
               <span class="transport-label" style="left: 55.263158%">REPLAY</span>
-              <span class="transport-label" style="left: 63.157895%">CAPSTAN</span>
+              <span class="transport-label" style="left: 63.157895%">CAPSTAN</span> -->
               <svg class="tape-path" viewBox="0 0 760 390">
                 <defs>
                   <linearGradient id="tape-gradient" gradientUnits="userSpaceOnUse" x1="0" x2="48" spreadMethod="repeat">
@@ -181,6 +165,22 @@
           ></audio>
 
         </div>
+
+        <header class="recording-header">
+          <div>
+            <p id="recording-number" class="recording-number"></p>
+            <h2 id="recording-title"></h2>
+            <p id="recording-subtitle" class="recording-subtitle"></p>
+          </div>
+
+          <button
+            id="details-button"
+            class="details-button"
+            type="button"
+          >
+            Details
+          </button>
+        </header>
 
         <section
           id="recording-details"

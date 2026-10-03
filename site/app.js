@@ -734,36 +734,19 @@ function loadAudio(recording) {
   playButton.disabled = false;
 }
 
-async function togglePlay() {
+async function playRecording() {
+  if (!selectedRecording || !audioPlayer.getAttribute("src") || !audioPlayer.paused || playButton.disabled) {
+    return;
+  }
+
   finishWinding(false);
-  if (!selectedRecording) {
-    return;
+  updatePlayButton(true);
+  try {
+    await audioPlayer.play();
+  } catch (error) {
+    updatePlayButton(false);
+    console.error("Unable to play recording:", error);
   }
-
-  if (!audioPlayer.src) {
-    return;
-  }
-
-  if (audioPlayer.paused) {
-    try {
-      await audioPlayer.play();
-
-      startReelAnimation();
-      updatePlayButton(true);
-    } catch (error) {
-      console.error(
-        "Unable to play recording:",
-        error
-      );
-    }
-
-    return;
-  }
-
-  audioPlayer.pause();
-
-  stopReelAnimation();
-  updatePlayButton(false);
 }
 
 function stopAudio() {
@@ -775,17 +758,9 @@ function stopAudio() {
 }
 
 function updatePlayButton(isPlaying) {
-  playIcon.classList.toggle("is-paused", isPlaying);
-
-  playLabel.textContent =
-    isPlaying ? "Pause" : "Play";
-
-  playButton.setAttribute(
-    "aria-label",
-    isPlaying
-      ? "Pause recording"
-      : "Play recording"
-  );
+  playLabel.textContent = "Play";
+  playButton.setAttribute("aria-label", "Play recording");
+  playButton.disabled = isPlaying || !audioPlayer.getAttribute("src") || Boolean(audioPlayer.error);
 }
 
 function formatTime(seconds) {
@@ -1215,7 +1190,7 @@ clearFiltersButton.addEventListener(
 
 playButton.addEventListener(
   "click",
-  togglePlay
+  playRecording
 );
 
 stopButton.addEventListener(
@@ -1325,7 +1300,7 @@ document.addEventListener(
       selectedRecording
     ) {
       event.preventDefault();
-      togglePlay();
+      playRecording();
     }
   }
 );
