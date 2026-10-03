@@ -1146,3 +1146,27 @@ html, body { height: 100%; overflow: hidden; }
   .details-overlay { inset: .5rem .75rem calc(var(--recording-header-height, 90px) + .5rem); }
   .details-panel-toolbar { top: -.75rem; }
 }
+
+/* Mobile: devote more viewport space to results and keep playback compact. */
+@media (max-width: 700px) {
+  .archive-app { grid-template-rows: 46% minmax(0, 1fr); }
+  .reel-stage { padding: .35rem .75rem; }
+  .reel-player {
+    grid-template-rows: auto auto auto auto;
+    align-content: start;
+    gap: .35rem;
+  }
+  .reel-controls { align-self: start; }
+  .reel-machine {
+    width: min(760px, 100%, calc((54dvh - 180px) * 760 / 390));
+    width: min(760px, 100%, calc((100cqh - 110px) * 760 / 390));
+  }
+  .details-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    padding: max(.5rem, env(safe-area-inset-top)) max(.75rem, env(safe-area-inset-right)) max(.5rem, env(safe-area-inset-bottom)) max(.75rem, env(safe-area-inset-left));
+    background: #f5f2ec;
+    pointer-events: auto;
+  }
+}
