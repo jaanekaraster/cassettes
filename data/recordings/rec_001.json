@@ -1,21 +1,26 @@
 {
-  "id": "rec-001",
-  "song_id": "song-001",
-  "reel": {
-    "id": "3_s2",
-    "size": "3.75\""
-  },
+  "id": "rec_001",
+  "title": "Dortn Dortn",
   "type": "audio",
-  "participants": [
+  "songs": [
     {
-      "person_id": "person-001",
-      "role": "singer"
+      "song_id": "song_001"
     }
   ],
+  "reel": {
+    "id": "3_s2",
+    "size": "7.5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 4,
   "audio": {
     "path": "audio/3_s2_dortn_dortn.mp3"
   },
-  "duration_seconds": 0,
+  "duration_seconds": null,
   "description": "",
   "comments": "",
   "documents": [
@@ -24,8 +29,5 @@
       "path": "documents/reel_3.pdf"
     }
   ],
-  "date": {
-    "value": "1968",
-    "precision": "year"
-  }
+  "date": null
 }

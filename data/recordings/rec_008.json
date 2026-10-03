@@ -1,0 +1,33 @@
+{
+  "id": "rec_008",
+  "title": "Ya lyublyu tebya zhizn (I love you, life)",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_008"
+    }
+  ],
+  "reel": {
+    "id": "3_s2",
+    "size": "7.5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 9,
+  "audio": {
+    "path": "audio/3_s2_zhizn.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_3.pdf"
+    }
+  ],
+  "date": null
+}

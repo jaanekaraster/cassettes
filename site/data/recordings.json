@@ -1,22 +1,27 @@
 [
   {
-    "id": "rec-001",
-    "song_id": "song-001",
-    "reel": {
-      "id": "3_s2",
-      "size": "3.75\""
-    },
+    "id": "rec_001",
+    "title": "My Song",
     "type": "audio",
-    "participants": [
+    "songs": [
       {
-        "person_id": "person-001",
-        "role": "singer"
+        "song_id": "song_001"
       }
     ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 4,
     "audio": {
       "path": "audio/3_s2_dortn_dortn.mp3"
     },
-    "duration_seconds": 0,
+    "duration_seconds": null,
     "description": "",
     "comments": "",
     "documents": [
@@ -25,40 +30,419 @@
         "path": "documents/reel_3.pdf"
       }
     ],
-    "date": {
-      "value": "1968",
-      "precision": "year"
-    }
+    "date": null
   },
   {
-    "id": "rec-002",
-    "song_id": "song-002",
-    "reel": {
-      "id": "3_s2",
-      "size": "3.75\""
-    },
+    "id": "rec_002",
+    "title": "A Liteleyn Yiddish (Nigun Atik)",
     "type": "audio",
-    "participants": [
+    "songs": [
       {
-        "person_id": "person-001",
-        "role": "singer"
+        "song_id": "song_002"
       }
     ],
-    "audio": {
-      "path": "audio/3_s2_dorozhinka.mp3"
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
     },
-    "duration_seconds": 0,
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 3,
+    "audio": {
+      "path": "audio/3_s2_nigun.mp3"
+    },
+    "duration_seconds": null,
     "description": "",
     "comments": "",
     "documents": [
       {
         "type": "reel_information",
-        "path": "documents/reel-12.jpg"
+        "path": "documents/reel_3.pdf"
       }
     ],
-    "date": {
-      "value": "1968",
-      "precision": "year"
-    }
+    "date": null
+  },
+  {
+    "id": "rec_003",
+    "title": "Oyf Yener Zayt Taych",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_003"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 2,
+    "audio": {
+      "path": "audio/3_s2_oyf_yener.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Unconfirmed lyrics",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_004",
+    "title": "A Glezele L'Chayim (Yiddish folk song)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_004"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 1,
+    "audio": {
+      "path": "audio/3_s2_glezele.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_005",
+    "title": "Droitele",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_005"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 5,
+    "audio": {
+      "path": "audio/3_s2_droitele_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Unconfirmed lyrics",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_006",
+    "title": "Dorozhen'ka (Little Road)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_006"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 8,
+    "audio": {
+      "path": "audio/3_s2_dorozhenka.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_007",
+    "title": "Sunrise, Sunset",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_007"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 7,
+    "audio": {
+      "path": "audio/3_s2_sunrise_sunset.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_008",
+    "title": "Ya lyublyu tebya zhizn (I love you, life)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_008"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 9,
+    "audio": {
+      "path": "audio/3_s2_zhizn.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_009",
+    "title": "Mat' radnaya maya",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_009"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 10,
+    "audio": {
+      "path": "audio/3_s2_maty.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_010",
+    "title": "Lyubimye Glaza (Beloved Eyes)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_010"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 11,
+    "audio": {
+      "path": "audio/3_s2_glaza.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_011",
+    "title": "Gershwin Medley in Concert",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [],
+    "order": 12,
+    "audio": {
+      "path": "audio/3_s2_gershwin.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Includes: Someone to watch over me, Embraceable You",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_012",
+    "title": "Mikhail Alexandrovitch/Horowitz/Kagan",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_002"
+      }
+    ],
+    "order": 13,
+    "audio": {
+      "path": "audio/3_s2_kagan_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Rest of the Mikhail Alexandrovitch (not good quality)",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_013",
+    "title": "Mikhail Alexandrovitch/Horowitz/Kagan",
+    "type": "audio",
+    "songs": [],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_002"
+      }
+    ],
+    "order": 0,
+    "audio": {
+      "path": "audio/3_s2_kagan_1.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "\"Mikhail Alexandrovitch, a leading concert artist of the Soviet Union, a tenor. Instrumentals and ensemble arranged and conducted by Kazan.\" Only a few seconds of him singing (not good quality)",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
+  },
+  {
+    "id": "rec_014",
+    "title": "Droitele (different key)",
+    "type": "audio",
+    "songs": [
+      {
+        "song_id": "song_005"
+      }
+    ],
+    "reel": {
+      "id": "3_s2",
+      "size": "7.5\""
+    },
+    "participants": [
+      {
+        "person_id": "person_001"
+      }
+    ],
+    "order": 6,
+    "audio": {
+      "path": "audio/3_s2_droitele_2.mp3"
+    },
+    "duration_seconds": null,
+    "description": "",
+    "comments": "Unconfirmed lyrics",
+    "documents": [
+      {
+        "type": "reel_information",
+        "path": "documents/reel_3.pdf"
+      }
+    ],
+    "date": null
   }
 ]

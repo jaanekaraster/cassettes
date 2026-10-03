@@ -1,85 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
+const { parseCsv, splitList } = require("./csv-utils.cjs");
+
 const ROOT = path.resolve(__dirname, "..");
 
 const CSV_PATH = path.join(ROOT, "data", "recordings.csv");
 const OUTPUT_DIR = path.join(ROOT, "data", "recordings");
-
-function parseCsvLine(line) {
-  const fields = [];
-  let field = "";
-  let insideQuotes = false;
-
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
-    const next = line[i + 1];
-
-    if (char === '"' && insideQuotes && next === '"') {
-      field += '"';
-      i++;
-      continue;
-    }
-
-    if (char === '"') {
-      insideQuotes = !insideQuotes;
-      continue;
-    }
-
-    if (char === "," && !insideQuotes) {
-      fields.push(field);
-      field = "";
-      continue;
-    }
-
-    field += char;
-  }
-
-  fields.push(field);
-
-  if (insideQuotes) {
-    throw new Error("Unclosed quote in CSV line");
-  }
-
-  return fields;
-}
-
-function parseCsv(text) {
-  const lines = text
-    .split(/\r?\n/)
-    .filter((line) => line.trim() !== "");
-
-  if (lines.length < 2) {
-    return [];
-  }
-
-  const headers = parseCsvLine(lines[0]);
-
-  return lines.slice(1).map((line, index) => {
-    const values = parseCsvLine(line);
-
-    const row = {};
-
-    headers.forEach((header, i) => {
-      row[header] = values[i] ?? "";
-    });
-
-    row._line = index + 2;
-
-    return row;
-  });
-}
-
-function splitList(value) {
-  if (!value || !value.trim()) {
-    return [];
-  }
-
-  return value
-    .split(";")
-    .map((item) => item.trim())
-    .filter(Boolean);
-}
 
 function parseInteger(value, fieldName, row, options = {}) {
   if (!value.trim()) {

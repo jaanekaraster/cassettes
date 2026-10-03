@@ -184,7 +184,7 @@ https://media.example.com/audio/rec-001.mp3
 ### Editing workflow
 
 For a new recording:
-1. Get the path to the WAV file.
+1. Get the path to the WAV file. If stored on D://, connect first: `sudo mount -t drvfs D: /mnt/d`
 2. Upload it as MP3 to the R2 audio/ prefix: `scripts/upload_audio.sh "path/to/wav/file.wav" "audio/file.mp3"`
 3. Upload any photographs or scanned documents to their R2 prefixes.
 4. Create or update the relevant JSON records. 

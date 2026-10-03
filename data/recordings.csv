@@ -1,0 +1,15 @@
+id,title,song_ids,reel_id,reel_size,type,participants,order,duration_seconds,description,comments,documents,date_value,date_precision,audio_path
+rec_013,Mikhail Alexandrovitch/Horowitz/Kagan,,3_s2,"7.5""",audio,person_002,0,,,"""Mikhail Alexandrovitch, a leading concert artist of the Soviet Union, a tenor. Instrumentals and ensemble arranged and conducted by Kazan."" Only a few seconds of him singing (not good quality)",documents/reel_3.pdf,,,audio/3_s2_kagan_1.mp3
+rec_004,A Glezele L'Chayim (Yiddish folk song),song_004,3_s2,"7.5""",audio,person_001,1,,,,documents/reel_3.pdf,,,audio/3_s2_glezele.mp3
+rec_003,Oyf Yener Zayt Taych,song_003,3_s2,"7.5""",audio,person_001,2,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_oyf_yener.mp3
+rec_002,A Liteleyn Yiddish (Nigun Atik),song_002,3_s2,"7.5""",audio,person_001,3,,,,documents/reel_3.pdf,,,audio/3_s2_nigun.mp3
+rec_001,Dortn Dortn,song_001,3_s2,"7.5""",audio,person_001,4,,,,documents/reel_3.pdf,,,audio/3_s2_dortn_dortn.mp3
+rec_005,Droitele,song_005,3_s2,"7.5""",audio,person_001,5,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_droitele_1.mp3
+rec_014,Droitele (different key),song_005,3_s2,"7.5""",audio,person_001,6,,,Unconfirmed lyrics,documents/reel_3.pdf,,,audio/3_s2_droitele_2.mp3
+rec_007,"Sunrise, Sunset",song_007,3_s2,"7.5""",audio,person_001,7,,,,documents/reel_3.pdf,,,audio/3_s2_sunrise_sunset.mp3
+rec_006,Dorozhen'ka (Little Road),song_006,3_s2,"7.5""",audio,person_001,8,,,,documents/reel_3.pdf,,,audio/3_s2_dorozhenka.mp3
+rec_008,"Ya lyublyu tebya zhizn (I love you, life)",song_008,3_s2,"7.5""",audio,person_001,9,,,,documents/reel_3.pdf,,,audio/3_s2_zhizn.mp3
+rec_009,Mat' radnaya maya,song_009,3_s2,"7.5""",audio,person_001,10,,,,documents/reel_3.pdf,,,audio/3_s2_maty.mp3
+rec_010,Lyubimye Glaza (Beloved Eyes),song_010,3_s2,"7.5""",audio,person_001,11,,,,documents/reel_3.pdf,,,audio/3_s2_glaza.mp3
+rec_011,Gershwin Medley in Concert,,3_s2,"7.5""",audio,,12,,,"Includes: Someone to watch over me, Embraceable You",documents/reel_3.pdf,,,audio/3_s2_gershwin.mp3
+rec_012,Mikhail Alexandrovitch/Horowitz/Kagan,,3_s2,"7.5""",audio,person_002,13,,,Rest of the Mikhail Alexandrovitch (not good quality),documents/reel_3.pdf,,,audio/3_s2_kagan_2.mp3

@@ -1,0 +1,33 @@
+{
+  "id": "rec_007",
+  "title": "Sunrise, Sunset",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_007"
+    }
+  ],
+  "reel": {
+    "id": "3_s2",
+    "size": "7.5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 7,
+  "audio": {
+    "path": "audio/3_s2_sunrise_sunset.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_3.pdf"
+    }
+  ],
+  "date": null
+}

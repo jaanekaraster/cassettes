@@ -1,0 +1,25 @@
+{
+  "id": "rec_011",
+  "title": "Gershwin Medley in Concert",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "3_s2",
+    "size": "7.5\""
+  },
+  "participants": [],
+  "order": 12,
+  "audio": {
+    "path": "audio/3_s2_gershwin.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "Includes: Someone to watch over me, Embraceable You",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_3.pdf"
+    }
+  ],
+  "date": null
+}

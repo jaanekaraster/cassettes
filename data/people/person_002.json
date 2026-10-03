@@ -1,0 +1,12 @@
+{
+  "id": "person_002",
+  "name": "Mikhail Alexandrovitch",
+  "display_name": "Mikhail Alexandrovitch",
+  "description": "",
+  "photos": [
+    {
+      "path": "photos/person_002-01.jpg",
+      "caption": ""
+    }
+  ]
+}

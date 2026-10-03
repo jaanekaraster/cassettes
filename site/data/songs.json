@@ -1,37 +1,162 @@
 [
   {
-    "id": "song-001",
-    "title": "Dortn Dortn",
+    "id": "song_001",
+    "title": "Dortn Dortn (Over There, Over There)",
     "original_title": {
-      "language": "Yiddish",
-      "script": "",
-      "transliteration": ""
+      "script": "אױ, דאָרטן, דאָרטן",
+      "transliteration": "Oy, Dortn, Dortn"
     },
     "language": "Yiddish",
-    "reference": null,
-    "description": "",
+    "reference": "https://yiddishsongs.org/oy-dortn-dortn/",
+    "description": "Folk song (textual variant published in 1901 by S. Ginzburg and P. Marek; one version published in 1918 by M. Kipnis). This version was published in 1927 by Y.L. Cahan.",
+    "lyrics": {
+      "original": "אױ, דאָרטן, דאָרטן, איבערן װאַסערל,\r\nאױ, דאָרטן, דאָרטן, איבערן בריק!\r\nפֿאַרטריבן האָסטו מיך אין די װײַטענע לענדער,\r\nאון בענקען, בענק איך נאַך דיר צוריק!\r\n\r\nאױ,וױפֿל אָװנטן צוזאַמען געזעסן,\r\nאױ, װיפֿל אָװנטן שפּעט אין דער נאַכט!\r\nאון װיפֿל טרערעלעך מיר האָבן בײדע פֿאַרגאָסן\r\nאײדער מיר האָבן די ליבע צוזאַמענגעבראַכט!\r\n\r\nאױ, העלף מיר גאָטעניו, אױ, גאָט אין הימל,\r\nהעלף מיר, גאָטעניו, ס’איז מיר ניט גוט;\r\nשױן צװײ-דרײַ יאָרעלעך, וױ מיר שפּילן אַ ליבע,\r\nאון אױסשפּילן די ליבע קאַנען מיר ניט!\r\n\r\nאױ, דײַנע אײגעלעך, אַזױ װי די קאַרשעלעך,\r\nאון דײַנע ליפּעלעך, וױ ראָזעװע פּאַפּיר;\r\nאון דײַנע פֿינגערלעך, װי טינט און װי פֿעדער —\r\nאױ, שרײַבן זאָלסטו אָפֿטע בריװ צו מיר!",
+      "transliteration": "Oy, dortn, dortn, ibern vaserl,\r\nOy, dortn, dortn, ibern brik!\r\nFartribn hostu mikh in di vaytene lender,\r\nUn benken benk ikh nokh dir tsurik!\r\n\r\nOy, vifl ovntn tsuzamen gezesn,\r\nOy, vifl ovntn shpet in der nakht!\r\nUn vifl trerelekh mir hobn beyde fargosn\r\nEyder mir hobn di libe tsuzamengebrakht!\r\n\r\nOy, helf mir, gotenyu, oy, got in himl,\r\nHelf mir, gotenyu, s’iz mir nit gut!\r\nShoyn tsayt dray yorelekh, vi mir shpiln a libe,\r\nUn oysshpiln di libe konen mir nit!\r\n\r\nOy, dayne eygelekh, azoy vi di karshelekh,\r\nUn dayne lipelekh, vi rozeve papir;\r\nUn dayne fiogerlekh, vi tint un vi feder­-\r\nOy, shraybn zolstu ofte briv tsu mir!",
+      "english": "Oh there, there, beyond the ocean,\r\nOh there, there, beyond the bridge!\r\nYou have driven me off to far away countries\r\nAnd I yearn, I yearn for you back home!\r\n\r\nOh, how many evenings we sat together\r\noh, how many evenings, late into the night!\r\nAnd how many tears we both shed\r\nbefore we joined our loves together!\r\n\r\nOh, help me, my God, oh God in heaven,\r\nhelp me, my God, I’m not doing well!\r\nIt’s already three years since we began our love affair\r\nand we cannot bring it to completion!\r\n\r\nOh, your eyes are like black cherries,\r\nlet your lips be like rose-colored paper;\r\nand your fingers like pen and ink —\r\nso you can write to me often!"
+    }
+  },
+  {
+    "id": "song_002",
+    "title": "Nigun Atik",
+    "original_title": {
+      "script": "ניגון עתיק",
+      "transliteration": "Nigun Atik"
+    },
+    "language": "Hebrew",
+    "reference": "https://www.youtube.com/watch?v=B6Rc1gd289k",
+    "description": "Tune from Nigun Atik",
     "lyrics": {
       "original": null,
+      "transliteration": null,
       "english": null
     }
   },
   {
-    "id": "song-002",
+    "id": "song_003",
+    "title": "Oyf yener zayt",
+    "original_title": {
+      "script": "אויף יענער זײַט טײַך",
+      "transliteration": "Oyf Yener Zayt Taych"
+    },
+    "language": "Yiddish",
+    "reference": "https://web.archive.org/web/20240000000000*/http://www.yiddishpennysongs.com/2016/10/oyf-yener-zayt-auf-jener-seit-af-yener.html",
+    "description": "",
+    "lyrics": {
+      "original": null,
+      "transliteration": "Oyf yener zayt\r\n\r\nDer mentsh shtraybt nor tsu vern raykh, er vendt ton di shlekhte zakh\r\nEr shvindlt, rayst di hoyt fun aykh, abi nor tsu krign gelt a sakh\r\nNor plutsim kumt aroys der sod, der khokhem vert gor bankrupt\r\nIn keytelekh firt men im gants vayt in prison fun yener zayt, fun yener zayt, fun yener zayt\r\n\r\nVayl mentshele, bist keynmol nit zat\r\nTsulib dos gelt roybstu oremelayt\r\nMeynst vest lebn eybik, du nar, oy vestu krign eyn psak derfar\r\nIn keyver dort af yener zayt",
+      "english": "Man strives only to become rich, he turns to doing wicked things\r\nHe swindles, tears the skin from you just to get a lot of money\r\nBut suddenly comes the secret, the \"wise\" fellow goes bankrupt\r\nThey carry him off in chains, far away, in prison, on the other side\r\n\r\nBecause you, little man, are never sated\r\nYou rob poor people just for money\r\nYou think you'll live forever, you fool, but you'll get your punishment for it\r\nIn the grave, there on the other side"
+    }
+  },
+  {
+    "id": "song_004",
+    "title": "A Glezele L'Chayyim (A Little Glass of Life)",
+    "original_title": {
+      "script": "אַ גלעזעלע לחײם",
+      "transliteration": "A Glezele L'Chayyim"
+    },
+    "language": "Yiddish",
+    "reference": "https://imslp.org/wiki/A_Glesele_Lechaim_(Rumshinsky%2C_Joseph)",
+    "description": "Composed 1914 by Joseph Rumshinsky, lyrics by B. Bergholz",
+    "lyrics": {
+      "original": "אַ גלעזעלע לחײם,\nעס שאַט ניט נעמען הײַנט\nװען מע זיצט בײַ אַ יום-טובֿדיקן טיש\nאַ גלעזעלע לחײם\nפֿאַר פֿרײַנדשאַפֿט און פֿאַר פֿרײַנד\nמע זאָל שטענדיק נאָר מוטער זײַן און פֿריש  אַ גלעזעלע לחײם\nפֿאַר אַלט און יונג װאָס זיצן דאָ\nפֿאַר יעדערן באַזונדער\nװאָ\n\nhttps://lyricstranslate.com/en/misha-alexandrovich-glezele-lekhayim-lyrics.html",
+      "transliteration": "A glezele lekhayim, ez shod nit nemen haynt,\r\nven me zitst bay a yontevdikn tish.\r\nA glezele lekhayim far frayndshaft un far fraynt,\r\nme zol shtendik nor munter zayn un frish.\r\nA glezele lekhayim far alt un yung vos zitsn do,\r\nun far yedern bazunder vos zaynen haynt mit undz nito.\r\nA glezele lekhayim, der bekher ful mit vayn,\r\nfar der zun, zi zol shtendik mit undz zayn.\r\n\r\nA glezele lekhayim trinken mir atsind,\r\nnor oyf simkhes bay yedern fun aykh.\r\nA glezele lekhayim far muter un far kind,\r\naz mit nakhes di mame zol zayn raykh.\r\nA glezele lekhayim, nit opshteyn zol fun aykh di shayn,\r\nkeyn shvartser tog in lebn in der mishpokhe zol nit zayn.\r\nA glezele lekhayim iz oystrinken keday,\r\nven me zet zikh mit fraynd oyf dos nay.\r\n\r\nA glezele lekhayim, far unzer groyser land,\r\niber unz zol der himl kukn reyn.\r\nA glezele lekhayim, ikh vintsh aykh nokh anand,\r\nmit a shmeykhl oyf di lipn zolt ir geyn.\r\nA glezele lekhayim, begleytn zol aykh shtendik freyd,\r\nmit laybik un munter, ir zolt keynmol nit tsesheyd.\r\nA glezele lekhayim, far alts vos unz gefelt\r\nun far sholem oyf gor der gantser velt.",
+      "english": null
+    }
+  },
+  {
+    "id": "song_005",
+    "title": "Droitele",
+    "original_title": {
+      "script": "דרויטעלע",
+      "transliteration": "Droitele"
+    },
+    "language": "Yiddish",
+    "reference": null,
+    "description": null,
+    "lyrics": {
+      "original": null,
+      "transliteration": null,
+      "english": null
+    }
+  },
+  {
+    "id": "song_006",
     "title": "Dorozhen'ka (Little Road)",
     "original_title": {
-      "language": "Russian",
       "script": "Дороженька",
       "transliteration": "Dorozhen'ka"
     },
     "language": "Russian",
-    "reference": {
-      "source": "https://www.youtube.com/watch?v=sYkiCUc41Wk",
-      "type": "youtube"
+    "reference": "https://www.youtube.com/watch?v=sYkiCUc41Wk",
+    "description": "Music: N. Ivanov Lyrics: S. Podelkov (1914)",
+    "lyrics": {
+      "original": "Вьется, вьется дальняя дороженька,\r\nСтелется за дымкой горизонт,\r\nА по этой дальней по дороженьке\r\nВслед за милым еду я на фронт.\r\n\r\nОн все чаще, чаще, чаще снится мне,\r\nКак идет с полками в бой и дым...\r\nПоднялась, рванулась бы я птицею,\r\nОпустилась рядом бы я с ним.\r\n\r\nВьется, вьется вдаль моя дороженька,\r\nЗа окном становится рассвет.\r\nЯ одна, одна стою у тополя,\r\nИ обидно сердцу - крыльев нет.",
+      "transliteration": null,
+      "english": "Winding, winding goes the long, long road,\nThe horizon stretches out through the haze;\nAnd along this long, long road I travel,\nFollowing my beloved to the front.\n\nMore and more often he appears in my dreams,\nMarching with his regiments into battle and smoke...\nOh, to rise up and soar like a bird,\nTo alight right there beside him.\n\nWinding, winding, my road stretches on,\nDawn is breaking outside the window.\nI stand all alone by the poplar tree,\nAnd my heart aches—for I have no wings."
+    }
+  },
+  {
+    "id": "song_007",
+    "title": "Sunrise, Sunset",
+    "original_title": {
+      "script": null,
+      "transliteration": null
     },
-    "description": "",
+    "language": "English",
+    "reference": "https://www.youtube.com/watch?v=DBJeF_Lav2o",
+    "description": "Composer: Jerry Bock, Lyrics: Sheldon Harnick (1964), Fiddler On The Roof",
     "lyrics": {
       "original": null,
-      "english": null
+      "transliteration": null,
+      "english": "Is this the little girl I carried?\r\nIs this the little boy at play?\r\nI don't remember growing older\r\nWhen did they?\r\n\r\nWhen did she get to be a beauty?\r\nWhen did he get to be so tall?\r\nWasn't it yesterday\r\nWhen they were small?\r\n\r\nSunrise, sunset\r\nSunrise, sunset\r\nSwiftly flow the days\r\nSeedlings turn overnight to sunflowers\r\nBlossoming even as we gaze\r\nSunrise, sunset\r\nSunrise, sunset\r\nSwiftly fly the years\r\nOne season following another\r\nLaden with happiness and tears\r\n\r\nWhat words of wisdom can I give them?\r\nHow can I help to ease their way?\r\nNow they must learn from one another\r\nDay by day\r\n\r\nThey look so natural together\r\nJust like two newlyweds should be\r\nIs there a canopy in store for me?\r\n\r\nSunrise, sunset\r\nSunrise, sunset\r\nSwiftly flow the days\r\nSeedlings turn overnight to sunflowers\r\nBlossoming even as we gaze\r\nSunrise, sunset\r\nSunrise, sunset\r\nSwiftly fly the years\r\nOne season following another\r\nLaden with happiness and tears"
+    }
+  },
+  {
+    "id": "song_008",
+    "title": "Ya lyublyu tevya, zhizn' (I Love You, Life)",
+    "original_title": {
+      "script": "Я люблю тебя, жизнь",
+      "transliteration": "Ya lyublyu tevya, zhizn'"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=eGu_lVnCyAg",
+    "description": "Composer: Eduard Kolmanovsky, Lyrics: Konstantni Vanshenkin (1956), performed by Mark Bernes",
+    "lyrics": {
+      "original": "Я люблю тебя, жизнь,\r\nЧто само по себе и не ново,\r\nЯ люблю тебя, жизнь,\r\nЯ люблю тебя снова и снова.\n\r\nВот уж окна зажглись,\r\nЯ шагаю с работы устало,\r\nЯ люблю тебя, жизнь,\r\nИ хочу, чтобы лучше ты стала.\r\n\nМне немало дано —\r\nШирь земли и равнина морская,\r\nМне известна давно\r\nБескорыстная дружба мужская…",
+      "transliteration": null,
+      "english": "I love you, life—\nA sentiment hardly new—\nI love you, life,\nI love you, time and again.\n\nThe windows are lit up now;\nI walk home from work, weary;\nI love you, life,\nAnd I want you to be better.\nI have been given so much—\n\nThe vastness of earth and the open sea;\nI have long known\nThe selfless friendship of men…"
+    }
+  },
+  {
+    "id": "song_009",
+    "title": "Mat' radnaya maya (My Dear Mother)",
+    "original_title": {
+      "script": "Мать родная моя",
+      "transliteration": "Mat' radnaya maya"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=IJlyxrjunn4",
+    "description": "Composer: Platon Maiboroda, Lyrics: Andrii Malyshko (1958)",
+    "lyrics": {
+      "original": "Мать родная моя, ты до зорьки вставала\r\nИ водила меня на поля из села.\r\nСобрала в путь-дорогу и меня далеко провожала,\r\nИ расшитый рушник мне на счастье дала.\r\nСобрала в путь-дорогу и меня далеко провожала,\r\nИ расшитый рушник мне на счастье, на долю дала.\r\n\r\nПусть сияет на нем, как весенняя сказка,\r\nВ соловьиную ночь расцветающий сад.\r\nИ любви материнской улыбнется мне тихая ласка,\r\nИ очей твоих синих задумчивый взгляд.\r\nИ любви материнской улыбнется мне тихая ласка,\r\nИ очей твоих синих печальный, задумчивый взгляд.\r\n\r\nЯ возьму тот рушник, расстелю, словно долю,\r\nВ тихом шелесте трав, в щебетанье дубров.\r\nИ на вышивке тонкой расцветет все родное до боли,\r\nИ разлука, и детство мое, и любовь.\r\nИ на вышивке тонкой расцветет все родное до боли,\r\nИ разлука, и детство, и матери милой любовь.",
+      "transliteration": null,
+      "english": "My own dear mother, you rose before dawn\nAnd led me from the village out to the fields.\nYou readied me for the journey and saw me off on my way,\nAnd gave me an embroidered towel for good fortune.\nYou readied me for the journey and saw me off on my way,\nAnd gave me an embroidered towel for luck and for my destiny.\n\nMay a garden in bloom on a night of singing nightingales\nShine upon it like a fairytale of spring.\nMay the quiet tenderness of a mother's love smile upon me,\nAlong with the pensive gaze of your blue eyes.\nMay the quiet tenderness of a mother's love smile upon me,\nAlong with the sorrowful, pensive gaze of your blue eyes.\n\nI shall take that towel and spread it out like my destiny,\nAmidst the quiet rustle of grass and the warbling of the woods.\nAnd upon the delicate embroidery, all that is dear—painfully so—will bloom:\nThe parting, my childhood, and love.\nAnd upon the delicate embroidery, all that is dear—painfully so—will bloom:\nThe parting, my childhood, and my dear mother's love."
+    }
+  },
+  {
+    "id": "song_010",
+    "title": "Lyubim'ye glaza (Beloved Eyes)",
+    "original_title": {
+      "script": "Любимые глаза",
+      "transliteration": "Lyubim'ye glaza"
+    },
+    "language": "Russian",
+    "reference": "https://www.youtube.com/watch?v=waDKI-4qJvo",
+    "description": "Composer: Andrey Babaev, Lyrics: Kara Seytliyev and Anisim Krongauz (1955)",
+    "lyrics": {
+      "original": "Воды арыка бегут, как живые\r\nПереливаясь, в журчаньи звеня\r\nВозле арыка я помню, впервые\r\nГлянули эти глаза на меня\r\n\r\nВ небе блещут звезды золотые\r\nЯрче звезд очей твоих краса\r\nТолько у любимой могут быть такие\r\nНеобыкновенные глаза!\r\n\r\nГде бы я ни был: в пустыне безбрежной\r\nВ море, в горах с пастухом у огня -\r\nЭти глаза неотрывно и нежно\r\nМне помогая, глядят на меня\r\n\r\nВ небе блещут звезды золотые\r\nЯрче звезд очей твоих краса\r\nТолько у любимой могут быть такие\r\nНеобыкновенные глаза!",
+      "transliteration": null,
+      "english": "The waters of the Aryk flow, alive and bright,\nRippling and chiming with a gentle sound;\nBeside the stream, I recall the moment\nThose eyes first gazed upon me.\n\nGolden stars are gleaming in the sky,\nYet the beauty of your eyes outshines them all;\nOnly a beloved could possess such\nExtraordinary eyes!\n\nWherever I may be—in the boundless desert,\nAt sea, or in the mountains by a shepherd's fire—\nThose eyes gaze upon me, tender and unwavering,\nOffering their support.\n\nGolden stars are gleaming in the sky,\nYet the beauty of your eyes outshines them all;\nOnly a beloved could possess such\nExtraordinary eyes!"
     }
   }
 ]

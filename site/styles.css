@@ -7,176 +7,911 @@
     sans-serif;
 
   color: #242424;
-  background: #f5f2ec;
+  background: #f1eee8;
 
   line-height: 1.5;
+
+  --paper: #f8f6f1;
+  --paper-dark: #ebe7df;
+  --ink: #242424;
+  --muted: #77716a;
+  --border: #d2cdc4;
+  --accent: #755f45;
+  --accent-dark: #5c4935;
+
+  --reel-metal: #b9b8b3;
+  --reel-metal-dark: #777773;
+  --reel-hub: #66645f;
+  --tape: #3c3025;
+  --tape-highlight: #554536;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 35%
+    ),
+    var(--paper);
+  color: var(--ink);
 }
 
-.container {
-  width: min(900px, calc(100% - 2rem));
-  margin: 0 auto;
-  padding: 3rem 0 5rem;
-}
+/* --------------------------------------------------
+   Main application shell
+-------------------------------------------------- */
 
-.site-header {
-  margin-bottom: 3rem;
-}
+.archive-app {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
 
-.site-header h1 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.site-header p {
-  margin: 0;
-  color: #666;
-}
-
-.controls {
-  margin-bottom: 2.5rem;
-}
-
-.controls label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.controls input {
   width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #c9c4bb;
+  height: 100vh;
+}
+
+/* --------------------------------------------------
+   Sidebar
+-------------------------------------------------- */
+
+.archive-sidebar {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100vh;
+
+  border-right: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f5f0 0%,
+      #efebe4 100%
+    );
+}
+
+.sidebar-header {
+  padding: 1.5rem 1.4rem 1rem;
+}
+
+.sidebar-header h1 {
+  margin: 0;
+
+  font-size: 1.45rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-header p {
+  margin: 0.35rem 0 0;
+
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------
+   Search and filters
+-------------------------------------------------- */
+
+.archive-filters {
+  padding: 0 1.25rem 1rem;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper input {
+  width: 100%;
+
+  padding: 0.7rem 0.8rem;
+
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: white;
+
+  background: #fff;
+
+  color: var(--ink);
   font: inherit;
 }
 
-.controls input:focus {
-  outline: 2px solid #8c7355;
+.search-wrapper input:focus {
+  outline: 2px solid rgba(117, 95, 69, 0.35);
+  outline-offset: 1px;
+
+  border-color: var(--accent);
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+
+  margin-top: 0.6rem;
+}
+
+.filter-grid select {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0.55rem 0.55rem;
+
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  background: white;
+
+  color: #4d4842;
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.filter-grid select:focus {
+  outline: 2px solid rgba(117, 95, 69, 0.3);
   outline-offset: 1px;
 }
 
-.results-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-
-  margin-bottom: 1rem;
-}
-
-.results-header h2 {
-  margin: 0;
-}
-
-#result-count {
-  color: #777;
-  font-size: 0.9rem;
-}
-
-.recording-card {
-  padding: 1.5rem 0;
-  border-top: 1px solid #d8d3ca;
-}
-
-.recording-card h3 {
-  margin: 0;
-  font-size: 1.3rem;
-}
-
-.original-title {
-  margin-top: 0.25rem;
-  color: #555;
-}
-
-.metadata {
-  margin-top: 0.5rem;
-  color: #706b64;
-  font-size: 0.9rem;
-}
-
-.description {
-  margin: 0.8rem 0;
-}
-
-audio {
-  display: block;
+.shuffle-button {
   width: 100%;
-  max-width: 600px;
-  margin-top: 1rem;
-}
 
-.error {
-  color: #a33;
-}
+  margin-top: 0.6rem;
+  padding: 0.55rem 0.7rem;
 
-@media (max-width: 600px) {
-  .container {
-    padding-top: 2rem;
-  }
-
-  .recording-card {
-    padding: 1.25rem 0;
-  }
-}
-
-.details-button {
-  margin-top: 1rem;
-  padding: 0.5rem 0.8rem;
-
-  border: 1px solid #c9c4bb;
+  border: 1px solid #bdb5aa;
   border-radius: 5px;
 
   background: transparent;
-  color: #4f463b;
 
+  color: var(--accent-dark);
   font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+
   cursor: pointer;
 }
 
-.details-button:hover {
-  background: #ebe7df;
+.shuffle-button:hover {
+  background: #e5e0d7;
 }
 
-.recording-details {
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-
-  background: #ebe7df;
-  border-radius: 6px;
+.shuffle-button:active {
+  transform: translateY(1px);
 }
 
-.recording-details section + section {
-  margin-top: 1.5rem;
+/* --------------------------------------------------
+   Recording list
+-------------------------------------------------- */
+
+.recordings-list {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  border-top: 1px solid var(--border);
 }
 
-.recording-details h4 {
-  margin: 0 0 0.5rem;
+.recordings-list::-webkit-scrollbar {
+  width: 9px;
 }
 
-.recording-details p {
+.recordings-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recordings-list::-webkit-scrollbar-thumb {
+  background: #c9c3b9;
+  border-radius: 20px;
+}
+
+.recording-list-item {
+  width: 100%;
+
+  padding: 0.9rem 1.25rem;
+
+  border: 0;
+  border-bottom: 1px solid rgba(210, 205, 196, 0.75);
+
+  background: transparent;
+
+  color: inherit;
+
+  text-align: left;
+
+  font: inherit;
+
+  cursor: pointer;
+}
+
+.recording-list-item:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.recording-list-item.active {
+  background: #e2ddd4;
+
+  box-shadow:
+    inset 4px 0 0 var(--accent);
+}
+
+.recording-list-title {
+  display: block;
+
+  margin-bottom: 0.2rem;
+
+  font-size: 0.92rem;
+  font-weight: 650;
+
+  line-height: 1.3;
+}
+
+.recording-list-meta {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.recording-list-empty {
+  padding: 1.5rem 1.25rem;
+
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------
+   Main player area
+-------------------------------------------------- */
+
+.archive-main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+/* --------------------------------------------------
+   Active recording header
+-------------------------------------------------- */
+
+.player-header {
+  position: relative;
+  z-index: 10;
+
+  padding: 1.5rem 2rem 0;
+}
+
+.player-header h2 {
+  margin: 0;
+
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+}
+
+.player-original-title {
+  margin-top: 0.3rem;
+
+  color: #5f5a54;
+  font-size: 0.95rem;
+}
+
+.player-transliteration {
+  color: #807a72;
+
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.player-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+
+  margin-top: 0.65rem;
+
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.player-meta span + span::before {
+  content: "·";
+
+  margin-right: 0.75rem;
+
+  color: #aaa39a;
+}
+
+/* --------------------------------------------------
+   Reel stage
+-------------------------------------------------- */
+
+.reel-stage {
+  position: relative;
+
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  overflow: hidden;
+}
+
+/*
+ * Subtle tabletop / archival-paper area behind the reel.
+ */
+
+.reel-stage::before {
+  content: "";
+
+  position: absolute;
+  inset: 8% 5% 5%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 68%
+    );
+
+  pointer-events: none;
+}
+
+/* --------------------------------------------------
+   Reel machine
+-------------------------------------------------- */
+
+.reel-machine {
+  position: relative;
+
+  width: min(760px, 90%);
+  height: min(460px, 62vh);
+
+  min-height: 300px;
+
+  z-index: 2;
+}
+
+/*
+ * The tape itself.
+ *
+ * IMPORTANT:
+ * The tape does NOT connect through the centers.
+ *
+ * It leaves the bottom of the left reel,
+ * travels down,
+ * crosses toward the right,
+ * then rises into the bottom of the right reel.
+ */
+
+.reel-tape-path {
+  position: absolute;
+
+  left: 15%;
+  right: 15%;
+
+  bottom: 12%;
+
+  height: 62%;
+
+  pointer-events: none;
+}
+
+.tape-horizontal {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 4%;
+
+  height: 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--tape-highlight),
+      var(--tape) 45%,
+      #2c241d
+    );
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+
+  transform-origin: left center;
+
+  transition:
+    left 1s ease,
+    right 1s ease;
+}
+
+.tape-left {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 16px;
+  height: 96%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2d241d,
+      var(--tape-highlight),
+      #2d241d
+    );
+
+  border-radius: 3px;
+
+  transform-origin: bottom center;
+}
+
+.tape-right {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 16px;
+  height: 96%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2d241d,
+      var(--tape-highlight),
+      #2d241d
+    );
+
+  border-radius: 3px;
+
+  transform-origin: bottom center;
+}
+
+/*
+ * Reels sit above the tape ends.
+ */
+
+.reel {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #d8d7d2 0%,
+      #bbb9b3 38%,
+      #8d8b86 72%,
+      #66645f 100%
+    );
+
+  border: 8px solid #6f6d68;
+
+  box-shadow:
+    0 15px 28px rgba(0, 0, 0, 0.2),
+    inset 0 2px 3px rgba(255, 255, 255, 0.55),
+    inset 0 -5px 8px rgba(0, 0, 0, 0.2);
+
+  transition:
+    width 0.8s ease,
+    height 0.8s ease;
+}
+
+.reel::before {
+  content: "";
+
+  position: absolute;
+  inset: 8%;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(60, 58, 54, 0.3);
+
+  box-shadow:
+    inset 0 0 0 7px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 9px rgba(50, 48, 44, 0.12);
+}
+
+.reel::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 19%;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(50, 48, 44, 0.2);
+}
+
+/*
+ * Supply reel.
+ *
+ * It is deliberately offset upward from the tape.
+ * The tape terminates underneath it.
+ */
+
+.reel-supply {
+  left: 7%;
+  bottom: 32%;
+
+  width: 230px;
+
+  transform-origin: center;
+}
+
+/*
+ * Take-up reel.
+ */
+
+.reel-takeup {
+  right: 7%;
+  bottom: 32%;
+
+  width: 180px;
+
+  transform-origin: center;
+}
+
+/* --------------------------------------------------
+   Reel hub
+-------------------------------------------------- */
+
+.reel-hub {
+  position: relative;
+
+  width: 25%;
+  aspect-ratio: 1;
+
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #85837e,
+      #595752 60%,
+      #3f3e3a
+    );
+
+  border: 5px solid #4c4a46;
+
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.3),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.35);
+}
+
+.reel-hub::before {
+  content: "";
+
+  width: 32%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background: #292825;
+
+  border: 2px solid #aaa7a0;
+}
+
+.reel-hub::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 20%;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(210, 208, 201, 0.45);
+}
+
+/* --------------------------------------------------
+   Reel spokes
+-------------------------------------------------- */
+
+.reel-spokes {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.reel-spokes::before,
+.reel-spokes::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 67%;
+  height: 7px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.45),
+      rgba(75, 73, 69, 0.5)
+    );
+
+  opacity: 0.75;
+}
+
+.reel-spokes::after {
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg);
+}
+
+/*
+ * Additional diagonal spoke effect.
+ */
+
+.reel-spokes {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 47%,
+      rgba(75, 73, 69, 0.35) 48%,
+      rgba(255, 255, 255, 0.25) 52%,
+      transparent 53%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 47%,
+      rgba(75, 73, 69, 0.35) 48%,
+      rgba(255, 255, 255, 0.25) 52%,
+      transparent 53%
+    );
+}
+
+/* --------------------------------------------------
+   Reel rotation
+-------------------------------------------------- */
+
+.reel-spokes {
+  transition: none;
+}
+
+.reel-machine.playing .reel-supply .reel-spokes,
+.reel-machine.playing .reel-takeup .reel-spokes {
+  animation: reel-spin 1.6s linear infinite;
+}
+
+@keyframes reel-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ * The tape has a subtle moving highlight while playing.
+ */
+
+.reel-machine.playing .tape-horizontal,
+.reel-machine.playing .tape-left,
+.reel-machine.playing .tape-right {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #2e251e 0,
+      #2e251e 14px,
+      #4f3e30 15px,
+      #2e251e 17px
+    );
+
+  animation: tape-motion 0.55s linear infinite;
+}
+
+@keyframes tape-motion {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 34px 0;
+  }
+}
+
+/* --------------------------------------------------
+   Playback controls
+-------------------------------------------------- */
+
+.player-controls {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+
+  padding: 0 2rem 1.5rem;
+}
+
+.play-button {
+  min-width: 120px;
+
+  padding: 0.7rem 1.4rem;
+
+  border: 1px solid var(--accent-dark);
+  border-radius: 5px;
+
+  background: var(--accent);
+
+  color: white;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.play-button:hover {
+  background: var(--accent-dark);
+}
+
+.play-button:active {
+  transform: translateY(1px);
+}
+
+.play-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.play-button.playing {
+  background: #40352a;
+}
+
+.audio-time {
+  min-width: 80px;
+
+  color: var(--muted);
+
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+
+/*
+ * Keep the native audio element hidden visually.
+ * app.js still uses it for actual playback.
+ */
+
+.recording-audio {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+/* --------------------------------------------------
+   Details
+-------------------------------------------------- */
+
+.player-details {
+  position: absolute;
+
+  z-index: 20;
+
+  right: 1.5rem;
+  bottom: 4.5rem;
+
+  width: min(430px, calc(100% - 3rem));
+
+  max-height: 55vh;
+
+  overflow-y: auto;
+
+  padding: 1.25rem;
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  background: rgba(248, 246, 241, 0.97);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.player-details[hidden] {
+  display: none;
+}
+
+.player-details h3,
+.player-details h4 {
+  margin-top: 0;
+}
+
+.player-details h4 {
+  margin-bottom: 0.4rem;
+}
+
+.player-details p {
   margin: 0;
 }
 
 .details-list {
-  margin: 0;
+  margin: 1rem 0 0;
 }
 
 .detail-row {
   display: grid;
-  grid-template-columns: 140px 1fr;
+
+  grid-template-columns: 110px 1fr;
+
   gap: 1rem;
 
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #d5d0c7;
+  padding: 0.45rem 0;
+
+  border-bottom: 1px solid #ddd8cf;
 }
 
 .detail-row:last-child {
@@ -184,7 +919,7 @@ audio {
 }
 
 .detail-row dt {
-  color: #706b64;
+  color: var(--muted);
   font-weight: 600;
 }
 
@@ -192,35 +927,88 @@ audio {
   margin: 0;
 }
 
-.reference a {
-  color: #67533c;
+/* --------------------------------------------------
+   Details / documents buttons
+-------------------------------------------------- */
+
+.secondary-button {
+  padding: 0.55rem 0.8rem;
+
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: var(--accent-dark);
+
+  font: inherit;
+  font-size: 0.85rem;
+
+  cursor: pointer;
 }
 
-.transliteration {
-  color: #777;
-  font-style: italic;
+.secondary-button:hover {
+  background: #e7e2da;
 }
 
+.documents {
+  margin-top: 1rem;
+}
 
 .document-button {
   display: block;
+
+  width: 100%;
+
   margin-top: 0.5rem;
 
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 0.7rem;
 
-  border: 1px solid #c9c4bb;
+  border: 1px solid var(--border);
   border-radius: 5px;
 
   background: white;
-  color: #4f463b;
+
+  color: var(--accent-dark);
 
   font: inherit;
+
+  text-align: left;
+
   cursor: pointer;
 }
 
 .document-button:hover {
-  background: #f5f2ec;
+  background: #f0ece5;
 }
+
+/* --------------------------------------------------
+   Empty / loading / errors
+-------------------------------------------------- */
+
+.player-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  padding: 2rem;
+
+  color: var(--muted);
+
+  text-align: center;
+}
+
+.archive-error {
+  padding: 1.5rem;
+
+  color: #963f3f;
+}
+
+/* --------------------------------------------------
+   Document modal
+-------------------------------------------------- */
 
 .document-modal {
   position: fixed;
@@ -244,7 +1032,9 @@ audio {
   height: min(90vh, 900px);
 
   background: white;
+
   border-radius: 6px;
+
   overflow: hidden;
 }
 
@@ -252,6 +1042,7 @@ audio {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
   gap: 0.75rem;
 
   padding: 0.6rem 0.8rem;
@@ -267,10 +1058,13 @@ audio {
   border-radius: 4px;
 
   background: transparent;
+
   color: white;
 
   font: inherit;
+
   text-decoration: none;
+
   cursor: pointer;
 }
 
@@ -286,4 +1080,231 @@ audio {
   min-height: 0;
 
   border: 0;
+}
+
+/* --------------------------------------------------
+   Reel size states
+--------------------------------------------------
+
+   app.js can set CSS variables on .reel-machine:
+
+     --supply-size
+     --takeup-size
+
+   These allow the visual diameter to respond to
+   the actual audio duration.
+
+-------------------------------------------------- */
+
+.reel-machine {
+  --supply-size: 230px;
+  --takeup-size: 180px;
+}
+
+.reel-supply {
+  width: var(--supply-size);
+}
+
+.reel-takeup {
+  width: var(--takeup-size);
+}
+
+/*
+ * When the tape is nearly finished, the supply reel
+ * should look smaller and the take-up reel larger.
+ */
+
+.reel-machine.short-recording {
+  --supply-size: 190px;
+  --takeup-size: 205px;
+}
+
+.reel-machine.long-recording {
+  --supply-size: 270px;
+  --takeup-size: 155px;
+}
+
+/* --------------------------------------------------
+   Responsive layout
+-------------------------------------------------- */
+
+@media (max-width: 850px) {
+  body {
+    overflow: auto;
+  }
+
+  .archive-app {
+    grid-template-columns: 280px minmax(0, 1fr);
+
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .archive-sidebar {
+    height: 100vh;
+  }
+
+  .archive-main {
+    height: 100vh;
+  }
+
+  .reel-machine {
+    width: 96%;
+  }
+
+  .reel-supply {
+    left: 2%;
+  }
+
+  .reel-takeup {
+    right: 2%;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    overflow: auto;
+  }
+
+  .archive-app {
+    display: block;
+
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .archive-sidebar {
+    height: auto;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .recordings-list {
+    max-height: 240px;
+  }
+
+  .archive-main {
+    height: calc(100vh - 390px);
+    min-height: 560px;
+  }
+
+  .player-header {
+    padding: 1.2rem 1rem 0;
+  }
+
+  .reel-stage {
+    padding: 1rem;
+  }
+
+  .reel-machine {
+    width: 100%;
+    height: 360px;
+  }
+
+  .reel-supply {
+    left: 4%;
+    bottom: 34%;
+
+    width: min(var(--supply-size), 46vw);
+  }
+
+  .reel-takeup {
+    right: 4%;
+    bottom: 34%;
+
+    width: min(var(--takeup-size), 39vw);
+  }
+
+  .reel-tape-path {
+    left: 14%;
+    right: 14%;
+  }
+
+  .player-controls {
+    padding: 0 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-header {
+    padding: 1rem;
+  }
+
+  .archive-filters {
+    padding: 0 1rem 0.8rem;
+  }
+
+  .recording-list-item {
+    padding: 0.75rem 1rem;
+  }
+
+  .archive-main {
+    min-height: 500px;
+  }
+
+  .reel-machine {
+    height: 300px;
+  }
+
+  .reel-supply {
+    bottom: 37%;
+  }
+
+  .reel-takeup {
+    bottom: 37%;
+  }
+
+  .reel-tape-path {
+    bottom: 13%;
+  }
+
+  .tape-horizontal {
+    height: 11px;
+  }
+
+  .tape-left,
+  .tape-right {
+    width: 11px;
+  }
+
+  .player-meta {
+    font-size: 0.75rem;
+  }
+}
+
+/* --------------------------------------------------
+   Accessibility
+-------------------------------------------------- */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid #80694d;
+  outline-offset: 2px;
+}
+
+/*
+ * Respect users who prefer reduced motion.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .reel-machine.playing .reel-supply .reel-spokes,
+  .reel-machine.playing .reel-takeup .reel-spokes,
+  .reel-machine.playing .tape-horizontal,
+  .reel-machine.playing .tape-left,
+  .reel-machine.playing .tape-right {
+    animation: none;
+  }
+
+  .reel {
+    transition: none;
+  }
 }

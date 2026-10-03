@@ -1,0 +1,29 @@
+{
+  "id": "rec_013",
+  "title": "Mikhail Alexandrovitch/Horowitz/Kagan",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "3_s2",
+    "size": "7.5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_002"
+    }
+  ],
+  "order": 0,
+  "audio": {
+    "path": "audio/3_s2_kagan_1.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "\"Mikhail Alexandrovitch, a leading concert artist of the Soviet Union, a tenor. Instrumentals and ensemble arranged and conducted by Kazan.\" Only a few seconds of him singing (not good quality)",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_3.pdf"
+    }
+  ],
+  "date": null
+}

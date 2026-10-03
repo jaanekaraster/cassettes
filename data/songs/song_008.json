@@ -1,0 +1,16 @@
+{
+  "id": "song_008",
+  "title": "Ya lyublyu tevya, zhizn' (I Love You, Life)",
+  "original_title": {
+    "script": "Я люблю тебя, жизнь",
+    "transliteration": "Ya lyublyu tevya, zhizn'"
+  },
+  "language": "Russian",
+  "reference": "https://www.youtube.com/watch?v=eGu_lVnCyAg",
+  "description": "Composer: Eduard Kolmanovsky, Lyrics: Konstantni Vanshenkin (1956), performed by Mark Bernes",
+  "lyrics": {
+    "original": "Я люблю тебя, жизнь,\r\nЧто само по себе и не ново,\r\nЯ люблю тебя, жизнь,\r\nЯ люблю тебя снова и снова.\n\r\nВот уж окна зажглись,\r\nЯ шагаю с работы устало,\r\nЯ люблю тебя, жизнь,\r\nИ хочу, чтобы лучше ты стала.\r\n\nМне немало дано —\r\nШирь земли и равнина морская,\r\nМне известна давно\r\nБескорыстная дружба мужская…",
+    "transliteration": null,
+    "english": "I love you, life—\nA sentiment hardly new—\nI love you, life,\nI love you, time and again.\n\nThe windows are lit up now;\nI walk home from work, weary;\nI love you, life,\nAnd I want you to be better.\nI have been given so much—\n\nThe vastness of earth and the open sea;\nI have long known\nThe selfless friendship of men…"
+  }
+}

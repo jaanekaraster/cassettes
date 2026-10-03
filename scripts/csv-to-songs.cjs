@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const { parseCsv } = require("./csv-utils.cjs");
+
 const ROOT = path.resolve(__dirname, "..");
 
 const CSV_PATH = path.join(ROOT, "data", "songs.csv");
@@ -44,31 +46,6 @@ function parseCsvLine(line) {
   return fields;
 }
 
-function parseCsv(text) {
-  const lines = text
-    .split(/\r?\n/)
-    .filter((line) => line.trim() !== "");
-
-  if (lines.length < 2) {
-    return [];
-  }
-
-  const headers = parseCsvLine(lines[0]);
-
-  return lines.slice(1).map((line, index) => {
-    const values = parseCsvLine(line);
-
-    const row = {};
-
-    headers.forEach((header, i) => {
-      row[header] = values[i] ?? "";
-    });
-
-    row._line = index + 2;
-
-    return row;
-  });
-}
 
 function makeSong(row) {
   if (!row.id.trim()) {
@@ -79,7 +56,7 @@ function makeSong(row) {
     throw new Error(`Line ${row._line}: missing title`);
   }
 
-  const song = {
+  return {
     id: row.id.trim(),
 
     title: row.title.trim(),
@@ -95,11 +72,14 @@ function makeSong(row) {
 
     description: row.description.trim(),
 
-    lyrics: null
+    lyrics: {
+      original: row.lyrics_original.trim() || null,
+      transliteration: row.lyrics_transliterated.trim() || null,
+      english: row.lyrics_english.trim() || null
+    }
   };
-
-  return song;
 }
+
 
 if (!fs.existsSync(CSV_PATH)) {
   throw new Error(

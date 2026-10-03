@@ -1,0 +1,16 @@
+{
+  "id": "person_001",
+  "name": "Sara Gdalzon",
+  "display_name": "Sara Gdalzon",
+  "description": "",
+  "photos": [
+    {
+      "path": "photos/person_001-01.jpg",
+      "caption": ""
+    },
+    {
+      "path": "photos/person_001-02.jpg",
+      "caption": ""
+    }
+  ]
+}

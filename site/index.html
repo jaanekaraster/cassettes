@@ -10,33 +10,113 @@
 </head>
 
 <body>
-  <main class="container">
+  <main class="archive-app">
 
-    <header class="site-header">
-      <h1>Family Archive</h1>
-      <p>Archival recordings from the family collection.</p>
-    </header>
+    <!-- Sidebar -->
+    <aside class="archive-sidebar" aria-label="Archive recordings">
 
-    <section class="controls" aria-label="Archive search">
-      <label for="search">Search recordings</label>
+      <header class="sidebar-header">
+        <h1>Family Archive</h1>
+        <p>Archival recordings from the family collection.</p>
+      </header>
 
-      <input
-        id="search"
-        type="search"
-        placeholder="Search by song, person, language..."
-        autocomplete="off"
-      >
-    </section>
+      <section class="archive-filters" aria-label="Search and filter recordings">
 
-    <section>
-      <div class="results-header">
+        <div class="filter-group">
+          <label for="search">Search</label>
+
+          <input
+            id="search"
+            type="search"
+            placeholder="Search recordings..."
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="filter-group">
+          <label for="language-filter">Language</label>
+
+          <select id="language-filter">
+            <option value="">All languages</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="person-filter">Person</label>
+
+          <select id="person-filter">
+            <option value="">All people</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="reel-filter">Reel</label>
+
+          <select id="reel-filter">
+            <option value="">All reels</option>
+          </select>
+        </div>
+
+        <div class="filter-actions">
+          <button
+            id="shuffle-button"
+            type="button"
+            class="shuffle-button"
+          >
+            Shuffle
+          </button>
+
+          <button
+            id="clear-filters"
+            type="button"
+            class="clear-filters-button"
+          >
+            Clear
+          </button>
+        </div>
+
+      </section>
+
+      <div class="sidebar-results-header">
         <h2>Recordings</h2>
         <span id="result-count"></span>
       </div>
 
-      <div id="recordings">
-        <p>Loading archive…</p>
+      <div
+        id="recordings"
+        class="recording-list"
+        aria-live="polite"
+      >
+        <p class="loading">Loading archive…</p>
       </div>
+
+    </aside>
+
+
+    <!-- Main player -->
+    <section class="archive-main" aria-label="Recording player">
+
+      <div
+        id="player"
+        class="player"
+        aria-live="polite"
+      >
+
+        <div class="player-empty">
+          <div class="player-empty-mark" aria-hidden="true">
+            ◉
+          </div>
+
+          <h2>Select a recording</h2>
+
+          <p>
+            Choose a recording from the archive to view its reel
+            and listen to the recording.
+          </p>
+        </div>
+
+      </div>
+
     </section>
 
   </main>

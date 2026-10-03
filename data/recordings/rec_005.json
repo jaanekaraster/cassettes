@@ -1,0 +1,33 @@
+{
+  "id": "rec_005",
+  "title": "Droitele",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_005"
+    }
+  ],
+  "reel": {
+    "id": "3_s2",
+    "size": "7.5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 5,
+  "audio": {
+    "path": "audio/3_s2_droitele_1.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "Unconfirmed lyrics",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_3.pdf"
+    }
+  ],
+  "date": null
+}
