@@ -20,6 +20,34 @@ const recordingSubtitle = document.querySelector("#recording-subtitle");
 
 const detailsButton = document.querySelector("#details-button");
 const detailsPanel = document.querySelector("#recording-details");
+const detailsOverlay = document.querySelector("#details-overlay");
+const detailsControlsDock = document.querySelector("#details-controls-dock");
+const transportControls = document.querySelector(".reel-controls");
+const playbackStatus = document.querySelector(".playback-status");
+const progressContainer = document.querySelector(".progress-container");
+const recordingHeader = document.querySelector(".recording-header");
+
+// Reserve the actual title height, including wrapped recording titles.
+new ResizeObserver(() => {
+  recordingView.style.setProperty("--recording-header-height", `${recordingHeader.getBoundingClientRect().height}px`);
+}).observe(recordingHeader);
+
+function setDetailsOpen(open) {
+  detailsPanel.hidden = !open;
+  detailsOverlay.hidden = !open;
+  detailsButton.textContent = open ? "Hide details" : "Details";
+  detailsButton.setAttribute("aria-expanded", String(open));
+  if (open) {
+    detailsControlsDock.appendChild(transportControls);
+    detailsControlsDock.appendChild(progressContainer);
+    detailsPanel.querySelector(".details-close-button")?.focus();
+  } else {
+    playbackStatus.parentNode.insertBefore(transportControls, playbackStatus);
+    playbackStatus.parentNode.appendChild(progressContainer);
+    detailsButton.focus();
+  }
+}
+
 
 const reelPlayer = document.querySelector("#reel-player");
 const audioPlayer = document.querySelector("#audio-player");
@@ -844,7 +872,17 @@ function updateDetails(recording) {
 
   heading.textContent = "Recording details";
 
-  detailsPanel.appendChild(heading);
+  const toolbar = document.createElement("div");
+  toolbar.className = "details-panel-toolbar";
+  const closeButton = document.createElement("button");
+  closeButton.type = "button";
+  closeButton.className = "details-close-button";
+  closeButton.textContent = "Close";
+  closeButton.setAttribute("aria-label", "Close recording details");
+  closeButton.addEventListener("click", () => setDetailsOpen(false));
+  toolbar.appendChild(heading);
+  toolbar.appendChild(closeButton);
+  detailsPanel.appendChild(toolbar);
 
   const metadata =
     document.createElement("dl");
@@ -853,13 +891,13 @@ function updateDetails(recording) {
 
   addDetailRow(
     metadata,
-    "Recording",
+    "Recording ID",
     recording.id
   );
 
   addDetailRow(
     metadata,
-    "Reel",
+    "Reel ID",
     recording.reel?.id
   );
 
@@ -906,7 +944,7 @@ function updateDetails(recording) {
   if (songsForRecording.length > 0) {
     addDetailRow(
       metadata,
-      "Songs",
+      "Songs in this recording",
       songsForRecording
         .map((song) => song.title)
         .join(", ")
@@ -938,7 +976,7 @@ function updateDetails(recording) {
     const songsHeading =
       document.createElement("h4");
 
-    songsHeading.textContent = "Songs";
+    songsHeading.textContent = "Song Information";
 
     songsSection.appendChild(songsHeading);
 
@@ -960,7 +998,7 @@ function updateDetails(recording) {
           document.createElement("div");
 
         original.textContent =
-          song.original_title.script;
+          "Original Title: "+song.original_title.script;
 
         songBlock.appendChild(original);
       }
@@ -975,7 +1013,7 @@ function updateDetails(recording) {
           "transliteration";
 
         transliteration.textContent =
-          song.original_title.transliteration;
+          "Transliteration: "+song.original_title.transliteration;
 
         songBlock.appendChild(
           transliteration
@@ -990,7 +1028,7 @@ function updateDetails(recording) {
           "detail-secondary";
 
         language.textContent =
-          song.language;
+          "Language: "+song.language;
 
         songBlock.appendChild(language);
       }
@@ -1020,6 +1058,9 @@ function updateDetails(recording) {
     );
   }
 
+  const lyricsSection = createLyricsSection(songsForRecording);
+  if (lyricsSection) detailsPanel.appendChild(lyricsSection);
+
   if (
     Array.isArray(recording.documents) &&
     recording.documents.length > 0
@@ -1042,28 +1083,34 @@ function updateDetails(recording) {
           return;
         }
 
-        const link =
-          document.createElement("a");
+        const title = archiveDocument.type === "reel_information"
+          ? "View reel information" : "View document";
+        const documentBlock = document.createElement("div");
+        documentBlock.className = "detail-document";
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "document-button";
+        button.textContent = title;
+        button.setAttribute("aria-expanded", "false");
 
-        link.href =
-          `${mediaBaseUrl}/${archiveDocument.path.replace(
-            /^\/+/,
-            ""
-          )}`;
-
-        link.target = "_blank";
-        link.rel =
-          "noopener noreferrer";
-
-        link.textContent =
-          archiveDocument.type ===
-          "reel_information"
-            ? "View reel information ↗"
-            : "View document ↗";
-
-        documentsSection.appendChild(
-          link
-        );
+        const viewer = document.createElement("iframe");
+        viewer.className = "detail-pdf-viewer";
+        viewer.title = archiveDocument.type === "reel_information"
+          ? "Reel information PDF" : "Archive document";
+        viewer.id = `document-viewer-${recording.id}-${documentsSection.childElementCount}`;
+        viewer.hidden = true;
+        button.setAttribute("aria-controls", viewer.id);
+        const path = archiveDocument.path.replace(/^\/+/, "");
+        const url = mediaBaseUrl ? `${mediaBaseUrl}/${path}` : path;
+        button.addEventListener("click", () => {
+          viewer.hidden = !viewer.hidden;
+          if (!viewer.hidden && !viewer.getAttribute("src")) viewer.src = url;
+          button.setAttribute("aria-expanded", String(!viewer.hidden));
+          button.textContent = viewer.hidden ? title : "Hide document";
+        });
+        documentBlock.appendChild(button);
+        documentBlock.appendChild(viewer);
+        documentsSection.appendChild(documentBlock);
       }
     );
 
@@ -1071,6 +1118,70 @@ function updateDetails(recording) {
       documentsSection
     );
   }
+}
+
+function createLyricsSection(recordingSongs) {
+  const section = document.createElement("section");
+  section.className = "lyrics-section";
+  const heading = document.createElement("h4");
+  heading.textContent = "Lyrics";
+  section.appendChild(heading);
+
+  recordingSongs.forEach((song) => {
+    const columns = [
+      ["original", "Original lyrics"],
+      ["transliteration", "Transliterated lyrics"],
+      ["english", "English lyrics"]
+    ].filter(([key]) => typeof song.lyrics?.[key] === "string" && song.lyrics[key].trim());
+    if (!columns.length) return;
+
+    const songSection = document.createElement("section");
+    songSection.className = "song-lyrics";
+    const title = document.createElement("h5");
+    title.textContent = song.title;
+    songSection.appendChild(title);
+    const grid = document.createElement("div");
+    grid.className = "lyrics-columns";
+    grid.style.setProperty("--lyrics-columns", columns.length);
+    // Compare authored lines and stanza breaks, not browser-generated wrapping.
+    const linesByColumn = columns.map(([key]) => song.lyrics[key].replace(/\r\n?/g, "\n").split("\n"));
+    const aligned = linesByColumn.every((lines) =>
+      lines.length === linesByColumn[0].length &&
+      lines.every((line, index) => Boolean(line.trim()) === Boolean(linesByColumn[0][index].trim()))
+    );
+    if (aligned) grid.classList.add("lyrics-aligned");
+    const language = String(song.language || "").trim().toLowerCase();
+    const originalRtl = /^(hebrew|yiddish|he|heb|iw|yi|yid)(?:$|[-_])/.test(language);
+
+    columns.forEach(([key, label], columnIndex) => {
+      const column = document.createElement("div");
+      column.className = "lyrics-column";
+      const columnHeading = document.createElement("h6");
+      columnHeading.textContent = label;
+      column.appendChild(columnHeading);
+      if (aligned) {
+        columnHeading.style.gridColumn = columnIndex + 1;
+        columnHeading.style.gridRow = 1;
+      }
+      const textLines = aligned ? linesByColumn[columnIndex] : [song.lyrics[key]];
+      textLines.forEach((line, lineIndex) => {
+        const text = document.createElement("p");
+        text.textContent = line;
+        text.setAttribute("dir", key === "original" && originalRtl ? "rtl" : "auto");
+        if (key === "original" && originalRtl) text.className = "lyrics-original-rtl";
+        if (aligned) {
+          text.classList.add("lyrics-line");
+          text.style.gridColumn = columnIndex + 1;
+          text.style.gridRow = lineIndex + 2;
+        }
+        column.appendChild(text);
+      });
+      grid.appendChild(column);
+    });
+    songSection.appendChild(grid);
+    section.appendChild(songSection);
+  });
+  return section.childElementCount > 1 ? section : null;
 }
 
 function addDetailRow(
@@ -1198,18 +1309,13 @@ stopButton.addEventListener(
   stopAudio
 );
 
-detailsButton.addEventListener(
-  "click",
-  () => {
-    detailsPanel.hidden =
-      !detailsPanel.hidden;
-
-    detailsButton.textContent =
-      detailsPanel.hidden
-        ? "Details"
-        : "Hide details";
+detailsButton.addEventListener("click", () => setDetailsOpen(detailsPanel.hidden));
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !detailsPanel.hidden) {
+    event.preventDefault();
+    setDetailsOpen(false);
   }
-);
+});
 
 progress.addEventListener(
   "input",

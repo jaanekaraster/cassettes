@@ -177,16 +177,22 @@
             id="details-button"
             class="details-button"
             type="button"
+            aria-controls="recording-details"
+            aria-expanded="false"
           >
             Details
           </button>
         </header>
 
-        <section
-          id="recording-details"
-          class="recording-details-panel"
-          hidden
-        ></section>
+        <div id="details-overlay" class="details-overlay" hidden>
+          <section
+            id="recording-details"
+            class="recording-details-panel"
+            aria-label="Recording details"
+            hidden
+          ></section>
+          <div id="details-controls-dock" class="details-controls-dock"></div>
+        </div>
 
       </div>
 
