@@ -1,0 +1,25 @@
+{
+  "id": "rec_045",
+  "title": "Orkestra",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "4_s1",
+    "size": "5\""
+  },
+  "participants": [],
+  "order": 1,
+  "audio": {
+    "path": "audio/4_s1_orkestra.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "Recorded at 7.5 originally. Sped up at 1.95",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "rec_066",
+  "title": "Odinokaya Garmon' (The Lonely Accordion)",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_016"
+    }
+  ],
+  "reel": {
+    "id": "4_s1",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 22,
+  "audio": {
+    "path": "audio/4_s1_garmon_2.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

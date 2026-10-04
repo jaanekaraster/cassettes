@@ -1,0 +1,29 @@
+{
+  "id": "rec_054",
+  "title": "12 days of xmas",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "4_s1",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_003"
+    }
+  ],
+  "order": 10,
+  "audio": {
+    "path": "audio/4_s1_xmas.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

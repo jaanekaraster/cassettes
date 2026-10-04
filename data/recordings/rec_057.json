@@ -1,0 +1,33 @@
+{
+  "id": "rec_057",
+  "title": "Ti ryadom so mnoi (You are by my side)",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_014"
+    }
+  ],
+  "reel": {
+    "id": "4_s1",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 13,
+  "audio": {
+    "path": "audio/4_s1_ti_ryadom.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}

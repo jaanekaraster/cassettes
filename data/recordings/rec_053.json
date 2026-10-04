@@ -1,0 +1,29 @@
+{
+  "id": "rec_053",
+  "title": "Take me out to the ballgame",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "4_s1",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_003"
+    }
+  ],
+  "order": 9,
+  "audio": {
+    "path": "audio/4_s1_ballgame.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_4.pdf"
+    }
+  ],
+  "date": null
+}
