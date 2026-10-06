@@ -23,6 +23,11 @@ const detailsPanel = document.querySelector("#recording-details");
 const detailsOverlay = document.querySelector("#details-overlay");
 const detailsControlsDock = document.querySelector("#details-controls-dock");
 const transportControls = document.querySelector(".reel-controls");
+transportControls.addEventListener("contextmenu", (event) => {
+  if (event.target.closest(".transport-button")) {
+    event.preventDefault();
+  }
+});
 const playbackStatus = document.querySelector(".playback-status");
 const progressContainer = document.querySelector(".progress-container");
 const recordingHeader = document.querySelector(".recording-header");
