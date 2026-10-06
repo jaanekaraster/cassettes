@@ -1,0 +1,25 @@
+{
+  "id": "rec_076",
+  "title": "Song 8",
+  "type": "audio",
+  "songs": [],
+  "reel": {
+    "id": "12_s1",
+    "size": "5\""
+  },
+  "participants": [],
+  "order": 7,
+  "audio": {
+    "path": "audio/12_s1_song8.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_12.pdf"
+    }
+  ],
+  "date": null
+}

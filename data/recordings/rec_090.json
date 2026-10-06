@@ -1,0 +1,33 @@
+{
+  "id": "rec_090",
+  "title": "Droitele",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_005"
+    }
+  ],
+  "reel": {
+    "id": "12_s1",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_004"
+    }
+  ],
+  "order": 21,
+  "audio": {
+    "path": "audio/12_1_droitele_1.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_12.pdf"
+    }
+  ],
+  "date": null
+}

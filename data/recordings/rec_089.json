@@ -1,0 +1,33 @@
+{
+  "id": "rec_089",
+  "title": "Na pob'vku edet",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_028"
+    }
+  ],
+  "reel": {
+    "id": "12_s1",
+    "size": "5\""
+  },
+  "participants": [
+    {
+      "person_id": "person_001"
+    }
+  ],
+  "order": 20,
+  "audio": {
+    "path": "audio/12_1_edet_3.mp3"
+  },
+  "duration_seconds": null,
+  "description": "Sara singalong: Sara sings the first part; the rest is a recording, with a siren in the background. The song ends and Sara continues",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_12.pdf"
+    }
+  ],
+  "date": null
+}

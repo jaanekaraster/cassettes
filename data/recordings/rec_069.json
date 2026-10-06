@@ -1,0 +1,29 @@
+{
+  "id": "rec_069",
+  "title": "Suliko",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_030"
+    }
+  ],
+  "reel": {
+    "id": "12_s1",
+    "size": "5\""
+  },
+  "participants": [],
+  "order": 0,
+  "audio": {
+    "path": "audio/12_s1_suliko.mp3"
+  },
+  "duration_seconds": null,
+  "description": "",
+  "comments": "",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_12.pdf"
+    }
+  ],
+  "date": null
+}

@@ -1,0 +1,29 @@
+{
+  "id": "rec_092",
+  "title": "Oyf yener zayt taych",
+  "type": "audio",
+  "songs": [
+    {
+      "song_id": "song_003"
+    }
+  ],
+  "reel": {
+    "id": "12_s1",
+    "size": "5\""
+  },
+  "participants": [],
+  "order": 23,
+  "audio": {
+    "path": "audio/12_1_oyf_yener.mp3"
+  },
+  "duration_seconds": null,
+  "description": "GM",
+  "comments": "Song (not sure if this is the same song) (Story)",
+  "documents": [
+    {
+      "type": "reel_information",
+      "path": "documents/reel_12.pdf"
+    }
+  ],
+  "date": null
+}
