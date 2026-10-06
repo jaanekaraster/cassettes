@@ -929,7 +929,7 @@ a:focus-visible {
 .details-button { padding: .5rem .8rem; border: 1px solid #c9c4bb; border-radius: 5px; background: #fffdf9; }
 .recording-list-item { display: block; width: 100%; padding: .85rem 1.5rem; border: 0; border-bottom: 1px solid #d2ccc2; background: transparent; text-align: left; }
 .recording-list-item:hover, .recording-list-item.is-selected { background: #ded8cd; }
-.recording-list-title { display: block; font-weight: 600; }
+.recording-list-title { display: block; color: #000000; font-weight: 600; }
 .recording-list-meta { display: block; margin-top: .25rem; color: #77716a; font-size: .8rem; }
 .filters select { margin-bottom: .65rem; }
 .filter-actions { display: flex; gap: .5rem; }
@@ -1028,7 +1028,7 @@ html, body { height: 100%; overflow: hidden; }
   overflow: hidden;
 }
 .recording-subtitle { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.details-button { flex: 0 0 auto; }
+.details-button { flex: 0 0 auto; color: #000000;}
 .recording-details-panel {
   position: absolute;
   z-index: 20;
