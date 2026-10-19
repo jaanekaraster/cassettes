@@ -36,6 +36,9 @@ Hardware setup:
 
 ---------------------------------------------------
 
+Audacity -> Audio Setup -> Choose Zoom H8
+Press Record on Audacity and then press Play on the Sony.
+Check that the volume levels are fine and that it's recording.
 Let it run for the entirety of the reel. Monitor progress via Audacity and headphones.
 Pay attention to the volume--not too low to obscure the recording, but not too high so as to produce feedback.
 
